@@ -19,7 +19,7 @@ const app = express();
 
 // Configure Nunjucks
 const nunjuckEnv = nunjucks.configure([
-  'app/views-initial',
+  'app/views',
   'node_modules/govuk-frontend/dist/',
   'node_modules/dfe-frontend/packages/components'
 ], {
