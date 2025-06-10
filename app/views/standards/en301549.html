@@ -1,0 +1,30 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Standards" %}
+{% set sidenav = "en301549" %}
+{% set path = "/standards/en301549" %}
+{% set title = "Accessibility of IT hardware and software" %}
+{% set description = "Legislation that requires public sector organisations to make their ICT hardware and software accessible to disabled people." %}
+
+{% block content %}
+
+    <section class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                {% include "standards/_sidenav.html" %}
+            </div>
+
+            <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl">Standards</span>
+                <h1 class="govuk-heading-xl">{{title}}</h1>
+
+                <p class="govuk-body">
+                    <a class="govuk-link"
+      href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf"
+      target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">EN 301 549 (PDF) <span class="govuk-visually-hidden">opens in new tab</span></a> is a European standard that specifies the accessibility requirements for ICT products and services. It includes websites, software, and hardware. The standard ensures that ICT products are accessible to all users.</p>
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

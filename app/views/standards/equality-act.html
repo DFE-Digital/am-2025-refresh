@@ -1,0 +1,66 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Standards" %}
+{% set sidenav = "equality-act" %}
+{% set path = "/standards/equality-act" %}
+{% set title = "Equality Act 2010 and the Public Sector Equality Duty" %}
+{% set description = "The Equality Act 2010 legally protects people from discrimination in the workplace and in wider society, includes the Public Sector Equality Duty." %}
+
+{% block content %}
+
+    <section class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-third">
+                {% include "standards/_sidenav.html" %}
+            </div>
+
+            <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl">Standards</span>
+                <h1 class="govuk-heading-xl">{{title}}</h1>
+
+                <p class="govuk-body">The
+  <a class="govuk-link"
+      href="https://www.legislation.gov.uk/ukpga/2010/15/contents" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">
+      Equality Act 2010 <span class="govuk-visually-hidden">opens in new tab</span></a> legally protects people from discrimination in the workplace and in wider society. It sets out
+   the different ways in which it’s unlawful to treat someone.</p>
+
+                <p class="govuk-body">Summary of act:
+<ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link" href="https://www.equalityhumanrights.com/en/equality-act-2010/what-equality-act"
+         target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">Equality Act 2010: introduction <span class="govuk-visually-hidden">opens in new tab</span></a>
+                        </li>
+                        <li>
+                            <a class="govuk-link" href="https://www.gov.uk/guidance/equality-act-2010-guidance" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">Equality Act
+         2010: guidance <span class="govuk-visually-hidden">opens in new tab</span></a>
+                        </li>
+                    </ul>
+
+                    <h2 class="govuk-heading-l">Public Sector Equality Duty</h2>
+                    <p class="govuk-body">
+  The <a class="govuk-link"
+ href="https://www.legislation.gov.uk/ukpga/2010/15/section/149" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">Public Sector Equality Duty <span class="govuk-visually-hidden">opens in new tab</span></a> requires public bodies to consider how their policies or decisions affect people who
+   are protected under the Equality Act. This helps organisations to deliver services that are accessible and inclusive.
+</p>
+                    <p class="govuk-body">Summary of duty:
+<ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                <a class="govuk-link" href="https://www.gov.uk/government/publications/public-sector-equality-duty"
+         target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">Public Sector Equality Duty: overview <span class="govuk-visually-hidden">opens in new tab</span></a>
+                            </li>
+                            <li>
+                                <a class="govuk-link"
+         href="https://www.equalityhumanrights.com/en/advice-and-guidance/public-sector-equality-duty"
+         target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">Public Sector Equality Duty: explained <span class="govuk-visually-hidden">opens in new tab</span></a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </section>
+
+        {% endblock %}

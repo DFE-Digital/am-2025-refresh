@@ -1,0 +1,27 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Standards" %}
+{% set sidenav = "shca" %}
+{% set path = "/standards/shca" %}
+{% set title = "Service Health Check App" %}
+{% set description = "" %}
+
+{% block content %}
+
+    <section class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                {% include "standards/_sidenav_assurance.html" %}
+            </div>
+
+            <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl">Standards</span>
+                <h1 class="govuk-heading-xl">{{title}}</h1>
+
+               
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

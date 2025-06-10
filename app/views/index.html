@@ -1,0 +1,93 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Home" %}
+{% set path = "" %}
+{% set title = "Accessibility and inclusive design manual" %}
+{% set description = "Everything you need to understand how we create accessible, inclusive products and services in the Department for Education." %}
+
+{% set mainClasses = 'govuk-!-padding-bottom-0' %}
+
+{% block content %}
+
+    <section style="background-color:#ffffff;" class="govuk-!-padding-top-9 govuk-!-padding-bottom-7" id="homepage-hero">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h1 class="govuk-heading-xl" style="color:#1d70b8; font-size: 4rem;">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-section">
+        <div class="govuk-width-container govuk-!-padding-top-7 govuk-!-padding-bottom-9">
+            <div class="section-header">
+                <h2 class="govuk-heading-l">What's popular</h2>
+            </div>
+            <ul class="dfe-custom-card-list">
+                <li class="dfe-custom-card">
+                    <a href="/audits">
+                        <span class="tag tag--blue">Assurance</span>
+                        <span class="dfe-custom-card-title">Get an audit</span>
+                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="dfe-custom-card">
+                    <a href="/issues-statements/common-issues">
+                        <span class="tag tag--yellow">Prevention</span>
+                        <span class="dfe-custom-card-title">Common accessibility issues</span>
+                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="dfe-custom-card">
+                    <a href="/standards/coga">
+                        <span class="tag tag--pink">Principles</span>
+                        <span class="dfe-custom-card-title">Cognitive accessibility guidelines</span>
+                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="govuk-width-container govuk-!-padding-top-5 govuk-!-padding-bottom-7">
+            <div class="dfe-custom-card dfe-custom-card--tools">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="dfe-custom-card-header dfe-custom-card-header--vertical">
+                            <span class="tag tag--green">Tools</span>
+                            <h3 class="dfe-custom-card-title govuk-!-font-size-24 govuk-!-margin-top-3">Find out how many people might have a disability or impairment that use your service</h3>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="hero-form-as-card">
+                            <form action="/app/how-many-people" method="post" style="width:100%;">
+                                <div class="govuk-form-group" style="margin-bottom:0; margin-top: 1rem;">
+                                    <label class="govuk-label govuk-label--s" for="numberOfUsers">Estimated number of people</label>
+                                    <div class="input-group">
+                                        <input class="govuk-input govuk-input--large" id="numberOfUsers" name="numberOfUsers" type="text" placeholder="Enter a number">
+                                        <button type="submit" class="govuk-button govuk-button--start" data-module="govuk-button">
+                                    Get results
+                                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                                                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

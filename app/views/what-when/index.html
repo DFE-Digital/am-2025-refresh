@@ -1,0 +1,312 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "What to do when" %}
+{% set path = "/what-when" %}
+{% set title = "What to do and when" %}
+{% set description = "What you should do and when" %}
+
+{% set mainClasses = 'govuk-!-padding-top-0 govuk-!-padding-bottom-0' %}
+
+{% block content %}
+
+    <section style="background-color:#F3FAFE;" class="govuk-!-padding-top-7 govuk-!-padding-bottom-4">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">This guidance is for everyone involved in designing, building, and running digital services. It brings together the key actions, tools, and standards you need to deliver accessible, inclusive products at every stage.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-guidance-section govuk-!-padding-top-7 govuk-!-padding-bottom-0">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h2 class="govuk-heading-m" style="margin-bottom: 1.5rem;">Filter guidance by role</h2>
+
+                    <div class="profession-selector" role="toolbar" aria-label="Filter guidance by role">
+                        <button class="profession-button" data-profession="all" aria-pressed="false" aria-controls="profession-content">All roles</button>
+                        <button class="profession-button" data-profession="product" aria-pressed="false" aria-controls="profession-content">Product</button>
+                        <button class="profession-button" data-profession="interaction" aria-pressed="false" aria-controls="profession-content">Design</button>
+                        <button class="profession-button" data-profession="research" aria-pressed="false" aria-controls="profession-content">Research</button>
+                        <button class="profession-button" data-profession="technical" aria-pressed="false" aria-controls="profession-content">Developers</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="profession-content" aria-live="polite">
+        <h2 class="govuk-visually-hidden">Filtered guidance content</h2>
+        <section class="govuk-!-padding-top-7 govuk-!-padding-bottom-4" data-profession="all" style="display: none;">
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-three-quarters">
+                        <h2 class="govuk-heading-l">Accessibility is everyone's responsibility</h2>
+
+                        <p class="govuk-body">Making products and websites accessible improves the user experience for everyone. Providing functionality like keyboard navigation, captions, clear content, and sufficient colour contrast can help all users, not just those with disabilities.</p>
+
+                        <p class="govuk-body">Accessible services also protect DfE from unnecessary risk. Including practices such as testing, audits, inclusive research, having an accessible statement, and allowing users to provide feedback, shows we're committed to accessibility. These steps help us to follow the law and reduce the chance of complaints or legal action.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="govuk-!-padding-top-7 govuk-!-padding-bottom-4" data-profession="product" style="display: none;">
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-three-quarters">
+                        <h2 class="govuk-heading-l">Product managers</h2>
+
+                        <p class="govuk-body">As a product manager, planning for accessibility is an important part of the role.  
+<p class="govuk-body">If you ensure that accessibility is considered by the whole team, and the necessary planning is in place, accessibility should be fully embedded in the product lifecycle. </p>
+                            <p class="govuk-body">Include accessibility in ceremonies, such as sprint planning and review. Work with the delivery manager and business analysts to embed accessibility into the delivery process. For example, include it in the 'definition of ready' and 'definition of done' for tickets.  </p>
+                            <p class="govuk-body">This will help the team know what to consider and whether the work done is accessible and <a href="/standards" class="govuk-link govuk-link--no-visited-state">meets standards</a>. </p>
+                            <p class="govuk-body">Product managers must be familiar with accessibility standards.</p>
+
+                            <p class="govuk-body">You should have a basic understanding of:</p>
+
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li><a href="/wcag-explorer" class="govuk-link govuk-link--no-visited-state">WCAG (Web Content Accessibility Guidelines)</a></li>
+                                <li><a href="https://apply-the-service-standard.education.gov.uk" class="govuk-link govuk-link--no-visited-state">the Service Standard</a></li>
+                                <li><a href="/standards#dfe-standards" class="govuk-link govuk-link--no-visited-state">DfE's accessibility standards</a></li>
+                            </ul>
+
+                            <p class="govuk-body">This will help to make sure the service meets accessibility <a href="/standards#legislation" class="govuk-link govuk-link--no-visited-state">requirements and legislation</a>. </p>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="discovery">
+                <div class="govuk-width-container">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-three-quarters">
+                            <h3 class="govuk-heading-l">In discovery</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product">lay the foundations for accessibility and inclusion from the start</li>
+                                <li data-profession="product">engage with stakeholders to explain <a href="/standards" class="govuk-link govuk-link--no-visited-state">why accessibility is important</a>. Help them understand its value and how it impacts time and cost considerations </li>
+                                <li data-profession="product">share <a href="https://accessibility.education.gov.uk" class="govuk-link govuk-link--no-visited-state">this manual</a> with the service team</li>
+                                <li data-profession="product">request the service team and stakeholders complete <a href="/training" class="govuk-link govuk-link--no-visited-state">basic and intermediate training</a>, to help to embed considering all users from the beginning</li>
+                                <li data-profession="product">ensure there is a plan to include users with access needs in <a href="https://user-research.education.gov.uk" class="govuk-link govuk-link--no-visited-state">user research</a> and that incentives are planned into costs</li>
+                                <li data-profession="product">start to talk to the wider team, including stakeholders, senior leadership and board members, about accessibility and its importance</li>
+                           <li data-profession="research">plan for user research with people with access need</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="alpha">
+                <div class="govuk-width-container">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-three-quarters">
+                            <h3 class="govuk-heading-l">In alpha</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product">ensure enough budget is in place for an <a href="/audits" class="govuk-link govuk-link--no-visited-state">accessibility audit</a></li>
+                                <li data-profession="product">start the procurement process for an audit </li>
+                                <li data-profession="product">ensure that the team are aware of how to <a href="/tools-testing" class="govuk-link govuk-link--no-visited-state">carry out their own testing</a> </li>
+                                <li data-profession="product">review the <a href="/inclusive-design" class="govuk-link govuk-link--no-visited-state">inclusive design guidance</a> with interaction designers and check that common patterns and components are used where possible</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="beta">
+                <div class="govuk-width-container">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-three-quarters">
+                            <h3 class="govuk-heading-l">In beta</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product">ensure that internal testing has been carried out, both [automated]() and [manual checks]() </li>
+                                <li data-profession="product">confirm an audit has been procured and booked in  </li>
+                                <li data-profession="product">check people with access needs have been included in research, or proxy users have been identified if contextual users are not available  </li>
+
+                                <li data-profession="product">prioritise resolving <a href="/issues-statement/prioritisation" class="govuk-link govuk-link--no-visited-state">accessibility issues</a>   </li>
+
+                                <li data-profession="product">log identified issues to the backlog to keep track   </li>
+
+                                <li data-profession="product">record identified issues in the <a href="/issues-statement/statement" class="govuk-link govuk-link--no-visited-state">accessibility statement</a> and ensure the correct template has been used  </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="live">
+                <div class="govuk-width-container">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-three-quarters">
+                            <h3 class="govuk-heading-l">In live</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product,design">keep accessibility statements up to date and review them regularly or when the service is updated</li>
+                                <li data-profession="product">continue to <a href="/issues-statement/prioritisation" class="govuk-link govuk-link--no-visited-state">prioritise</a> accessibility issues and resolve in a timely manner </li>
+                                <li data-profession="product,technical">ensure that <a href="/tools-testing" class="govuk-link govuk-link--no-visited-state">accessibility testing</a> is carried out on all changes to the service</li>
+                                <li data-profession="product,design">keep on top of <a href="/training" class="govuk-link govuk-link--no-visited-state">training</a> and awareness of accessibility and changes to <a href="/standards" class="govuk-link govuk-link--no-visited-state">accessibility standards</a></li>
+                                <li data-profession="product">report compliance with <a href="/standards#dfe-standards" class="govuk-link govuk-link--no-visited-state">department standards</a> through the <a href="https://educationgovuk.sharepoint.com/sites/ServiceHealthCheckHub/SitePages/Service-Health-Check-App.aspx" class="govuk-link govuk-link--no-visited-state" target="_blank" rel="noopener noreferrer">Service Health Check App (opens the DfE intranet in a new tab)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <style>
+            .profession-selector {
+                display: flex;
+                gap: 0.5rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                flex-wrap: wrap;
+            }
+            .profession-button {
+                background: #fff;
+                border: 1.5px solid #e5e7eb;
+                border-radius: 4px;
+                padding: 0.5em 1.5em;
+                font-size: 1rem;
+                font-weight: 600;
+                color: #235edf;
+                cursor: pointer;
+                transition: box-shadow 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
+                outline: none;
+                margin-bottom: 0.5rem;
+                box-shadow: 0 2px 8px rgba(37,99,235,0.05);
+                position: relative;
+            }
+            .profession-button[aria-pressed="true"],
+            .profession-button.active {
+                background: #235edf;
+                color: #fff;
+                border-color: #235edf;
+                box-shadow: 0 0 0 3px #235edf33;
+                z-index: 1;
+            }
+            .profession-button:focus {
+                border-color: #fd0;
+                background: #fffbe6;
+                color: #0b0c0c;
+                box-shadow: 0 0 0 3px #fd0;
+            }
+            @media (max-width: 600px) {
+                .profession-selector {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+                .profession-button {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+            .govuk-visually-hidden {
+                position: absolute !important;
+                width: 1px !important;
+                height: 1px !important;
+                padding: 0 !important;
+                margin: -1px !important;
+                overflow: hidden !important;
+                clip: rect(0, 0, 0, 0) !important;
+                white-space: nowrap !important;
+                border: 0 !important;
+            }
+            #profession-content {
+                outline: none !important;
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const buttons = document.querySelectorAll('.profession-button');
+                const items = document.querySelectorAll('.profession-list li');
+                const sections = document.querySelectorAll('section[data-profession]');
+
+                function updateList(profession) {
+                    items.forEach(item => {
+                        const professions = item.getAttribute('data-profession') ? item.getAttribute('data-profession').split(',') : [];
+                        if (profession === 'all' || professions.includes(profession)) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+
+                function updateSection(profession) {
+                    sections.forEach(section => {
+                        if (profession === 'all' && section.getAttribute('data-profession') === 'all') {
+                            section.style.display = 'block';
+                        } else if (profession !== 'all' && section.getAttribute('data-profession') === profession) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+
+                function setActiveButton(profession) {
+                    buttons.forEach(b => {
+                        b.setAttribute(
+                            'aria-pressed', b.getAttribute('data-profession') === profession
+                            ? 'true'
+                            : 'false');
+                    });
+                }
+
+                function setURLParam(profession) {
+                    const url = new URL(window.location);
+                    url
+                        .searchParams
+                        .set('role', profession);
+                    window
+                        .history
+                        .replaceState({}, '', url);
+                }
+
+                function getProfessionFromURL() {
+                    const params = new URLSearchParams(window.location.search);
+                    return params.get('role') || 'all';
+                }
+
+                // Main logic
+                function filterByProfession(profession, updateUrl = true) {
+                    setActiveButton(profession);
+                    updateList(profession);
+                    updateSection(profession);
+                    if (updateUrl) setURLParam(profession);
+                    // Move focus to content region for screen readers
+                    const contentRegion = document.getElementById('profession-content');
+                    if (contentRegion) {
+                        contentRegion.focus();
+                    }
+                }
+                
+                // Button click events
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const profession = this.getAttribute('data-profession');
+                        filterByProfession(profession, true);
+                    });
+                });
+
+                // On page load, check URL param
+                const initialProfession = getProfessionFromURL();
+                filterByProfession(initialProfession, false);
+            });
+        </script>
+
+    {% endblock %}
