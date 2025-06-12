@@ -1,0 +1,92 @@
+.tools-section {
+    background-color: #f8f8f8;
+    margin: 2rem 0;
+}
+
+.tools-section .dfe-custom-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 0;
+}
+
+.tools-section .dfe-custom-card-header {
+    margin-bottom: 1.5rem;
+}
+
+.tools-section .dfe-custom-card-header--vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tools-section .tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.tools-section .tag--green {
+    background-color: #e6f4ea;
+    color: #137333;
+}
+
+.tools-section .dfe-custom-card-title {
+    color: #0b0c0c;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.tools-section .hero-form-as-card {
+    background: #f8f8f8;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.tools-section .input-group {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.tools-section .input-group .govuk-input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.tools-section .input-group .govuk-button {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 48.0525em) {
+    .tools-section .input-group {
+        flex-direction: column;
+    }
+    
+    .tools-section .input-group .govuk-button {
+        width: 100%;
+    }
+    
+    .tools-section .dfe-custom-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Focus states for accessibility */
+.tools-section .govuk-input:focus,
+.tools-section .govuk-button:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 4px #0b0c0c;
+}
+
+/* Hover states */
+.tools-section .govuk-button:hover {
+    background-color: #004b30;
+} 

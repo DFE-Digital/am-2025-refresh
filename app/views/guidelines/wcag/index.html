@@ -1,0 +1,66 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Guidelines" %}
+{% set path = "/guidelines/wcag" %}
+{% set title = "WCAG overview" %}
+{% set description = "Understand the principles of WCAG and the levels of conformance." %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter sticky">
+
+                    <h2 class="govuk-heading-m">Contents</h2>
+
+                    <nav class="govuk-link-list sticky">
+                        <ul class="govuk-list govuk-list--spaced">
+                            <li class="govuk-link-list__item">
+                                <a href="#main-principles" class="govuk-link" data-target="main-principles">Principles</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#levels-of-conformance" class="govuk-link" data-target="levels-of-conformance">Levels of conformance</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#declaring-compliance" class="govuk-link" data-target="declaring-compliance">Declaring compliance</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class="govuk-grid-column-three-quarters">
+
+                    <p class="govuk-body">The <a href="https://www.w3.org/TR/WCAG22/" class="govuk-link govuk-link--no-visited-state">Web Content Accessibility Guidelines (WCAG)</a> are a set of recommendations designed to make web content more accessible to people with disabilities.</p>
+                    <p class="govuk-body">The guidelines aim to improve the user experience for everyone. Including people with impairments to their vision, hearing, thinking and understanding and mobility.</p>
+
+                   
+                    <h2 class="govuk-heading-m" id="main-principles">Principles</h2>
+                    <p class="govuk-body">WCAG is organised around 4 principles.</p>
+
+                    <h3 class="govuk-heading-s">Perceivable</h3>
+                    
+                    <p class="govuk-body">Information and user interface components must be presented in ways that users can perceive. This means content should be available to at least one of a user's senses (sight, hearing, touch).
+</p>
+
+<p class="govuk-body"><a href="/guidelines/wcag/explorer/perceivable" class="govuk-link govuk-link--no-visited-state">Learn more about the Perceivable principle</a></p>
+                   
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

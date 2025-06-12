@@ -1,0 +1,89 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Home" %}
+{% set path = "" %}
+{% set title = "Accessibility and inclusive design manual" %}
+{% set description = "Standards and guidance for designing and building accessible and inclusive products and services in the Department for Education." %}
+
+{% set mainClasses = 'govuk-!-padding-bottom-0' %}
+
+{% block content %}
+
+    <section class="dfe-manual-hero dfe-manual-hero--homepage" id="homepage-hero">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h1 class="govuk-heading-xl dfe-manual-hero--homepage-title ">{{title}}</h1>
+                    <p class="govuk-body-l govuk-!-margin-bottom-9">{{description}}</p>
+                </div>
+
+                <div class="govuk-grid-column-full">
+
+                    <h2 class="govuk-heading-m">What's popular</h2>
+
+                    <ul class="dfe-manual-viewed-list dfe-manual-viewed-list--inline" data-module="ga4-link-tracker">
+                        <li class="dfe-manual-viewed-list__item">
+                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
+                                <span class="dfe-manual-action-link__link-wrapper">
+                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Get an accessibility audit</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="dfe-manual-viewed-list__item">
+                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
+                                <span class="dfe-manual-action-link__link-wrapper">
+                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Cognitive accessibility guidelines</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="dfe-manual-viewed-list__item">
+                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
+                                <span class="dfe-manual-action-link__link-wrapper">
+                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Accessibility standards in DfE</a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual dfe-manual--section dfe-manual--section--standard" id="getting-started-with-accessibility">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
+                        Getting started with accessibility
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-many-modern-section">
+        <div class="how-many-modern-container">
+            <div class="how-many-modern-left">
+                <h2 class="how-many-modern-title">
+                    How many people might have a disability or impairment that use your product or service?
+                </h2>
+                <p class="how-many-modern-lead">
+                    Accessibility issues affect millions of people in the UK.<br>
+                    Use this tool to understand who may be affected by impairments or conditions that may impact their ability to use your products or services.
+                </p>
+            </div>
+            <div class="how-many-modern-right">
+                <form action="/how-many-people" method="post" class="how-many-modern-card">
+                    <label class="govuk-label" for="how-many-people-input">
+                        Enter the number of users for your service
+                    </label>
+                    <input class="govuk-input" id="how-many-people-input" name="how-many-people" type="number" inputmode="numeric" pattern="[0-9]*" required>
+                    <button class="govuk-button" data-module="govuk-button" type="submit">
+                        Calculate
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

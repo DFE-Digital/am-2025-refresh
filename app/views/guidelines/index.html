@@ -1,0 +1,93 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Guidelines" %}
+{% set path = "/guidelines" %}
+{% set title = "Guidelines" %}
+{% set description = "Guidelines help you to understand the standards and principles of accessibility and inclusive design." %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-l">Understanding WCAG</h2>
+                    <p class="govuk-body">WCAG (Web Content Accessibility Guidelines) are the international standards for accessibility and in the UK, a legal requirement for public sector websites.</p>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <div class="dfe-grid-container">
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/guidelines/wcag/" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Overview</a>
+                                </h3>
+                                <p>Understand the principles of WCAG and the levels of conformance.</p>
+                            </div>
+                        </div>
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/guidelines/wcag/" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">WCAG Explorer</a>
+                                </h3>
+                                <p>Explore the WCAG guidelines and how to meet and test them.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-l">Inclusive design guidelines and principles</h2>
+                    <p class="govuk-body">Additional guidelines to help you design and build products and services for users with cognitive and learning disabilities.</p>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <div class="dfe-grid-container">
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/guidelines/coga/" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Cognitive accessibility guidelines</a>
+                                </h3>
+                                <p>Making content usable for people who have thinking, learning, remembering, and problem-solving challenges.</p>
+                            </div>
+                        </div>
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/guidelines/universal-design/" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Universal design principles </a>
+                                </h3>
+                                <p>The 7 design principles are guidelines for designing spaces and products that everyone can use.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
