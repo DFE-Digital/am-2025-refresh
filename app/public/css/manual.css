@@ -1062,6 +1062,10 @@ body {
     padding: 1rem 0 3rem 0;
 }
 
+.dfe-manual-section.dfe-manual-section--header.dfe-manual-section--header--with-breadcrumbs{
+    padding: 0rem 0 3rem 0;
+}
+
 .dfe-manual-section-header--white {
     background-color: var(--modern-white);
 }

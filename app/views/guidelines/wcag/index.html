@@ -5,9 +5,27 @@
 {% set title = "WCAG overview" %}
 {% set description = "Understand the principles of WCAG and the levels of conformance." %}
 
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a href="/" class="govuk-breadcrumbs__link">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a href="/guidelines" class="govuk-breadcrumbs__link">Guidelines</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a href="/guidelines/wcag" class="govuk-breadcrumbs__link">WCAG</a>
+        </li>
+    </ol>
+</div>
+
+{% endblock %}
+
 {% block content %}
 
-    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered">
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section--header--with-breadcrumbs dfe-manual-section-header--white dfe-manual-section-header--bordered">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">
