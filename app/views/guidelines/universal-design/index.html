@@ -1,0 +1,109 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Guidelines" %}
+{% set path = "/guidelines/universal-design" %}
+{% set title = "Universal design principles" %}
+{% set description = "The 7 design principles are guidelines for designing spaces and products that everyone can use." %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a href="/" class="govuk-breadcrumbs__link">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a href="/guidelines" class="govuk-breadcrumbs__link">Guidelines</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+           Cognitive accessibility guidelines
+        </li>
+    </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section--header--with-breadcrumbs dfe-manual-section-header--white dfe-manual-section-header--bordered">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter sticky">
+
+                    <h2 class="govuk-heading-m">Contents</h2>
+
+                    <nav class="govuk-link-list sticky">
+                        <ul class="govuk-list govuk-list--spaced">
+                            <li class="govuk-link-list__item">
+                                <a href="#principles" class="govuk-link govuk-link--no-visited-state" data-target="main-principles">Principles</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#equitable-use" class="govuk-link govuk-link--no-visited-state" data-target="levels-of-conformance">Equitable use</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#flexible-usage" class="govuk-link govuk-link--no-visited-state" data-target="flexible-usage">Flexible usage</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#simple-and-intuitive" class="govuk-link govuk-link--no-visited-state" data-target="simple-and-intuitive">Simple and intuitive</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#perceptible-information" class="govuk-link govuk-link--no-visited-state" data-target="perceptible-information">Perceptible information</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#tolerance-for-error" class="govuk-link govuk-link--no-visited-state" data-target="tolerance-for-error">Tolerance for error</a> 
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#low-physical-effort" class="govuk-link govuk-link--no-visited-state" data-target="low-physical-effort">Low physical effort</a>
+                            </li>
+                            <li class="govuk-link-list__item">
+                                <a href="#size-and-space" class="govuk-link govuk-link--no-visited-state" data-target="size-and-space">Size and space</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class="govuk-grid-column-three-quarters">
+
+                    <h2 class="govuk-heading-l" id="principles">Principles</h2>
+
+                    <p class="govuk-body">The 7 design principles are guidelines for designing spaces and products that everyone can use. They were first created for architecture and product design but can also apply to digital services.</p>
+                    <p class="govuk-body">When designing DfE products and websites, we should use these principles to ensure they're accessible and easy for everyone.</p>
+
+                    <p class="govuk-body">The 7 design principles are:</p>
+
+                    <h3 class="govuk-heading-m" id="equitable-use">Equitable use</h3>
+
+                
+
+<p class="govuk-body">Provide equal access to DfE products and websites to everyone who wants to use a service.</p>
+
+<p class="govuk-body">You should:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>avoid cluttered layouts</li>
+    <li>use the <a href="https://design.homeoffice.gov.uk/accessibility/inclusive-language#disability" class="govuk-link govuk-link--no-visited-state">correct language for people with disabilities</a></li>
+    <li>not exclude anyone</li>
+    <li>not disadvantage or stigmatise anyone</li>
+    <li>make the design appealing to all users</li>
+    <li>ensure users can access with assistive technology</li>
+</ul>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
