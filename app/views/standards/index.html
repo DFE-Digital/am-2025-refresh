@@ -5,16 +5,15 @@
 {% set title = "Standards" %}
 {% set description = "The accessibility standards that people delivering digital products and websites must meet." %}
 
-{% set mainClasses = 'govuk-!-padding-top-0 govuk-!-padding-bottom-0' %}
 
 {% block content %}
 
-    <section style="background-color:#F3FAFE;" class="govuk-!-padding-top-7 govuk-!-padding-bottom-4">
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-three-quarters">
+               <div class="govuk-grid-column-two-thirds">
                     <h1 class="govuk-heading-xl">{{title}}</h1>
-                    <p class="govuk-body-l">Accessibility standards are requirements we must meet when we design and build DfE products and websites.</p>
+                    <p class="govuk-body-l">{{description}}</p>
                 </div>
             </div>
         </div>
@@ -120,43 +119,38 @@
         </div>
     </section>
 
-    <section class="govuk-!-padding-top-5 govuk-!-padding-bottom-7">
+    <section style="background-color: #ffffff;" class="govuk-!-padding-top-5 govuk-!-padding-bottom-9">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-                    <h2 class="govuk-heading-l" id="assurance">How we assure legal requirements and standards in DfE</h2>
+                    <h2 class="govuk-heading-l">How accessibility is assured in DfE</h2>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <div class="govuk-!-padding-top-1 govuk-!-margin-bottom-5" style="background-color: #003a69;"></div>
                     <p class="govuk-body">We have a range of assurance processes in place in DfE to ensure that we're meeting the standards.</p>
-                    <div class="dfe-grid-container">
-                        <div class="dfe-card">
-                            <div class="dfe-card-container">
-                                <h3 class="govuk-heading-m">
-                                    <a href="/standards/assessments" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Service assessments</a>
-                                </h3>
-                                <p class="govuk-body">How accessibility is assessed through service assessments in DfE.</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-!-padding-top-1 govuk-!-margin-bottom-5" style="background-color: #aecbdd;"></div>
 
-                        <div class="dfe-card">
-                            <div class="dfe-card-container">
-                                <h3 class="govuk-heading-m">
-                                    <a href="/standards/assessor-role" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Accessibility assessor role</a>
-                                </h3>
-                                <p class="govuk-body">The role of the accessibility specialist assesor is to ensure that products and websites are usable for everyone.</p>
-                            </div>
-                        </div>
-                        <div class="dfe-card">
-                            <div class="dfe-card-container">
-                                <h3 class="govuk-heading-m">
-                                    <a href="/standards/shca" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Service Health Check</a>
-                                </h3>
-                                <p class="govuk-body">Report compliance with the accessibility standards through the department's service health check app.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+               
+
+                    <ul class="govuk-list govuk-list--spaced">
+                        <li>
+                            <a href="/standards/assessments" class="govuk-link govuk-link--no-visited-state">Service assessments</a>
+                        </li>
+                        <li>
+                            <a href="/standards/assessor-role" class="govuk-link govuk-link--no-visited-state">Accessibility assessor role</a>
+                        </li>
+                        <li>
+                            <a href="/standards/shca" class="govuk-link govuk-link--no-visited-state">Service Health Check App</a>
+                        </li>
+                    </ul>
+                 
                 </div>
             </div>
         </div>
     </section>
+
+
 
 {% endblock %}

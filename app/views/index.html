@@ -3,91 +3,87 @@
 {% set serviceNav = "Home" %}
 {% set path = "" %}
 {% set title = "Accessibility and inclusive design manual" %}
-{% set description = "Everything you need to understand how we create accessible, inclusive products and services in the Department for Education." %}
+{% set description = "Standards and guidance for designing and building accessible and inclusive products and services in the Department for Education." %}
 
 {% set mainClasses = 'govuk-!-padding-bottom-0' %}
 
 {% block content %}
 
-    <section style="background-color:#ffffff;" class="govuk-!-padding-top-9 govuk-!-padding-bottom-7" id="homepage-hero">
+    <section class="dfe-manual-hero dfe-manual-hero--homepage" id="homepage-hero">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-three-quarters">
-                    <h1 class="govuk-heading-xl" style="color:#1d70b8; font-size: 4rem;">{{title}}</h1>
-                    <p class="govuk-body-l">{{description}}</p>
+                    <h1 class="govuk-heading-xl dfe-manual-hero--homepage-title ">{{title}}</h1>
+                    <p class="govuk-body-l govuk-!-margin-bottom-9">{{description}}</p>
+                </div>
+
+                <div class="govuk-grid-column-full">
+
+                    <h2 class="govuk-heading-m">What's popular</h2>
+
+                    <ul class="dfe-manual-viewed-list dfe-manual-viewed-list--inline" data-module="ga4-link-tracker">
+                        <li class="dfe-manual-viewed-list__item">
+                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
+                                <span class="dfe-manual-action-link__link-wrapper">
+                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Get an accessibility audit</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="dfe-manual-viewed-list__item">
+                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
+                                <span class="dfe-manual-action-link__link-wrapper">
+                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Cognitive accessibility guidelines</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="dfe-manual-viewed-list__item">
+                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
+                                <span class="dfe-manual-action-link__link-wrapper">
+                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Accessibility standards in DfE</a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="popular-section">
-        <div class="govuk-width-container govuk-!-padding-top-7 govuk-!-padding-bottom-9">
-            <div class="section-header">
-                <h2 class="govuk-heading-l">What's popular</h2>
-            </div>
-            <ul class="dfe-custom-card-list">
-                <li class="dfe-custom-card">
-                    <a href="/audits">
-                        <span class="tag tag--blue">Assurance</span>
-                        <span class="dfe-custom-card-title">Get an audit</span>
-                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                        </svg>
-                    </a>
-                </li>
-                <li class="dfe-custom-card">
-                    <a href="/issues-statements/common-issues">
-                        <span class="tag tag--yellow">Prevention</span>
-                        <span class="dfe-custom-card-title">Common accessibility issues</span>
-                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                        </svg>
-                    </a>
-                </li>
-                <li class="dfe-custom-card">
-                    <a href="/standards/coga">
-                        <span class="tag tag--pink">Principles</span>
-                        <span class="dfe-custom-card-title">Cognitive accessibility guidelines</span>
-                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
+    <section class="dfe-manual dfe-manual--section dfe-manual--section--standard" id="getting-started-with-accessibility">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
 
-    <section class="tools-section">
-        <div class="govuk-width-container govuk-!-padding-top-5 govuk-!-padding-bottom-7">
-            <div class="dfe-custom-card dfe-custom-card--tools">
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-two-thirds">
-                        <div class="dfe-custom-card-header dfe-custom-card-header--vertical">
-                            <span class="tag tag--green">Tools</span>
-                            <h3 class="dfe-custom-card-title govuk-!-font-size-24 govuk-!-margin-top-3">Find out how many people might have a disability or impairment that use your service</h3>
-                        </div>
-                    </div>
-                    <div class="govuk-grid-column-one-half">
-                        <div class="hero-form-as-card">
-                            <form action="/app/how-many-people" method="post" style="width:100%;">
-                                <div class="govuk-form-group" style="margin-bottom:0; margin-top: 1rem;">
-                                    <label class="govuk-label govuk-label--s" for="numberOfUsers">Estimated number of people</label>
-                                    <div class="input-group">
-                                        <input class="govuk-input govuk-input--large" id="numberOfUsers" name="numberOfUsers" type="text" placeholder="Enter a number">
-                                        <button type="submit" class="govuk-button govuk-button--start" data-module="govuk-button">
-                                    Get results
-                                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-                                                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
+                        Getting started with accessibility
+                    </h2>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="how-many-modern-section">
+        <div class="how-many-modern-container">
+            <div class="how-many-modern-left">
+                <h2 class="how-many-modern-title">
+                    How many people might have a disability or impairment that use your product or service?
+                </h2>
+                <p class="how-many-modern-lead">
+                    Accessibility issues affect millions of people in the UK.<br>
+                    Use this tool to understand who may be affected by impairments or conditions that may impact their ability to use your products or services.
+                </p>
+            </div>
+            <div class="how-many-modern-right">
+                <form action="/how-many-people" method="post" class="how-many-modern-card">
+                    <label class="govuk-label" for="how-many-people-input">
+                        Enter the number of users for your service
+                    </label>
+                    <input class="govuk-input" id="how-many-people-input" name="how-many-people" type="number" inputmode="numeric" pattern="[0-9]*" required>
+                    <button class="govuk-button" data-module="govuk-button" type="submit">
+                        Calculate
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 {% endblock %}

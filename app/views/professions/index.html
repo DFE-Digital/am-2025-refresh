@@ -1,21 +1,19 @@
 {% extends "layouts/layout.html" %}
 
-{% set serviceNav = "What to do when" %}
-{% set path = "/what-when" %}
-{% set title = "What to do and when" %}
+{% set serviceNav = "Professions" %}
+{% set path = "/professions" %}
+{% set title = "Professions" %}
 {% set description = "What you should do and when" %}
 
-{% set mainClasses = 'govuk-!-padding-top-0 govuk-!-padding-bottom-0' %}
 
 {% block content %}
 
-    <section style="background-color:#F3FAFE;" class="govuk-!-padding-top-7 govuk-!-padding-bottom-4">
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-three-quarters">
+                <div class="govuk-grid-column-two-thirds">
                     <h1 class="govuk-heading-xl">{{title}}</h1>
-                    <p class="govuk-body-l">This guidance is for everyone involved in designing, building, and running digital services. It brings together the key actions, tools, and standards you need to deliver accessible, inclusive products at every stage.</p>
-
+                    <p class="govuk-body-l">{{description}}</p>
                 </div>
             </div>
         </div>
