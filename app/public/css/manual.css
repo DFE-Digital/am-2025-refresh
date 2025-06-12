@@ -1081,9 +1081,16 @@ body {
     background-color: var(--modern-white);
 }
 
-.dfe-manual-section-header--bordered{
+.dfe-manual-section-header--bordered-bottom{
     border-bottom: 1px solid var(--modern-border-grey);
 }
+
+.dfe-manual-section-header--bordered--top{
+    border-top: 1px solid var(--modern-border-grey);
+}
+
+
+
 
 .stem-tool {
   background: var(--accent);
