@@ -1,0 +1,29 @@
+<nav class="dfe-vertical-nav " aria-labelledby="vertical-nav-heading">
+  <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
+    Pages in this section
+  </h2>
+
+<a href="/guidelines" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to guidelines</a>
+
+  <ul class="dfe-vertical-nav__section">
+    <li class="dfe-vertical-nav__section-item{% if path == '/guidelines/coga' %} dfe-vertical-nav__section-item--current{% endif %}">
+      <a class="dfe-vertical-nav__link" href="/guidelines/coga">Cognitive accessibility guidelines</a>
+      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/guidelines/coga' %}block{% else %}none{% endif %}">
+        <li class="dfe-vertical-nav__section-item">
+          <a class="dfe-vertical-nav__link" href="/guidelines/coga#who-created-coga">Who created COGA</a>
+        </li>    
+         <li class="dfe-vertical-nav__section-item">
+          <a class="dfe-vertical-nav__link" href="/guidelines/coga#guidelines">The guidelines</a>
+        </li>      
+      </ul>
+    </li>
+     <li class="dfe-vertical-nav__section-item{% if path == '/guidelines/universal-design' %} dfe-vertical-nav__section-item--current{% endif %}">
+      <a class="dfe-vertical-nav__link" href="/guidelines/universal-design">Universal design principles</a>
+      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/guidelines/universal-design' %}block{% else %}none{% endif %}">
+        <li class="dfe-vertical-nav__section-item">
+          <a class="dfe-vertical-nav__link" href="/guidelines/universal-design#principles">The principles</a>
+        </li>        
+      </ul>
+    </li>
+  </ul>
+</nav>

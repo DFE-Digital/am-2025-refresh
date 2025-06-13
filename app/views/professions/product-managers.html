@@ -1,0 +1,122 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Professions" %}
+{% set path = "/professions/product-managers" %}
+{% set title = "Product managers" %}
+{% set description = "What product managers should do to ensure accessibility is considered in the product lifecycle." %}
+{% set lastUpdated = "2025-06-13" %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Professions</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter sticky">
+                    {% include "professions/_nav.html" %}
+                </div>
+                <div class="govuk-grid-column-three-quarters">
+                    <h2 class="govuk-heading-l">Responsibilites</h2>
+
+                    <p class="govuk-body">As a product manager, planning for accessibility is an important part of the role. </p>
+                    <p class="govuk-body">If you ensure that accessibility is considered by the whole team, and the necessary planning is in place, accessibility should be fully embedded in the product lifecycle. </p>
+                    <p class="govuk-body">Include accessibility in ceremonies, such as sprint planning and review. Work with the delivery manager and business analysts to embed accessibility into the delivery process. For example, include it in the 'definition of ready' and 'definition of done' for tickets.  </p>
+                    <p class="govuk-body">This will help the team know what to consider and whether the work done is accessible and <a href="/standards" class="govuk-link govuk-link--no-visited-state">meets standards</a>. </p>
+                    <p class="govuk-body">Product managers must be familiar with accessibility standards.</p>
+                    <p class="govuk-body">You should have a basic understanding of:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a href="/wcag-explorer" class="govuk-link govuk-link--no-visited-state">WCAG (Web Content Accessibility Guidelines)</a>
+                        </li>
+                        <li>
+                            <a href="https://apply-the-service-standard.education.gov.uk" class="govuk-link govuk-link--no-visited-state">the Service Standard</a>
+                        </li>
+                        <li>
+                            <a href="/standards#dfe-standards" class="govuk-link govuk-link--no-visited-state">DfE's accessibility standards</a>
+                        </li>
+                    </ul>
+
+                    <p class="govuk-body">This will help to make sure the service meets accessibility <a href="/standards#legislation" class="govuk-link govuk-link--no-visited-state">requirements and legislation</a>. </p>
+
+                    <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="discovery">
+                        <div class="govuk-width-container">
+                            <h3 class="govuk-heading-l" id="discovery">In discovery</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product">lay the foundations for accessibility and inclusion from the start</li>
+                                <li data-profession="product">engage with stakeholders to explain <a href="/standards" class="govuk-link govuk-link--no-visited-state">why accessibility is important</a>. Help them understand its value and how it impacts time and cost considerations </li>
+                                <li data-profession="product">share <a href="https://accessibility.education.gov.uk" class="govuk-link govuk-link--no-visited-state">this manual</a> with the service team</li>
+                                <li data-profession="product">request the service team and stakeholders complete <a href="/training" class="govuk-link govuk-link--no-visited-state">basic and intermediate training</a>, to help to embed considering all users from the beginning</li>
+                                <li data-profession="product">ensure there is a plan to include users with access needs in <a href="https://user-research.education.gov.uk" class="govuk-link govuk-link--no-visited-state">user research</a> and that incentives are planned into costs</li>
+                                <li data-profession="product">start to talk to the wider team, including stakeholders, senior leadership and board members, about accessibility and its importance</li>
+                                <li data-profession="research">plan for user research with people with access need</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="alpha">
+                        <div class="govuk-width-container">
+                            <h3 class="govuk-heading-l" id="alpha">In alpha</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product">ensure enough budget is in place for an <a href="/audits" class="govuk-link govuk-link--no-visited-state">accessibility audit</a>
+                                </li>
+                                <li data-profession="product">start the procurement process for an audit </li>
+                                <li data-profession="product">ensure that the team are aware of how to <a href="/tools-testing" class="govuk-link govuk-link--no-visited-state">carry out their own testing</a>
+                                </li>
+                                <li data-profession="product">review the <a href="/inclusive-design" class="govuk-link govuk-link--no-visited-state">inclusive design guidance</a> with interaction designers and check that common patterns and components are used where possible</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="beta">
+                        <div class="govuk-width-container">
+                            <h3 class="govuk-heading-l" id="beta">In beta</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product">ensure that internal testing has been carried out, both [automated]() and [manual checks]() </li>
+                                <li data-profession="product">confirm an audit has been procured and booked in  </li>
+                                <li data-profession="product">check people with access needs have been included in research, or proxy users have been identified if contextual users are not available  </li>
+                                <li data-profession="product">prioritise resolving <a href="/issues-statement/prioritisation" class="govuk-link govuk-link--no-visited-state">accessibility issues</a>
+                                </li>
+                                <li data-profession="product">log identified issues to the backlog to keep track   </li>
+                                <li data-profession="product">record identified issues in the <a href="/issues-statement/statement" class="govuk-link govuk-link--no-visited-state">accessibility statement</a> and ensure the correct template has been used  </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="govuk-!-padding-top-3 govuk-!-padding-bottom-7" data-stage="live">
+                        <div class="govuk-width-container">
+                            <h3 class="govuk-heading-l" id="live">In live</h3>
+                            <p class="govuk-body" data-profession="product">You should:</p>
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2 govuk-!-margin-top-2 profession-list">
+                                <li data-profession="product,design">keep accessibility statements up to date and review them regularly or when the service is updated</li>
+                                <li data-profession="product">continue to <a href="/issues-statement/prioritisation" class="govuk-link govuk-link--no-visited-state">prioritise</a> accessibility issues and resolve in a timely manner </li>
+                                <li data-profession="product,technical">ensure that <a href="/tools-testing" class="govuk-link govuk-link--no-visited-state">accessibility testing</a> is carried out on all changes to the service</li>
+                                <li data-profession="product,design">keep on top of <a href="/training" class="govuk-link govuk-link--no-visited-state">training</a> and awareness of accessibility and changes to <a href="/standards" class="govuk-link govuk-link--no-visited-state">accessibility standards</a>
+                                </li>
+                                <li data-profession="product">report compliance with <a href="/standards#dfe-standards" class="govuk-link govuk-link--no-visited-state">department standards</a> through the <a href="https://educationgovuk.sharepoint.com/sites/ServiceHealthCheckHub/SitePages/Service-Health-Check-App.aspx" class="govuk-link govuk-link--no-visited-state" target="_blank" rel="noopener noreferrer">Service Health Check App (opens the DfE intranet in a new tab)</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

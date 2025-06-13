@@ -5,30 +5,15 @@
 {% set title = "WCAG overview" %}
 {% set description = "Understand the principles of WCAG and the levels of conformance." %}
 
-{% block beforeContent %}
 
-<div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-        <li class="govuk-breadcrumbs__list-item">
-            <a href="/" class="govuk-breadcrumbs__link">Home</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            <a href="/guidelines" class="govuk-breadcrumbs__link">Guidelines</a>
-        </li>
-        <li class="govuk-breadcrumbs__list-item">
-            WCAG
-        </li>
-    </ol>
-</div>
-
-{% endblock %}
 
 {% block content %}
 
-    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section--header--with-breadcrumbs dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Guidelines</span>
                     <h1 class="govuk-heading-xl">{{title}}</h1>
                     <p class="govuk-body-l">{{description}}</p>
                 </div>
@@ -41,21 +26,7 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-quarter sticky">
 
-                    <h2 class="govuk-heading-m">Contents</h2>
-
-                    <nav class="govuk-link-list sticky">
-                        <ul class="govuk-list govuk-list--spaced">
-                            <li class="govuk-link-list__item">
-                                <a href="#main-principles" class="govuk-link govuk-link--no-visited-state" data-target="main-principles">Principles</a>
-                            </li>
-                            <li class="govuk-link-list__item">
-                                <a href="#levels-of-conformance" class="govuk-link govuk-link--no-visited-state" data-target="levels-of-conformance">Levels of conformance</a>
-                            </li>
-                            <li class="govuk-link-list__item">
-                                <a href="#declaring-compliance" class="govuk-link govuk-link--no-visited-state" data-target="declaring-compliance">Declaring compliance</a>
-                            </li>
-                        </ul>
-                    </nav>
+                {% include "guidelines/wcag/_nav.html" %}
 
                 </div>
                 <div class="govuk-grid-column-three-quarters">
@@ -64,20 +35,16 @@
                     <p class="govuk-body">The guidelines aim to improve the user experience for everyone. Including people with impairments to their vision, hearing, thinking and understanding and mobility.</p>
 
                    
-                    <h2 class="govuk-heading-l" id="main-principles">Principles</h2>
+                    <h2 class="govuk-heading-l" id="principles">Principles</h2>
                     <p class="govuk-body">WCAG is organised around 4 principles.</p>
 
-                    <h3 class="govuk-heading-m">Perceivable</h3>
+                    <h3 class="govuk-heading-m" id="perceivable">Perceivable</h3>
                     
-                    <p class="govuk-body">Information and user interface components must be presented in ways that users can perceive. This means content should be available to at least one of a user's senses (sight, hearing, touch).
-</p>
-
-<p class="govuk-body"><a href="/guidelines/wcag/explorer/perceivable" class="govuk-link govuk-link--no-visited-state">Learn more about the Perceivable principle</a></p>
+                    <p class="govuk-body">Information and user interface components must be presented in ways that users can perceive. This means content should be available to at least one of a user's senses (sight, hearing, touch).</p>
+                    <p class="govuk-body"><a href="/guidelines/wcag/explorer/perceivable" class="govuk-link govuk-link--no-visited-state">Learn more about the Perceivable principle</a></p>
                    
-
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -88,7 +55,7 @@
                 <div class="govuk-grid-column-two-thirds">
                     <h2 class="govuk-heading-l">Also see</h2>
 
-                    <div class="dfe-grid-container">
+                   <div class="dfe-grid-container govuk-!-margin-top-2">
                        
                         <div class="dfe-card">
                             <div class="dfe-card-container">

@@ -1,0 +1,66 @@
+<nav class="dfe-vertical-nav govuk-!-margin-top-2" aria-labelledby="vertical-nav-heading">
+  <div class="dfe-vertical-nav__mobile-container">
+    <button class="dfe-vertical-nav__toggle" aria-expanded="false" aria-controls="vertical-nav-list">
+      <span class="dfe-vertical-nav__toggle-text"><strong>Pages in this section</strong></span>
+      <span class="dfe-vertical-nav__chevron" aria-hidden="true"></span>
+    </button>
+    <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
+      Pages in this section
+    </h2>
+    <ul class="dfe-vertical-nav__section" id="vertical-nav-list">
+      
+       <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/tools-testing/vision' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link" href="/tools-testing/vision">Vision</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/tools-testing/vision' %}block{% else %}none{% endif %}">
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link" href="/tools-testing/vision#understand-impact">Understand the impact</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link" href="/tools-testing/vision#tools">Tools and techniques</a>
+          </li>
+        </ul>
+      </li>
+    
+  
+    </ul>
+  </div>
+</nav>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector('.dfe-vertical-nav__toggle');
+  var navList = document.getElementById('vertical-nav-list');
+  var chevron = document.querySelector('.dfe-vertical-nav__chevron');
+  var container = document.querySelector('.dfe-vertical-nav__mobile-container');
+  if (toggle && navList && chevron && container) {
+    toggle.addEventListener('click', function() {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      navList.style.display = expanded ? 'none' : 'block';
+      if (!expanded) {
+        chevron.classList.add('dfe-vertical-nav__chevron--up');
+        container.classList.add('dfe-vertical-nav__mobile-container--expanded');
+      } else {
+        chevron.classList.remove('dfe-vertical-nav__chevron--up');
+        container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
+      }
+    });
+    // Hide nav by default on mobile
+    function handleResize() {
+      if (window.innerWidth <= 800) {
+        navList.style.display = 'none';
+        toggle.setAttribute('aria-expanded', 'false');
+        chevron.classList.remove('dfe-vertical-nav__chevron--up');
+        container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
+        toggle.style.display = 'flex';
+      } else {
+        navList.style.display = 'block';
+        toggle.style.display = 'none';
+        container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
+        chevron.classList.remove('dfe-vertical-nav__chevron--up');
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+  }
+});
+</script>

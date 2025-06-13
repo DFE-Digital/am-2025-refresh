@@ -3,32 +3,15 @@
 {% set serviceNav = "Guidelines" %}
 {% set path = "/guidelines/coga" %}
 {% set title = "Cognitive accessibility guidelines" %}
-{% set description = "How to make content usable for people who have thinking, learning, remembering, and problem-solving challenges." %}
-
-{% block beforeContent %}
-
-    <div class="govuk-breadcrumbs">
-        <ol class="govuk-breadcrumbs__list">
-            <li class="govuk-breadcrumbs__list-item">
-                <a href="/" class="govuk-breadcrumbs__link">Home</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item">
-                <a href="/guidelines" class="govuk-breadcrumbs__link">Guidelines</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item">
-           Cognitive accessibility guidelines
-        </li>
-        </ol>
-    </div>
-
-{% endblock %}
+{% set description = "COGA is a set of 8 guidelines for inclusive design. By applying them to the products and websites we build, content will be more accessible." %}
 
 {% block content %}
 
-    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section--header--with-breadcrumbs dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Guidelines</span>
                     <h1 class="govuk-heading-xl">{{title}}</h1>
                     <p class="govuk-body-l">{{description}}</p>
                 </div>
@@ -41,75 +24,241 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-quarter sticky">
 
-                    <h2 class="govuk-heading-m">Contents</h2>
-
-                    <nav class="govuk-link-list sticky">
-                        <ul class="govuk-list govuk-list--spaced">
-                            <li class="govuk-link-list__item">
-                                <a href="#main-principles" class="govuk-link" data-target="main-principles">Principles</a>
-                            </li>
-                            <li class="govuk-link-list__item">
-                                <a href="#levels-of-conformance" class="govuk-link" data-target="levels-of-conformance">Levels of conformance</a>
-                            </li>
-                            <li class="govuk-link-list__item">
-                                <a href="#declaring-compliance" class="govuk-link" data-target="declaring-compliance">Declaring compliance</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    {% include "guidelines/_nav.html" %}
 
                 </div>
                 <div class="govuk-grid-column-three-quarters">
 
-                    <p class="govuk-body">The <a href="https://www.w3.org/TR/WCAG22/" class="govuk-link govuk-link--no-visited-state">Web Content Accessibility Guidelines (WCAG)</a> are a set of recommendations designed to make web content more accessible to people with disabilities.</p>
-                    <p class="govuk-body">The guidelines aim to improve the user experience for everyone. Including people with impairments to their vision, hearing, thinking and understanding and mobility.</p>
-
-                    <h2 class="govuk-heading-m" id="main-principles">Principles</h2>
-                    <p class="govuk-body">WCAG is organised around 4 principles.</p>
-
-                    <h3 class="govuk-heading-s">Perceivable</h3>
-
-                    <p class="govuk-body">Information and user interface components must be presented in ways that users can perceive. This means content should be available to at least one of a user's senses (sight, hearing, touch).
+                    <h2 class="govuk-heading-l" id="who-created-coga">Who created COGA</h2>
+                    <p class="govuk-body">
+    The guidelines have been drafted by the <a href="https://www.w3.org/" class="govuk-link">World Wide Web Consortium (W3C)</a> and invited experts. W3C also created <a class="govuk-link" href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG (Web Content Accessibility Guidelines)</a>.
+   </p>
+                    <p class="govuk-body">
+                        <a href="/knowledge-hub/wcag" class="govuk-link">WCAG</a> is a set of guidelines that help teams to test and audit products and websites to check how accessible they are.</p>
+                    <p class="govuk-body">
+    COGA is a set of guidelines for designers to consider when creating products and websites.
 </p>
 
+                    <h2 class="govuk-heading-l" id="guidelines">The guidelines</h2>
                     <p class="govuk-body">
-                        <a href="/guidelines/wcag/explorer/perceivable" class="govuk-link govuk-link--no-visited-state">Learn more about the Perceivable principle</a>
-                    </p>
+    The 8 guidelines are good design principles that have huge benefits for people with cognitive impairments.
+</p>
+                    <p class="govuk-body">
+   Cognitive accessibility is often overlooked in WCAG, as it does not have clear solutions like tools for low-vision users.</p>
 
-                </div>
+                </p>
+                <p class="govuk-body">
+   These guidelines give advice on how to make content usable for people who face challenges with thinking, learning, remembering, and problem-solving. 
+</p>
+
+                <p class="govuk-body">
+  The 8 guidelines:
+</p>
+                <ul class="govuk-list govuk-!-margin-bottom-9">
+                    <li>
+                        <a href="#guideline-1" class="govuk-link govuk-link--no-visited-state">Guideline 1: help users understand what things are and how to use them</a>
+                    </li>
+                    <li>
+                        <a href="#guideline-2" class="govuk-link govuk-link--no-visited-state">Guideline 2: help users find what they need</a>
+                    </li>
+                    <li>
+                        <a href="#guideline-3" class="govuk-link govuk-link--no-visited-state">Guideline 3: use clear and understandable content</a>
+                    </li>
+                    <li>
+                        <a href="#guideline-4" class="govuk-link govuk-link--no-visited-state">Guideline 4: help users avoid mistakes and know how to correct them</a>
+                    </li>
+                    <li>
+                        <a href="#guideline-5" class="govuk-link govuk-link--no-visited-state">Guideline 5: help users focus</a>
+                    </li>
+                    <li>
+                        <a href="#guideline-6" class="govuk-link govuk-link--no-visited-state">Guideline 6: ensure processes do not rely on memory</a>
+                    </li>
+                    <li>
+                        <a href="#guideline-7" class="govuk-link govuk-link--no-visited-state">Guideline 7: provide help and support</a>
+                    </li>
+                    <li>
+                        <a href="#guideline-8" class="govuk-link govuk-link--no-visited-state">Guideline 8: support adaptation and personalisation</a>
+                    </li>
+                </ul>
+
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-1">Guideline 1</span>
+                <h3 class="govuk-heading-m">Help users understand what things are and how to use them</h3>
+                <p class="govuk-body">
+   When designing content and components make sure users can easily understand their purpose and how to use them. Using clear, consistent content and visuals, helps users to interact with webpages without too much cognitive load.</p>
+                <p class="govuk-body">
+Keeping your content and website consistent helps people with memory issues, learning disabilities, or attention impairments. It makes it easier for them to find what they need quickly.</p>
+                <p class="govuk-body">
+   You should always:
+</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>style buttons and links consistently</li>
+                    <li>ensure users are aware of what will happen when interacting</li>
+                    <li>use commonly used icons, (if using icons). This also support people with English as an additional language. For example, use a phone icon rather than a headset or a person talking</li>
+                    <li>use clear, helpful hint text for inputs </li>
+                    <li>place commonly used components in a consistent location and order</li>
+                </ul>
+
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-2">Guideline 2</span>
+                <h3 class="govuk-heading-m">Help users find what they need</h3>
+                <p class="govuk-body">
+    Navigation should be easy and intuitive. Users should quickly identify important information, find features, and access content with minimal effort.
+</p>
+                <p class="govuk-body">People with cognitive disabilities want to be able to find content with the minimum number of steps and be provided with that content in small, manageable sections.  Products and websites should be navigable and searchable, and information should be findable.  </p>
+
+                <p class="govuk-body">
+   You should always:
+</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>provide a clear layout with defined sections</li>
+                    <li>use a clear <a href="https://design-system.service.gov.uk/styles/headings/" class="govuk-link">heading structure</a>
+                    </li>
+                    <li>make the most important information easy to find</li>
+                    <li>include a <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview" class="govuk-link">sitemap</a>
+                    </li>
+                    <li>use good information architecture and navigation</li>
+                    <li>make help and search features easy to recognize</li>
+                    <li>ensure content is <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" class="govuk-link">searchable</a>
+                    </li>
+                </ul>
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-3">Guideline 3</span>
+                <h3 class="govuk-heading-m">Use clear and understandable content</h3>
+                <p class="govuk-body">
+    Users may perceive your content in different ways, but it should always be clear, understandable and easy to follow.  
+</p>
+
+                <p class="govuk-body">
+  People with language, processing, or memory disabilities need content to be written in plain language and provided in a layout that is easy to follow without getting overwhelmed.  
+</p>
+
+                <p class="govuk-body">
+   You should always:
+</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>write in plain language, using short sentences, and avoid jargon</li>
+                    <li>use the <a href="https://www.gov.uk/guidance/style-guide/a-to-z" class="govuk-link">GOV.UK style guide</a> and <a href="https://design.education.gov.uk/design-system/style-guide" class="govuk-link">DfE content style guide</a>
+                    </li>
+                    <li>include <a href="https://design-system.service.gov.uk/styles/images/" class="govuk-link">images</a> that support the content</li>
+                    <li>ensure videos are easy to follow and include captions and a transcript</li>
+                    <li>avoid large pages of written content</li>
+                    <li>use a consistent, easy-to-read font</li>
+                    <li>make choices clear</li>
+                    <li>format content as users expect to see it (for example, date of birth)</li>
+                    <li>use <a href="https://design-system.service.gov.uk/styles/colour/" class="govuk-link">colour</a> to enhance readability and urgency</li>
+                </ul>
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-4">Guideline 4</span>
+                <h3 class="govuk-heading-m">Help users avoid mistakes and know how to correct them</h3>
+                <p class="govuk-body">
+  Ask users only for the information you need when designing a form. If an error occurs, explain what went wrong, and how to resolve it. 
+</p>
+                <p class="govuk-body">
+ Some people find it difficult to be precise when they enter information which can cause errors to occur. Users should be able to resolve errors, undo mistakes and easily understand where they went wrong.  
+</p>
+
+                <p class="govuk-body">
+   You should always:
+</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>help users avoid mistakes by using patterns like '<a href="https://design-system.service.gov.uk/patterns/check-answers/" class="govuk-link">check answers</a>'</li>
+                    <li>show examples of potential failures or errors</li>
+                    <li>be flexible in data validation, for example, allow spaces in inputs</li>
+                    <li>avoid abstract concepts, for example, don't use stars for required fields</li>
+                    <li>remove guesswork, for example, if using checkboxes, add 'check all that apply'. For radio buttons, add 'choose one option'</li>
+                    <li>provide a <a href="https://design-system.service.gov.uk/components/back-link/" class="govuk-link">back link</a>
+                    </li>
+                    <li>use clear error messages that include the problem, cause, and recommendation</li>
+                    <li>provide a <a href="https://design-system.service.gov.uk/components/error-summary/" class="govuk-link">summary of errors</a>
+                    </li>
+                    <li>offer alternative methods for resolving issues, like a phone number or helpdesk link</li>
+                    <li>avoid timeouts or provide a mechanism to easily extend</li>
+                </ul>
+
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-5">Guideline 5</span>
+                <h3 class="govuk-heading-m">Help users focus</h3>
+                <p class="govuk-body">
+ Users do not want to be distracted. This can be especially problematic for people with ADHD (attention deficit hyperactivity disorder). Animations, banners and adverts can be extremely distracting for many people.  
+</p>
+
+                <p class="govuk-body">
+ Users can often lose focus or be distracted during tasks. Emails, messages and colleagues in the office can all be distractors. It's important that users can reorient themselves if they do become distracted or have to switch tasks during a process.  
+</p>
+
+                <p class="govuk-body">
+   You should always:
+</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>avoid cluttered layouts</li>
+                    <li>use <a href="https://design-system.service.gov.uk/components/back-link/" class="govuk-link">visual hierarchy</a> to emphasise important content</li>
+                    <li>narrowly scope tasks</li>
+                    <li>provide one thing per page</li>
+                    <li>don't distract users mid-task, for example, with ads or signups</li>
+                    <li>avoid auto-playing videos or sounds (or at least provide a way to stop them easily)</li>
+                    <li>provide clear navigation aids to help users reorient themselves</li>
+                </ul>
+
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-6">Guideline 6</span>
+                <h3 class="govuk-heading-m">Ensure processes do not rely on memory</h3>
+                <p class="govuk-body">
+Users should not have to rely on memory to recall important information or complete authentication. 
+</p>
+                <p class="govuk-body">
+Users with short-term and working memory difficulties can find it difficult to recall passwords or information from previous steps. 
+</p>
+
+                <p class="govuk-body">
+   You should always:
+</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="https://accessibility.education.gov.uk/knowledge-hub/wcag/criteria/understandable#3-3-7" class="govuk-link">re-provide information</a> when required for a task</li>
+                    <li>make important information visible, not hidden in tooltips</li>
+                    <li>provide hint text</li>
+                    <li>use autocomplete values for inputs</li>
+                    <li>allow copy and paste for inputs</li>
+                </ul>
+
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-7">Guideline 7</span>
+                <h3 class="govuk-heading-m">Provide help and support</h3>
+                <p class="govuk-body">
+   Users want assistance to be accessible, consistently available and findable. Users can also require support when completing tasks. 
+</p>
+                <p class="govuk-body">
+   Provide users with different support mechanisms so they can choose one that suits their needs. Also provide support which helps users to know what a task requires of them, as well as any materials they will need. 
+</p>
+                <p class="govuk-body">
+   You should always:
+</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>link support at the source</li>
+                    <li>provide help within error messages</li>
+                    <li>link to documentation</li>
+                    <li>help users self-serve where possible</li>
+                    <li>provide multiple support channels</li>
+                    <li>tell users what materials they might need to provide</li>
+                </ul>
+
+                <span class="govuk-caption-m govuk-!-margin-top-7" id="guideline-8">Guideline 8</span>
+                <h3 class="govuk-heading-m">Support adaptation and personalisation</h3>
+                <p class="govuk-body">
+   Users want to use their own settings and preferences when navigating your product or website.  
+</p>
+                <p class="govuk-body">
+  Some users may have situational requirements which mean they don't rely on assistive technology, but instead use specific tools or browser setting to view content. 
+</p>
+
+                <p class="govuk-body">
+   You should always:
+</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>support dark mode and high contrast mode</li>
+                    <li>support font settings like text and line spacing</li>
+                    <li>use responsive units (rem, em) and avoid px</li>
+                    <li>support reduced motion</li>
+                </ul>
+
             </div>
-
         </div>
-    </section>
-
-    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section--header--with-breadcrumbs dfe-manual-section-header--white  dfe-manual-section-header--bordered--top govuk-!-margin-top-9 govuk-!-padding-top-7 govuk-!-padding-bottom-0">
-        <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                    <h2 class="govuk-heading-l">Also see</h2>
-
-                    <div class="dfe-grid-container">
-                        <div class="dfe-card">
-                            <div class="dfe-card-container">
-                                <h3 class="govuk-heading-s">
-                                    <a href="/guidelines/wcag" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">WCAG</a>
-                                </h3>
-                                <p>Understand the principles of WCAG and the levels of conformance.</p>
-                            </div>
-                        </div>
-                        <div class="dfe-card">
-                            <div class="dfe-card-container">
-                                <h3 class="govuk-heading-s">
-                                    <a href="/guidelines/universal-design" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Universal design principles </a>
-                                </h3>
-                                <p>The 7 design principles are guidelines for designing spaces and products that everyone can use.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
 {% endblock %}

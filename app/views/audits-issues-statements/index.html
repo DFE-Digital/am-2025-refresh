@@ -1,0 +1,158 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Audits" %}
+{% set path = "/audits-issues-statements" %}
+{% set title = "Audits, issues and statements" %}
+{% set description = "Audits, issues and statements help you formally test and assure your service meets accessibility standards and how to manage issues and publish an accurate statement." %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section" id="audits">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-l">Audits</h2>
+                    <p class="govuk-body">An audit will check to make sure your product or website meets the WCAG 2.2 Level AA accessibility guidelines and how well it performs with <a href="https://www.gov.uk/service-manual/technology/testing-with-assistive-technologies" class="govuk-link govuk-link--no-visited-state">assistive technologies</a>.</p>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <div class="dfe-grid-container govuk-!-margin-top-2">
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/audits-issues-statements/audits/why-you-need-an-audit" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Why you need an audit</a>
+                                </h3>
+                                <p class="govuk-body">An accessibility audit will give you an understanding of the types of barriers users may face when using your product or website.</p>
+                            </div>
+                        </div>
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/audits-issues-statements/audits/get-an-audit" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Get an audit</a>
+                                </h3>
+                                <p class="govuk-body">How to get an audit and what to expect when you get the report.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section--no-padding-top" id="issues">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-l">Issues</h2>
+                    <p class="govuk-body">How to manage and prioritise accessibility issues in your product or website.</p>
+
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <div class="dfe-grid-container govuk-!-margin-top-2">
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/audits-issues-statements/issues/common-issues" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Common issues</a>
+                                </h3>
+                                <p class="govuk-body">The common issues that are found in accessibility audits and how to prevent them.</p>
+                            </div>
+                        </div>
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/audits-issues-statements/issues/manage-and-prioritise-issues" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Manage and prioritise issues</a>
+                                </h3>
+                                <p class="govuk-body">How to manage and prioritise accessibility issues.</p>
+                            </div>
+                        </div>
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/audits-issues-statements/issues/disproportionate-burden" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Disproportionate burden</a>
+                                </h3>
+                                <p class="govuk-body">What to do if you think an issue is a disproportionate burden to fix.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section--no-padding-top" id="statements">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-l">Statements</h2>
+                    <p class="govuk-body">It's a legal requirement to publish an accessibility statement. Find out what you need to publish and when.</p>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <div class="dfe-grid-container govuk-!-margin-top-2">
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/audits-issues-statements/accessibility-statements/standard" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Accessibility statement standard</a>
+                                </h3>
+                                <p class="govuk-body">How to ensure you meet the accessibility statement standard.</p>
+                            </div>
+                        </div>
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h3 class="govuk-heading-s">
+                                    <a href="/audits-issues-statements/accessibility-statements/templates" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Statement templates</a>
+                                </h3>
+                                <p class="govuk-body">Templates you should use to publish your accessibility statement.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <div class="dfe-manual--cta-panel dfe-manual--cta-panel--obvious">
+                        <div class="dfe-manual--cta-panel__main">
+                            <span class="dfe-manual--cta-badge">New</span>
+                            <h3 class="dfe-manual--cta-title">Accessibility Issues and Statements Service</h3>
+                            <p class="dfe-manual--cta-lead">
+                                Try the new Accessibility Issues and Statements Service to track accessibility issues and manage your product's accessibility statement in one place.
+                            </p>
+                            <a href="https://accessibility-statements.education.gov.uk/" target="_blank"
+                               class="govuk-button dfe-manual--cta-btn dfe-manual--cta-btn-white"
+                               style="margin-top: 1.5rem; border-radius: 0;">
+                                Find out more
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
