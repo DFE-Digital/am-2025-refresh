@@ -1,0 +1,66 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Audits" %}
+{% set path = "/audits-issues-statements/audits/get-an-audit" %}
+{% set title = "Get an audit" %}
+{% set description = "You can get an audit from a number of different providers. You can also get an internal audit." %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Audits, issues and statements</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter sticky">
+
+                    {% include "audits-issues-statements/audits/_nav.html" %}
+
+                </div>
+                <div class="govuk-grid-column-three-quarters">
+
+                    <p class="govuk-body">You should start planning for your audit at alpha phase, and ensure that sufficient time, resource and cost have been planned into your delivery.</p>
+                    <p class="govuk-body">This will allow you to have had an audit, updated your accessibility statement and resolved any issues before users start to use your product or website.</p>
+
+                    <div class="dfe-manual-card dfe-manual-card--highlight govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+                        <div class="dfe-manual-card__content">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Get help to plan and organise your audit</h2>
+                            
+                            <p class="govuk-body govuk-!-margin-bottom-4">The DesignOps team will help you:</p>
+                            
+                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+                                <li>understand what type of audit you need</li>
+                                <li>plan your audit timeline</li>
+                                <li>prepare the right information for auditors</li>
+                                <li>find the right audit provider</li>
+                            </ul>
+
+                            <p class="govuk-body govuk-!-margin-bottom-6">This service is for DfE products and websites only. We aim to respond to all requests within 2 working days.</p>
+
+                            <div style="padding: 20px; background-color: #1d70b8; display: flex; align-items: center; gap: 12px;">
+                                <span class="material-symbols-outlined" style="font-size: 32px; color: #ffffff;">
+                                    arrow_circle_right
+                                </span>
+                                <a href="https://forms.office.com/e/P4bedSKaGU" class="govuk-link govuk-link--inverse govuk-!-font-weight-bold " style="font-size: 19px;">
+                                    Submit an audit request
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

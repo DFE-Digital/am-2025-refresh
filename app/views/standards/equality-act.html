@@ -8,18 +8,29 @@
 
 {% block content %}
 
-    <section class="govuk-width-container">
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Standards</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+    <div class="govuk-width-container">
 
         <div class="govuk-grid-row">
 
-            <div class="govuk-grid-column-one-third">
+            <div class="govuk-grid-column-one-quarter">
                 {% include "standards/_sidenav.html" %}
             </div>
 
-            <div class="govuk-grid-column-two-thirds">
-                <span class="govuk-caption-xl">Standards</span>
-                <h1 class="govuk-heading-xl">{{title}}</h1>
-
+            <div class="govuk-grid-column-three-quarters">
+             
                 <p class="govuk-body">The
   <a class="govuk-link"
       href="https://www.legislation.gov.uk/ukpga/2010/15/contents" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">
@@ -61,6 +72,7 @@
                     </div>
                 </div>
 
+    </div>
             </section>
 
         {% endblock %}

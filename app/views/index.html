@@ -5,84 +5,278 @@
 {% set title = "Accessibility and inclusive design manual" %}
 {% set description = "Standards and guidance for designing and building accessible and inclusive products and services in the Department for Education." %}
 
-{% set mainClasses = 'govuk-!-padding-bottom-0' %}
-
 {% block content %}
-
-    <section class="dfe-manual-hero dfe-manual-hero--homepage" id="homepage-hero">
+    <section class="dfe-manual-hero">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-three-quarters">
-                    <h1 class="govuk-heading-xl dfe-manual-hero--homepage-title ">{{title}}</h1>
-                    <p class="govuk-body-l govuk-!-margin-bottom-9">{{description}}</p>
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="dfe-manual-hero__content">
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{title}}</h1>
+                        <p class="govuk-body-l govuk-!-margin-bottom-6">{{description}}</p>
+                        <div class="dfe-manual-hero__cta">
+                            <a href="/standards" class="govuk-button govuk-button--start">
+                                Get started
+                                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor" d="M0 0h13l20 20-20 20H0V0zm1 5v30h10l19-19-19-19H1z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="govuk-grid-column-full">
-
-                    <h2 class="govuk-heading-m">What's popular</h2>
-
-                    <ul class="dfe-manual-viewed-list dfe-manual-viewed-list--inline" data-module="ga4-link-tracker">
-                        <li class="dfe-manual-viewed-list__item">
-                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
-                                <span class="dfe-manual-action-link__link-wrapper">
-                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Get an accessibility audit</a>
-                                </span>
-                            </div>
-                        </li>
-                        <li class="dfe-manual-viewed-list__item">
-                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
-                                <span class="dfe-manual-action-link__link-wrapper">
-                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Cognitive accessibility guidelines</a>
-                                </span>
-                            </div>
-                        </li>
-                        <li class="dfe-manual-viewed-list__item">
-                            <div class="dfe-manual-action-link dfe-manual-action-link--light-icon govuk-!-margin-bottom-0">
-                                <span class="dfe-manual-action-link__link-wrapper">
-                                    <a class="govuk-link dfe-manual-action-link__link dfe-manual-force-print-link-styles" href="/audits">Accessibility standards in DfE</a>
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="govuk-grid-column-one-third">
+                    <div class="dfe-manual-hero__image">
+                        <img src="/images/accessibility-hero.svg" alt="" class="dfe-manual-hero__img">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="dfe-manual dfe-manual--section dfe-manual--section--standard" id="getting-started-with-accessibility">
+    <section class="dfe-manual-section dfe-manual-section--white">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-
-                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
-                        Getting started with accessibility
-                    </h2>
+                    <div class="dfe-manual-features">
+                        <div class="dfe-manual-features__item">
+                            <div class="dfe-manual-features__icon">
+                                <img src="/images/icon-standards.svg" alt="" class="dfe-manual-features__img">
+                            </div>
+                            <div class="dfe-manual-features__content">
+                                <h2 class="govuk-heading-m">Standards</h2>
+                                <p class="govuk-body">Learn about accessibility requirements and legal obligations</p>
+                                <a href="/standards" class="govuk-link govuk-link--no-visited-state">View standards</a>
+                            </div>
+                        </div>
+                        <div class="dfe-manual-features__item">
+                            <div class="dfe-manual-features__icon">
+                                <img src="/images/icon-testing.svg" alt="" class="dfe-manual-features__img">
+                            </div>
+                            <div class="dfe-manual-features__content">
+                                <h2 class="govuk-heading-m">Testing</h2>
+                                <p class="govuk-body">Tools and techniques for testing accessibility</p>
+                                <a href="/tools-testing" class="govuk-link govuk-link--no-visited-state">Start testing</a>
+                            </div>
+                        </div>
+                        <div class="dfe-manual-features__item">
+                            <div class="dfe-manual-features__icon">
+                                <img src="/images/icon-audit.svg" alt="" class="dfe-manual-features__img">
+                            </div>
+                            <div class="dfe-manual-features__content">
+                                <h2 class="govuk-heading-m">Audits</h2>
+                                <p class="govuk-body">Get expert help with accessibility audits</p>
+                                <a href="/audits" class="govuk-link govuk-link--no-visited-state">Request audit</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="how-many-modern-section">
-        <div class="how-many-modern-container">
-            <div class="how-many-modern-left">
-                <h2 class="how-many-modern-title">
-                    How many people might have a disability or impairment that use your product or service?
-                </h2>
-                <p class="how-many-modern-lead">
-                    Accessibility issues affect millions of people in the UK.<br>
-                    Use this tool to understand who may be affected by impairments or conditions that may impact their ability to use your products or services.
-                </p>
+    <section class="dfe-manual-section dfe-manual-section--light">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="dfe-manual-content">
+                        <h2 class="govuk-heading-l">What this manual helps you with</h2>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-card dfe-manual-card--feature">
+                                    <div class="dfe-manual-card__content">
+                                        <h3 class="govuk-heading-s">Understanding requirements</h3>
+                                        <p class="govuk-body">Learn about WCAG 2.2 and Public Sector Bodies Accessibility Regulations</p>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Legal requirements</li>
+                                            <li>WCAG standards</li>
+                                            <li>DfE policies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-card dfe-manual-card--feature">
+                                    <div class="dfe-manual-card__content">
+                                        <h3 class="govuk-heading-s">Designing inclusively</h3>
+                                        <p class="govuk-body">Create services that work for everyone, including disabled users</p>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>User research</li>
+                                            <li>Design patterns</li>
+                                            <li>Best practices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row govuk-!-margin-top-6">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-card dfe-manual-card--feature">
+                                    <div class="dfe-manual-card__content">
+                                        <h3 class="govuk-heading-s">Testing effectively</h3>
+                                        <p class="govuk-body">Use the right tools and techniques to find accessibility issues</p>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Automated testing</li>
+                                            <li>Manual testing</li>
+                                            <li>User testing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-card dfe-manual-card--feature">
+                                    <div class="dfe-manual-card__content">
+                                        <h3 class="govuk-heading-s">Meeting standards</h3>
+                                        <p class="govuk-body">Ensure your service meets legal requirements and best practices</p>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                            <li>Compliance checks</li>
+                                            <li>Documentation</li>
+                                            <li>Accessibility statements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <div class="dfe-manual-card dfe-manual-card--highlight">
+                        <div class="dfe-manual-card__content">
+                            <h2 class="govuk-heading-m">Impact calculator</h2>
+                            <p class="govuk-body">See how many users might be affected by accessibility issues</p>
+                            <form action="/how-many-people" method="post" class="govuk-!-margin-top-4">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="how-many-people-input">
+                                        Number of users
+                                    </label>
+                                    <input class="govuk-input" id="how-many-people-input" name="how-many-people" type="number" inputmode="numeric" pattern="[0-9]*" required>
+                                </div>
+                                <button class="govuk-button" data-module="govuk-button" type="submit">
+                                    Calculate
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="how-many-modern-right">
-                <form action="/how-many-people" method="post" class="how-many-modern-card">
-                    <label class="govuk-label" for="how-many-people-input">
-                        Enter the number of users for your service
-                    </label>
-                    <input class="govuk-input" id="how-many-people-input" name="how-many-people" type="number" inputmode="numeric" pattern="[0-9]*" required>
-                    <button class="govuk-button" data-module="govuk-button" type="submit">
-                        Calculate
-                    </button>
-                </form>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-l">Accessibility guidance by topic</h2>
+                    <div class="dfe-manual-topics">
+                        <div class="dfe-manual-topics__item">
+                            <div class="dfe-manual-card">
+                                <div class="dfe-manual-card__content">
+                                    <div class="dfe-manual-topics__icon">
+                                        <img src="/images/icon-vision.svg" alt="" class="dfe-manual-topics__img">
+                                    </div>
+                                    <h3 class="govuk-heading-m">
+                                        <a href="/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
+                                    </h3>
+                                    <p class="govuk-body">Guidance for screen reader users and those with low vision</p>
+                                    <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-4">
+                                        <li>Screen reader testing</li>
+                                        <li>Visual impairments</li>
+                                        <li>Colour and contrast</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dfe-manual-topics__item">
+                            <div class="dfe-manual-card">
+                                <div class="dfe-manual-card__content">
+                                    <div class="dfe-manual-topics__icon">
+                                        <img src="/images/icon-cognitive.svg" alt="" class="dfe-manual-topics__img">
+                                    </div>
+                                    <h3 class="govuk-heading-m">
+                                        <a href="/cognitive" class="govuk-link govuk-link--no-visited-state">Cognitive</a>
+                                    </h3>
+                                    <p class="govuk-body">Guidance for users with cognitive impairments</p>
+                                    <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-4">
+                                        <li>Clear content</li>
+                                        <li>Simple navigation</li>
+                                        <li>Consistent design</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dfe-manual-topics__item">
+                            <div class="dfe-manual-card">
+                                <div class="dfe-manual-card__content">
+                                    <div class="dfe-manual-topics__icon">
+                                        <img src="/images/icon-mobility.svg" alt="" class="dfe-manual-topics__img">
+                                    </div>
+                                    <h3 class="govuk-heading-m">
+                                        <a href="/mobility" class="govuk-link govuk-link--no-visited-state">Mobility</a>
+                                    </h3>
+                                    <p class="govuk-body">Guidance for keyboard and assistive technology users</p>
+                                    <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-4">
+                                        <li>Keyboard navigation</li>
+                                        <li>Focus management</li>
+                                        <li>Touch targets</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section--blue">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="dfe-manual-help">
+                        <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Need help with accessibility?</h2>
+                        <p class="govuk-body-l govuk-!-margin-bottom-6">Our accessibility team can help you with audits, guidance, and training.</p>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-help__item">
+                                    <h3 class="govuk-heading-s">Accessibility audits</h3>
+                                    <p class="govuk-body">Get expert help identifying and fixing issues</p>
+                                    <a href="/audits" class="govuk-link govuk-link--white">Request an audit</a>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-help__item">
+                                    <h3 class="govuk-heading-s">Technical guidance</h3>
+                                    <p class="govuk-body">Support with specific accessibility challenges</p>
+                                    <a href="/guidance" class="govuk-link govuk-link--white">Get guidance</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row govuk-!-margin-top-6">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-help__item">
+                                    <h3 class="govuk-heading-s">Training and workshops</h3>
+                                    <p class="govuk-body">Learn about accessibility best practices</p>
+                                    <a href="/training" class="govuk-link govuk-link--white">Book training</a>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="dfe-manual-help__item">
+                                    <h3 class="govuk-heading-s">Accessibility statements</h3>
+                                    <p class="govuk-body">Help creating compliant statements</p>
+                                    <a href="/statements" class="govuk-link govuk-link--white">Get help</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dfe-manual-help__contact">
+                            <p class="govuk-body">
+                                <a href="mailto:accessibility@education.gov.uk" class="govuk-link govuk-link--white">Contact the accessibility team</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <div class="dfe-manual-help__image">
+                        <img src="/images/help-illustration.svg" alt="" class="dfe-manual-help__img">
+                    </div>
+                </div>
             </div>
         </div>
     </section>

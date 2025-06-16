@@ -55,7 +55,7 @@ div {
     height: 30px;
 }
 
-.govuk-service-navigation__list{ font-size: 1rem;}
+
 
 @media (min-width: 40.0625em) {
   .govuk-template--rebranded .govuk-service-navigation__service-name {

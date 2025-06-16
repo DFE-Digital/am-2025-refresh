@@ -1,0 +1,24 @@
+<nav class="dfe-vertical-nav " aria-labelledby="vertical-nav-heading">
+  <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
+    Pages in this section
+  </h2>
+
+  <a href="/audits-issues-statements" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to audits, issues and statements</a>
+
+  
+  <ul class="dfe-vertical-nav__section">
+   
+    <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits/why-you-need-an-audit' %} dfe-vertical-nav__section-item--current{% endif %}">
+      <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/why-you-need-an-audit">Why you need an audit</a>
+      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/audits/why-you-need-an-audit' %}block{% else %}none{% endif %}">
+        <li class="dfe-vertical-nav__section-item">
+          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/why-you-need-an-audit#whats-included-in-the-audit-report">What's in the audit report</a>
+        </li>
+        
+      </ul>
+    </li>
+     <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits/get-an-audit' %} dfe-vertical-nav__section-item--current{% endif %}">
+      <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/get-an-audit">Get an audit</a>
+    </li>
+  </ul>
+</nav>

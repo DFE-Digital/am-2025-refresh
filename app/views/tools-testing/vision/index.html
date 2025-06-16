@@ -11,6 +11,7 @@
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Tools and testing</span>
                     <h1 class="govuk-heading-xl">{{title}}</h1>
                     <p class="govuk-body-l">{{description}}</p>
                 </div>
@@ -25,208 +26,158 @@
                     {% include "tools-testing/_nav.html" %}
                 </div>
                 <div class="govuk-grid-column-three-quarters">
- <h2 class="govuk-heading-l" id="understand-impact">Understand the impact</h2>
-  <p class="govuk-body">
-    Being able to use sight to interact with or understand content can be affected by a range of conditions, including:
-  </p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      colour blindness (difficulty distinguishing certain hues or contrasts; see <a href="https://webaim.org/articles/contrast/">WebAIM: Understanding WCAG contrast requirements</a>)
-    </li>
-    <li>
-      low vision (reduced acuity requiring larger text, higher contrast, magnification; see <a href="https://alphagov.github.io/accessibility-personas/claudia/">GDS Persona: Claudia, partially sighted magnifier user</a>)
-    </li>
-    <li>
-      blindness (little or no usable vision, relying on screen readers or other assistive technologies; see <a href="https://alphagov.github.io/accessibility-personas/ashleigh/">GDS Persona: Ashleigh, screen reader user</a>)
-    </li>
-    <li>
-      eye injuries or conditions (e.g., cataracts, macular degeneration, glaucoma) leading to variable vision capabilities; refer to general WCAG context (<a href="https://www.w3.org/TR/WCAG22/#principles">WCAG Perceivable Principle</a>)
-    </li>
-  </ul>
+                    <h2 class="govuk-heading-l" id="understanding-visual-impairments">Understanding visual impairments</h2>
+                    <p class="govuk-body">
+                        Visual impairments affect how people perceive and interact with digital content. Common conditions include:
+                    </p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>colour blindness (difficulty distinguishing certain colours)</li>
+                        <li>low vision (reduced visual acuity requiring magnification)</li>
+                        <li>blindness (relying on screen readers)</li>
+                        <li>eye conditions (cataracts, glaucoma, etc.)</li>
+                    </ul>
 
-  <p class="govuk-body">
-    People with visual impairments may:
-  </p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      have difficulty reading small or low-contrast text, especially below a 4.5:1 contrast ratio (see <a href="https://www.w3.org/TR/WCAG22/#contrast-minimum">WCAG 2.2 SC 1.4.3 Contrast (Minimum)</a> and <a href="https://webaim.org/articles/contrast/">WebAIM contrast guidance</a>)
-    </li>
-    <li>
-      need to resize text up to 200% without loss of content or functionality (see <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">W3C Understanding SC 1.4.4 Resize Text</a>)
-    </li>
-    <li>
-      experience layout breakage when zooming or adjusting spacing (see <a href="https://www.w3.org/TR/WCAG22/#text-spacing">WCAG 2.2 SC 1.4.12 Text Spacing</a> and <a href="https://webaim.org/articles/text-spacing/">WebAIM: Text Spacing Guidance</a>)
-    </li>
-    <li>
-      struggle to distinguish information conveyed by colour alone (see <a href="https://webaim.org/articles/contrast/evaluating">WebAIM: Evaluating Contrast and Color Use</a>)
-    </li>
-    <li>
-      require clear focus indicators and sufficient target sizes to navigate via keyboard or magnifier (see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/forced-color-adjust">MDN: Forced Colors Mode and focus styles</a>)
-    </li>
-    <li>
-      benefit from screen reader support (for partially sighted or blind users) with correct semantic markup and ARIA roles (see <a href="https://webaim.org/techniques/screenreader/">WebAIM: Designing for Screen Reader Compatibility</a> and <a href="https://www.w3.org/WAI/standards-guidelines/aria/">W3C WAI-ARIA Overview</a>)
-    </li>
-  </ul>
+                    <h3 class="govuk-heading-m" id="key-challenges">Key challenges</h3>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>reading small or low-contrast text</li>
+                        <li>distinguishing information conveyed by colour alone</li>
+                        <li>navigating with keyboard or screen reader</li>
+                        <li>reading text when zoomed or magnified</li>
+                        <li>understanding content when text spacing is adjusted</li>
+                    </ul>
 
-  <p class="govuk-body">
-    To illustrate real-world experiences, consider GOV.UK accessibility personas:
-  </p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      <strong>Claudia</strong> – a partially sighted magnifier user who relies on enlarged text and high contrast to read content (<a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user">GOV.UK: Claudia persona profile</a>)
-    </li>
-    <li>
-      <strong>Ashleigh</strong> – a severely sight impaired screen reader user who depends on correct semantic structure and ARIA support to navigate pages without visual cues (<a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user">GOV.UK: Ashleigh persona profile</a>)
-    </li>
-  </ul>
+                    <h2 class="govuk-heading-l" id="testing-tools">Essential testing tools</h2>
+                    
+                    <h3 class="govuk-heading-m" id="automated-tools">Automated testing tools</h3>
+                    <p class="govuk-body">
+                        Automated tools can help identify common accessibility issues quickly. While they can't catch everything, they're a good starting point for testing.
+                    </p>
 
-  <p class="govuk-body">
-    Understanding these personas helps teams empathise and simulate tests that reveal barriers (see <a href="https://accessibility.blog.gov.uk/2019/02/11/using-persona-profiles-to-test-accessibility/">GOV.UK Blog: Using persona profiles to test accessibility</a>).
-  </p>
+                    <h4 class="govuk-heading-s" id="axe-devtools">axe DevTools</h4>
+                    <p class="govuk-body">
+                        A browser extension that provides automated accessibility testing. It checks for contrast issues, missing text alternatives, and semantic structure problems. Available for Chrome, Firefox, and Edge.
+                    </p>
 
-  <!-- Tools you can use section -->
-  <h2 class="govuk-heading-l" id="tools">Tools you can use</h2>
-  <p class="govuk-body">
-    There are a range of tools and techniques you can use to test for visual impairments, organised here by purpose with plain-language guidance.
-  </p>
+                    <h4 class="govuk-heading-s" id="wave">WAVE</h4>
+                    <p class="govuk-body">
+                        Web Accessibility Evaluation Tool provides visual feedback about accessibility issues on your page. It highlights problems directly on the page and offers detailed explanations of each issue.
+                    </p>
 
-  <!-- Colour contrast checker -->
-  <h3 class="govuk-heading-m" id="colour-contrast-checker">Colour contrast checker</h3>
-  <p class="govuk-body">
-    The colour contrast checker measures whether text (or images of text) and background colours meet WCAG 2.2 contrast requirements (minimum 4.5:1 for normal text, 3:1 for large text; see <a href="https://www.w3.org/TR/WCAG22/#contrast-minimum">WCAG 2.2 SC 1.4.3 Contrast (Minimum)</a> and <a href="https://webaim.org/articles/contrast/">WebAIM contrast guidance</a>).
-  </p>
-  <p class="govuk-body">
-    <strong>How to use:</strong> Use tools such as <a href="https://webaim.org/resources/contrastchecker/">WebAIM Contrast Checker</a> or <a href="https://developer.paciellogroup.com/resources/contrastanalyser/">Colour Contrast Analyser</a> to input or pick foreground and background colours and verify ratios. In browser devtools, inspect computed styles for dynamic content or overlayed text.
-  </p>
-  <p class="govuk-body">
-    <strong>Interpretation:</strong> If the ratio is below threshold, revise design: increase font weight, adjust colours, add background overlays, or change layout. Automated results cover only some contexts; always review in context (e.g., text over images; see <a href="https://dequeuniversity.com/rules/axe/4.8/color-contrast">Deque University: color-contrast rule</a>).
-  </p>
+                    <h4 class="govuk-heading-s" id="lighthouse">Lighthouse</h4>
+                    <p class="govuk-body">
+                        Built into Chrome DevTools, Lighthouse provides quick accessibility audits with actionable insights. It's particularly useful for checking basic accessibility requirements and performance metrics.
+                    </p>
 
-  <!-- Visual simulation scripts -->
-  <h3 class="govuk-heading-m" id="visual-simulation-scripts">Visual simulation scripts (formerly bookmarklets)</h3>
-  <p class="govuk-body">
-    These browser-based simulation scripts let you approximate low-vision experiences by applying effects like blur, grayscale, or magnification. Although technically implemented as “bookmarklets,” refer to them as <em>visual simulation scripts</em> for clarity (see <a href="https://alphagov.github.io/accessibility-personas/">GDS Accessibility personas</a>).
-  </p>
-  <p class="govuk-body">
-    <strong>How to install:</strong> Drag the provided link to your favourites bar or add the snippet as a browser extension/user script. Label descriptively (e.g., “Blur simulation”, “Grayscale simulation”).
-  </p>
-  <p class="govuk-body">
-    <strong>How to test:</strong> Activate the script on a page to simulate blurred or desaturated vision and observe which elements become unreadable or confusing. Use zoom scripts to enlarge content beyond 200% and check layout resilience; use spacing adjustment scripts to test text spacing requirements (see <a href="https://webaim.org/articles/text-spacing/">WebAIM: Text Spacing Guidance</a>).
-  </p>
-  <p class="govuk-body">
-    <strong>Interpretation:</strong> Identify failures (e.g., text too small or low contrast under blur), then adjust design: larger fonts, higher contrast, flexible layouts using relative units. Document issues with reference to personas (e.g., Claudia’s difficulty reading blurred headings).
-  </p>
+                    <h3 class="govuk-heading-m" id="manual-tools">Manual testing tools</h3>
+                    <p class="govuk-body">
+                        Manual testing tools help you simulate different visual impairments and verify accessibility features. These tools are essential for understanding how users with visual impairments experience your service.
+                    </p>
 
-  <!-- Screen reader testing -->
-  <h3 class="govuk-heading-m" id="screen-reader-testing">Screen reader testing</h3>
-  <p class="govuk-body">
-    For partially sighted users who supplement vision with audio, and blind users relying entirely on audio, test with popular screen readers (e.g., NVDA on Windows, VoiceOver on macOS/iOS; see <a href="https://webaim.org/techniques/screenreader/">WebAIM: Screen Reader Compatibility</a>).
-  </p>
-  <p class="govuk-body">
-    <strong>How to use:</strong> Enable the screen reader, navigate via headings, landmarks, links, and form controls. Verify announcements are meaningful, labels present, focus order logical, and dynamic content announced via ARIA live regions (see <a href="https://www.w3.org/WAI/standards-guidelines/aria/">W3C WAI-ARIA Overview</a> and <a href="https://webaim.org/articles/screenreader_testing/">WebAIM: Testing with Screen Readers</a>).
-  </p>
-  <p class="govuk-body">
-    <strong>Interpretation:</strong> If content is skipped, misannounced, or unlabeled, fix semantic markup (proper HTML elements, ARIA attributes). Document scenarios with reference to persona Ashleigh’s experience (e.g., difficulty finding “Submit” button due to missing accessible name).
-  </p>
+                    <h4 class="govuk-heading-s" id="colour-contrast-checkers">Colour contrast checkers</h4>
+                    <p class="govuk-body">
+                        Tools like the <a href="https://webaim.org/resources/contrastchecker/" class="govuk-link">WebAIM Contrast Checker</a> and <a href="https://developer.paciellogroup.com/resources/contrastanalyser/" class="govuk-link">Colour Contrast Analyser</a> help verify that text meets WCAG contrast requirements. They're essential for ensuring text remains readable for users with low vision or colour blindness.
+                    </p>
 
-  <!-- Zoom and resize testing -->
-  <h3 class="govuk-heading-m" id="zoom-resize-testing">Zoom and resize testing</h3>
-  <p class="govuk-body">
-    Ensure text can be resized up to 200% without loss of content or functionality, per WCAG 2.1 SC 1.4.4 (<a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">Understanding Resize Text</a>).
-  </p>
-  <p class="govuk-body">
-    <strong>How to test:</strong> In browser settings or via simulation scripts, increase text size or page zoom to 200% and navigate all pages; check that content remains visible, no horizontal scrolling is required, and interactive elements remain operable.
-  </p>
-  <p class="govuk-body">
-    <strong>Interpretation:</strong> If layout breaks (overlaps, off-screen content), refactor CSS to use relative units (em, rem, %) and flexible containers (flexbox/grid). Test with persona Claudia’s profile (magnifier + high zoom; see <a href="https://accessibility.blog.gov.uk/2021/03/30/remote-accessibility-persona-testing/">GOV.UK Blog: Remote accessibility persona testing</a>).
-  </p>
+                    <h4 class="govuk-heading-s" id="visual-simulation-tools">Visual simulation tools</h4>
+                    <p class="govuk-body">
+                        Chrome DevTools includes built-in vision deficiency emulation, allowing you to simulate different types of colour blindness. You can access this through the Rendering tab in DevTools. This helps you understand how users with various types of colour vision deficiency might experience your content.
+                    </p>
 
-  <!-- Text spacing testing -->
-  <h3 class="govuk-heading-m" id="text-spacing-testing">Text spacing testing</h3>
-  <p class="govuk-body">
-    Verify that increasing line height, letter spacing, word spacing, and paragraph spacing does not cause loss of content or functionality, per WCAG 2.2 SC 1.4.12 (<a href="https://www.w3.org/TR/WCAG22/#text-spacing">WCAG Text Spacing</a> and <a href="https://webaim.org/articles/text-spacing/">WebAIM: Text Spacing Guidance</a>).
-  </p>
-  <p class="govuk-body">
-    <strong>How to test:</strong> Use simulation scripts or browser extensions that apply spacing adjustments; review pages for overlap or cutoff. Combine with zoom testing to simulate compounded effects.
-  </p>
-  <p class="govuk-body">
-    <strong>Interpretation:</strong> If text overlaps or is clipped, adjust CSS to avoid fixed heights, use min-height, flexible line boxes, and avoid positioning that breaks under spacing changes.
-  </p>
+                    <h4 class="govuk-heading-s" id="screen-readers">Screen readers</h4>
+                    <p class="govuk-body">
+                        Essential tools for testing with screen reader users. NVDA is free for Windows users, while VoiceOver comes built into macOS and iOS devices. TalkBack is available on Android devices. These tools help verify that your content is properly structured and announced to screen reader users.
+                    </p>
 
-  <!-- Target size highlighter -->
-  <h3 class="govuk-heading-m" id="target-size-highlighter">Target size highlighter</h3>
-  <p class="govuk-body">
-    Identify interactive elements smaller than recommended size (at least 24x24 CSS pixels) to ensure ease of activation when zoomed or via magnifier (see <a href="https://webaim.org/articles/contrast/evaluating">WebAIM: Evaluating Contrast and Color Use</a> for guidelines on visibility under zoom).
-  </p>
-  <p class="govuk-body">
-    <strong>How to use:</strong> Activate a script or use devtools to outline clickable areas; measure dimensions. Many simulation scripts include target-size highlighting.
-  </p>
-  <p class="govuk-body">
-    <strong>Interpretation:</strong> Increase padding or redesign controls to meet minimum size; test under zoom and with magnifier to simulate persona Claudia’s needs.
-  </p>
+                    <div class="govuk-inset-text">
+                        <p class="govuk-body">
+                            Remember: While automated tools are helpful, they can only catch about 30% of accessibility issues. Always combine automated testing with manual testing and real user feedback.
+                        </p>
+                    </div>
 
-  <!-- Developer/browser devtools techniques -->
-  <h3 class="govuk-heading-m" id="devtools-techniques">Developer / browser devtools techniques</h3>
-  <p class="govuk-body">
-    Use browser devtools to inspect CSS for colour values, simulate forced-colors mode, emulate vision deficiencies (see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/forced-color-adjust">MDN: Forced Colors Mode</a>), and test responsive behaviour under zoom.
-  </p>
-  <p class="govuk-body">
-    <strong>How to test:</strong> In Chrome DevTools, under “Rendering” or via extensions, apply emulated vision deficiencies; inspect computed styles for contrast; simulate high-contrast mode; check focus styles under forced-colors.
-  </p>
-  <p class="govuk-body">
-    <strong>Interpretation:</strong> Address issues uncovered: ensure focus indicators are visible (contrast ≥3:1 to adjacent pixels), semantic HTML, ARIA where needed; validate under real assistive tech as final check.
-  </p>
+                    <h2 class="govuk-heading-l" id="testing-checklist">Testing checklist</h2>
+                    
+                    <h3 class="govuk-heading-m">Visual testing</h3>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Verify text contrast meets WCAG 2.2 requirements (4.5:1 for normal text, 3:1 for large text)</li>
+                        <li>Test with different vision deficiency simulations</li>
+                        <li>Ensure information isn't conveyed by colour alone</li>
+                        <li>Check focus indicators are visible (3:1 contrast)</li>
+                        <li>Verify text remains readable when zoomed to 200%</li>
+                    </ul>
 
-  <!-- Real-life scenario example -->
-  <h3 class="govuk-heading-m" id="scenario-example">Scenario: Improving readability for low-vision users</h3>
-  <p class="govuk-body">
-    Claudia uses a magnifier at 150% and blur simulation; she notices low contrast on form labels and overlaps when zoomed; the team updates colour palette for higher contrast, refactors CSS to flex layout, and verifies via screen reader that labels remain associated when resized (see <a href="https://webaim.org/articles/screenreader_testing/">WebAIM: Testing with Screen Readers</a> and <a href="https://accessibility.blog.gov.uk/2019/02/11/using-persona-profiles-to-test-accessibility/">GOV.UK Blog: Using persona profiles to test accessibility</a>).
-  </p>
+                    <h3 class="govuk-heading-m">Screen reader testing</h3>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Verify all content is announced correctly</li>
+                        <li>Check heading structure and navigation</li>
+                        <li>Test form labels and error messages</li>
+                        <li>Verify dynamic content updates are announced</li>
+                        <li>Test keyboard navigation and focus management</li>
+                    </ul>
 
-  <!-- Who should test -->
-  <h3 class="govuk-heading-m" id="roles">Who should test</h3>
-  <ul class="govuk-list govuk-list--bullet govuk-body">
-    <li>
-      <strong>Designers:</strong> choose accessible colour palettes, typography, spacing, focus indicators (see <a href="https://www.gov.uk/service-manual/agile-delivery/start-with-user-needs">GDS Design Principle: Start with user needs</a>).
-    </li>
-    <li>
-      <strong>Developers:</strong> implement relative units, semantic HTML, ARIA support; integrate automated contrast checks in CI/CD pipelines using tools like axe DevTools (see <a href="https://dequeuniversity.com/rules/axe/4.8/color-contrast">Deque University: color-contrast rule</a>).
-    </li>
-    <li>
-      <strong>Content writers:</strong> ensure clear headings, sufficient text size, avoid conveying info by colour alone (see <a href="https://webaim.org/articles/contrast/">WebAIM contrast guidance</a>).
-    </li>
-    <li>
-      <strong>QA/Testers:</strong> include zoom, contrast, screen reader tests in regression suites; simulate personas via profiles or scripts (see <a href="https://accessibility.blog.gov.uk/2021/03/30/remote-accessibility-persona-testing/">GOV.UK Blog: Remote accessibility persona testing</a>).
-    </li>
-    <li>
-      <strong>Product owners:</strong> prioritise fixes based on impact to personas like Claudia and Ashleigh; allocate time/budget for thorough visual accessibility testing (see <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles">GOV.UK User Profiles</a>).
-    </li>
-  </ul>
+                    <h3 class="govuk-heading-m">Responsive testing</h3>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Test text spacing adjustments (line height, letter spacing, word spacing)</li>
+                        <li>Verify layout remains usable at 200% zoom</li>
+                        <li>Check touch targets are at least 44x44 pixels</li>
+                        <li>Test with different viewport sizes</li>
+                    </ul>
 
-  <!-- Further resources -->
-  <h3 class="govuk-heading-m" id="further-resources">Further resources</h3>
-  <ul class="govuk-list govuk-list--bullet govuk-body">
-    <li><a href="https://www.w3.org/TR/WCAG22/#contrast-minimum">WCAG 2.2 Contrast (Minimum) 1.4.3</a> – official specification for contrast requirements.</li>
-    <li><a href="https://webaim.org/articles/contrast/">WebAIM: Understanding WCAG contrast requirements</a>.</li>
-    <li><a href="https://webaim.org/articles/text-spacing/">WebAIM: Text Spacing Guidance</a> – advice on line, letter, word, paragraph spacing.</li>
-    <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">W3C: Understanding SC 1.4.4 Resize Text</a> – guidance on text resizing up to 200%.</li>
-    <li><a href="https://www.w3.org/TR/WCAG22/#text-spacing">WCAG 2.2 SC 1.4.12 Text Spacing</a>.</li>
-    <li><a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user">GOV.UK: Claudia persona profile</a>.</li>
-    <li><a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user">GOV.UK: Ashleigh persona profile</a>.</li>
-    <li><a href="https://webaim.org/techniques/screenreader/">WebAIM: Screen Reader Compatibility</a>.</li>
-    <li><a href="https://www.w3.org/WAI/standards-guidelines/aria/">W3C WAI-ARIA Overview</a>.</li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/forced-color-adjust">MDN: Forced Colors Mode</a>.</li>
-    <li><a href="https://dequeuniversity.com/rules/axe/4.8/color-contrast">Deque University: color-contrast rule</a>.</li>
-    <li><a href="https://webaim.org/articles/screenreader_testing/">WebAIM: Testing with Screen Readers</a>.</li>
-    <li><a href="https://accessibility.blog.gov.uk/2019/02/11/using-persona-profiles-to-test-accessibility/">GOV.UK Blog: Using persona profiles to test accessibility</a>.</li>
-    <li><a href="https://accessibility.blog.gov.uk/2021/03/30/remote-accessibility-persona-testing/">GOV.UK Blog: Remote accessibility persona testing</a>.</li>
-    <li><a href="https://webaim.org/resources/contrastchecker/">WebAIM Contrast Checker</a>.</li>
-    <li><a href="https://developer.paciellogroup.com/resources/contrastanalyser/">Colour Contrast Analyser</a>.</li>
-    <li><a href="https://alphagov.github.io/accessibility-personas/">GDS Accessibility personas</a>.</li>
-    <li><a href="https://www.gov.uk/service-manual/agile-delivery/start-with-user-needs">GDS Design Principle: Start with user needs</a>.</li>
-    <li><a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles">GOV.UK: Understanding disabilities and impairments user profiles</a>.</li>
-    <li><a href="https://webaim.org/articles/contrast/evaluating">WebAIM: Evaluating Contrast and Color Use</a>.</li>
-  </ul>
+                    <h2 class="govuk-heading-l" id="personas">Testing with personas</h2>
+                    <p class="govuk-body">
+                        GOV.UK provides detailed accessibility personas to help you understand and test for different user needs. These personas are based on real user research and help teams empathize with users' experiences.
+                    </p>
+
+                    <div class="govuk-card govuk-!-margin-bottom-6">
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Claudia</h3>
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+                                Partially sighted magnifier user
+                            </p>
+                            <div class="govuk-body govuk-!-margin-bottom-4">
+                                <p class="govuk-!-margin-bottom-2">Claudia uses screen magnification software to read content. She needs:</p>
+                                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                                    <li>high contrast and clear text</li>
+                                    <li>keyboard navigation support</li>
+                                    <li>occasional screen reader use</li>
+                                </ul>
+                            </div>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user" class="govuk-link govuk-link--no-visited-state">
+                                    View Claudia's full profile
+                                    <span class="govuk-visually-hidden"> - Partially sighted magnifier user</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="govuk-card">
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Ashleigh</h3>
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+                                Screen reader user
+                            </p>
+                            <div class="govuk-body govuk-!-margin-bottom-4">
+                                <p class="govuk-!-margin-bottom-2">Ashleigh relies on screen readers full-time. She needs:</p>
+                                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                                    <li>clear page structure</li>
+                                    <li>keyboard navigation</li>
+                                    <li>meaningful alt text</li>
+                                </ul>
+                            </div>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user" class="govuk-link govuk-link--no-visited-state">
+                                    View Ashleigh's full profile
+                                    <span class="govuk-visually-hidden"> - Screen reader user</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                  
+                     
+
+                  
                 </div>
             </div>
         </div>

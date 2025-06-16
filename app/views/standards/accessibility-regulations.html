@@ -3,23 +3,35 @@
 {% set serviceNav = "Standards" %}
 {% set sidenav = "accessibility-regulations" %}
 {% set path = "/standards/accessibility-regulations" %}
-{% set title = "Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018" %}
-{% set description = "" %}
+{% set title = "Public sector bodies accessibility regulations" %}
+{% set description = "The Accessibility Regulations 2018 are standards for public sector websites and mobile apps." %}
 
 {% block content %}
 
-    <section class="govuk-width-container">
-
-        <div class="govuk-grid-row">
-
-            <div class="govuk-grid-column-one-third">
-                {% include "standards/_sidenav.html" %}
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Standards</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="govuk-grid-column-two-thirds">
-                <span class="govuk-caption-xl">Standards</span>
-                <h1 class="govuk-heading-xl">{{title}}</h1>
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter sticky">
 
+            
+                    {% include "standards/_nav.html" %}
+
+                </div>
+                <div class="govuk-grid-column-three-quarters">
+   
+              
                 <div class="govuk-warning-text">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
@@ -38,15 +50,15 @@
 
                 <p class="govuk-body">This law requires public bodies to  meet the latest published version of <a href="/wcag-explorer" class="govuk-link govuk-link--no-visited-state">WCAG</a>.</p>
 
-                <h2 class="govuk-heading-l">Why it matters for DfE</h2>
+                <h2 class="govuk-heading-l" id="why-it-matters-in-dfe">Why it matters for DfE</h2>
                 <p class="govuk-body">As a government department, we must follow these rules. If you create or update a website or app, it must meet the accessibility requirements. </p>
                 <p class="govuk-body">Building accessible products and websites ensures parents, teachers, students and other stakeholders can use our online services without barriers.</p>
                 <p class="govuk-body">Following the regulations also improves overall user experience, reduces support calls and helps us to be more inclusive.</p>
 
-                <h2 class="govuk-heading-l">How to meet the regulations</h2>
+                <h2 class="govuk-heading-l" id="how-to-meet-the-regulations">How to meet the regulations</h2>
                 <p class="govuk-body">In practice, this means all DfE websites and mobile applications must follow <a href="/wcag" class="govuk-link govuk-link--no-visited-state">WCAG 2.2 (Web Content Accessibility Guidelines) 2.2 at level AA</a>.</p>
 
-                <h2 class="govuk-heading-l">Content in scope</h2>
+                <h2 class="govuk-heading-l" id="content-in-scope">Content in scope</h2>
                  <p class="govuk-body">Examples of content types that must meet the regulations:</p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li>all public-facing web pages on DfE websites and mobile apps</li>
