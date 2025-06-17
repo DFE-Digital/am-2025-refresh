@@ -1,0 +1,64 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Audits" %}
+{% set path = "/audits-issues-statements/audits/after-an-audit" %}
+{% set title = "After an audit" %}
+{% set description = "What to do after an audit and what's included in the report." %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Audits, issues and statements</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third sticky">
+
+                    {% include "audits-issues-statements/audits/_nav.html" %}
+
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+
+                    <p class="govuk-body">You'll receive a report which includes accessibility and best practice issues that may affect users with disabilities.</p>
+    <p class="govuk-body">The report will tell you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>where your product or website is failing to provide a good user experience, especially for people with disabilities</li>
+        <li>which WCAG criteria you're failing to meet</li>
+        <li>potential ways to fix issues. Some audit providers prioritise issues for you</li>
+    </ul>
+
+    <h2 class="govuk-heading-l" id="actions-as-team">Actions as a team</h2>
+                            
+                    <ol class="govuk-list govuk-list--number govuk-!-margin-bottom-6">
+                    <li>Review audit.</li>
+                    <li>Prioritise any issues.</li>
+                    <li>Log issues so you can keep track of them, for example in a spreadsheet.</li>
+                    <li>Start to fix issues.</li>
+                    <li>Update the log as each issue is fixed.</li>
+                    <li>Request a retest for accessibility.</li>
+                    <li>Add any unresolved issues to your accessibility statement.</li>
+                            </ol>
+    <h2 class="govuk-heading-l" id="before-your-service-goes-live">Before your service goes live</h2>
+    <p class="govuk-body govuk-!-margin-bottom-6">Most of your accessibility issues should be resolved before users access your service.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">Any high-impact issues should have been fixed and if any low-impact issues remain, you must provide a timeline in the statement for when they will be resolved.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
