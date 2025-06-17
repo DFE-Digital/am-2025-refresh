@@ -19,6 +19,11 @@
     </li>
      <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits/get-an-audit' %} dfe-vertical-nav__section-item--current{% endif %}">
       <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/get-an-audit">Get an audit</a>
+      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/audits/get-an-audit' %}block{% else %}none{% endif %}">
+        <li class="dfe-vertical-nav__section-item">
+          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/get-an-audit#get-help-to-plan-and-organise-your-audit">Get help to plan and organise your audit</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </nav>

@@ -1,0 +1,65 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Support" %}
+{% set path = "/support" %}
+{% set title = "Support" %}
+{% set description = "Get help and support from the DesignOps team." %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section" id="support">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <p class="govuk-body">The DesignOps team is here to help you with questions about accessibility and inclusive design.</p>
+                    <p class="govuk-body">We can help you with guidance and support on:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>getting an <a href="/audits-issues-statements/audits/why-you-need-an-audit" class="govuk-link govuk-link--no-visited-state">accessibility audit</a></li>
+                        <li>publishing an <a href="/audits-issues-statements/accessibility-statements/templates" class="govuk-link govuk-link--no-visited-state">accessibility statement</a></li>
+                        <li>becoming an <a href="/standards/assessor-role" class="govuk-link govuk-link--no-visited-state">accessibility assessor</a> for service assessments</li>
+                        <li>professional development and <a href="/training" class="govuk-link govuk-link--no-visited-state">training</a></li>
+                        <li>understanding <a href="/audits-issues-statements/issues/manage-and-prioritise-issues" class="govuk-link govuk-link--no-visited-state">issues you may have</a></li>
+                        <li>using <a href="/tools-testing" class="govuk-link govuk-link--no-visited-state">tools and testing</a></li>
+                    </ul>
+
+                    <p class="govuk-body">You can contact us in any of the following ways:</p>
+
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">DfE Slack</dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="https://ukgovernmentdfe.slack.com/archives/C0432A8JSV7" class="govuk-link govuk-link--no-visited-state">#DesignOps</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Cross-Gov Slack</dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="https://ukgovernmentdigital.slack.com/archives/C04GXQ0320Z" class="govuk-link govuk-link--no-visited-state">#DfE-DesignOps</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Email</dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="mailto:design.ops@education.gov.uk" class="govuk-link govuk-link--no-visited-state">design.ops@education.gov.uk</a>
+                            </dd>
+                        </div>
+                    </dl>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

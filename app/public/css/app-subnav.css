@@ -46,9 +46,7 @@
   text-decoration-skip-ink: none;
 }
 
-.dfe-vertical-nav__link:focus {
-  text-decoration: underline;
-}
+
 
 /* Nested section */
 .dfe-vertical-nav__section--nested {
@@ -66,20 +64,21 @@
   position: relative;
   /* keep normal weight even if current */
   font-weight: 400;
-  /* increase left padding so the text itself lines up under “Product” */
+  /* increase left padding so the text itself lines up under "Product" */
   padding-left: 1.3rem;
+  display: inline-block;
 }
 
 /* Draw the dash at exactly the same left offset as the Product link's text */
 .dfe-vertical-nav__section--nested .dfe-vertical-nav__link::before {
   content: "—";
   position: absolute;
-  /* matches the 10px padding-left of top-level links */
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--modern-border-grey);
-  pointer-events: none;
+  left: 0;
+  width: 1.3rem;
+  overflow: hidden;
+  color: #505a5f;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* If a nested item is current, no bold or border-left */
@@ -88,7 +87,6 @@
   font-weight: 400;
   font-size: 1rem;
 }
-
 
 .dfe-vertical-nav__section.dfe-vertical-nav__section--nested .dfe-vertical-nav__section-item {
   margin-bottom: 5px;

@@ -1,11 +1,9 @@
 {% extends "layouts/layout.html" %}
 
-{% set serviceNav = "Professions" %}
-{% set path = "/professions/content-designers" %}
-{% set title = "Content designers" %}
-{% set description = "What content designers should do to ensure accessibility is considered in the design of content." %}
-
-
+{% set serviceNav = "Audits" %}
+{% set path = "/audits-issues-statements/issues/common-issues" %}
+{% set title = "Common issues" %}
+{% set description = "" %}
 
 
 {% block content %}
@@ -14,7 +12,7 @@
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <span class="govuk-caption-xl">Professions</span>
+                    <span class="govuk-caption-xl">Audits, issues and statements</span>
                     <h1 class="govuk-heading-xl">{{title}}</h1>
                     <p class="govuk-body-l">{{description}}</p>
                 </div>
@@ -22,27 +20,19 @@
         </div>
     </section>
 
-    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <section class="dfe-manual-section dfe-manual-section-header--white">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-third sticky">
 
-            
-                    {% include "professions/_nav.html" %}
+                    {% include "audits-issues-statements/issues/_nav.html" %}
 
                 </div>
                 <div class="govuk-grid-column-two-thirds">
-                    <h2 class="govuk-heading-l">Responsibilites</h2>
 
-                   
-
-
-                    </div>
                 </div>
             </div>
-        </section>
-
-  
+        </div>
     </section>
 
 {% endblock %}
