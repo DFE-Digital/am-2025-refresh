@@ -1,0 +1,177 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Tools and testing" %}
+{% set path = "/tools-testing/tools" %}
+{% set title = "Tools" %}
+{% set description = "Tools to help you test for accessibility issues." %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Tools and testing</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section ">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <p class="govuk-body">Each tool provides a range of features and benefits, and is designed to help you test for different disabilities and impairments.</p>
+                    <p class="govuk-body">Select a tool to read detailed guidance on how and when to use it.</p>
+
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption">Tools</caption>
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Name</th>
+                                <th scope="col" class="govuk-table__header">Description</th>
+                                <th scope="col" class="govuk-table__header">Use for testing</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/accessibility-insights">Accessibility Insights</a>
+                                </td>
+                                <td class="govuk-table__cell">Automated and guided manual accessibility checks based on WCAG.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/physical">Physical</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/arc-toolkit">ARC Toolkit</a>
+                                </td>
+                                <td class="govuk-table__cell">Code-level accessibility testing tool with WCAG checks.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/axe-devtools">axe DevTools</a>
+                                </td>
+                                <td class="govuk-table__cell">Browser extension for automated WCAG-based accessibility testing.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/physical">Physical</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/blur">Blur</a>
+                                </td>
+                                <td class="govuk-table__cell">Simulates blurred vision to test visibility of key content.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/contrast-checker">Contrast Checker</a>
+                                </td>
+                                <td class="govuk-table__cell">Tests text colour contrast against WCAG levels.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/headingsmap">HeadingsMap</a>
+                                </td>
+                                <td class="govuk-table__cell">Displays page heading structure to verify content hierarchy.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/lists">Lists</a>
+                                </td>
+                                <td class="govuk-table__cell">Tests semantic structure and accessibility of list content.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/resize-text">Resize text</a>
+                                </td>
+                                <td class="govuk-table__cell">Tests text and layout responsiveness to user scaling.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/screen-readers">Screen readers</a>
+                                </td>
+                                <td class="govuk-table__cell">Tools like NVDA, JAWS, VoiceOver that read out content aloud.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/physical">Physical</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/target-size">Target size</a>
+                                </td>
+                                <td class="govuk-table__cell">Ensures touch/click areas meet minimum size guidelines.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/physical">Physical</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/text-spacing">Text spacing</a>
+                                </td>
+                                <td class="govuk-table__cell">Tests increased spacing between letters, lines and paragraphs.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/voiceover">VoiceOver</a>
+                                </td>
+                                <td class="govuk-table__cell">Built-in Apple screen reader for macOS and iOS.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/physical">Physical</a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/tools/wave-evaluation">WAVE Evaluation</a>
+                                </td>
+                                <td class="govuk-table__cell">Visual tool showing accessibility issues within page layout.</td>
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>, 
+        <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
