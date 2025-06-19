@@ -5,8 +5,6 @@
 {% set title = "WCAG overview" %}
 {% set description = "Understand the principles of WCAG and the levels of conformance." %}
 
-
-
 {% block content %}
 
     <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
@@ -26,7 +24,7 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-third sticky">
 
-                {% include "guidelines/wcag/_nav.html" %}
+                    {% include "guidelines/wcag/_nav.html" %}
 
                 </div>
                 <div class="govuk-grid-column-two-thirds">
@@ -34,31 +32,34 @@
                     <p class="govuk-body">The <a href="https://www.w3.org/TR/WCAG22/" class="govuk-link govuk-link--no-visited-state">Web Content Accessibility Guidelines (WCAG) 2.2</a> are a set of recommendations designed to make web content more accessible to people with disabilities.</p>
                     <p class="govuk-body">The guidelines aim to improve the user experience for everyone. Including people with impairments to their vision, hearing, thinking and understanding and mobility.</p>
 
-                   
                     <h2 class="govuk-heading-l" id="principles">Principles</h2>
                     <p class="govuk-body">WCAG 2.2 is organised around 4 principles.</p>
 
                     <h3 class="govuk-heading-m" id="perceivable">Perceivable</h3>
-                    
+
                     <p class="govuk-body">Information and user interface components must be presented in ways that users can perceive. This means content should be available to at least one of a user's senses (sight, hearing, touch).</p>
-                    <p class="govuk-body"><a href="/guidelines/wcag/explorer/perceivable" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Perceivable principle</a>.</p>
+                    <p class="govuk-body">
+                        <a href="/guidelines/wcag/explorer/perceivable" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Perceivable principle</a>.</p>
 
                     <h3 class="govuk-heading-m" id="perceivable">Operable</h3>
-                    
+
                     <p class="govuk-body">User interface components and navigation must be operable. Users should be able to use and interact with the interface effectively.</p>
-                    <p class="govuk-body"><a href="/guidelines/wcag/explorer/operable" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Operable principle</a>.</p>
+                    <p class="govuk-body">
+                        <a href="/guidelines/wcag/explorer/operable" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Operable principle</a>.</p>
 
                     <h3 class="govuk-heading-m" id="perceivable">Understandable</h3>
-                    
+
                     <p class="govuk-body">Information and the operation of user interfaces must be understandable. Users should be able to comprehend the information, as well as how to use the interface.</p>
-                    <p class="govuk-body"><a href="/guidelines/wcag/explorer/understandable" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Understandable principle</a>.</p>
+                    <p class="govuk-body">
+                        <a href="/guidelines/wcag/explorer/understandable" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Understandable principle</a>.</p>
 
                     <h3 class="govuk-heading-m" id="perceivable">Robust</h3>
-                    
-                    <p class="govuk-body">Content must be robust enough to be interpreted reliably by a wide variety of user agents, including assistive technologies. This means ensuring compatibility as technologies evolve.</p>
-                    <p class="govuk-body"><a href="/guidelines/wcag/explorer/robust" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Robust principle</a>.</p>
 
-                    <h2 class="govuk-heading-l" id="principles">What we have to meet</h2>
+                    <p class="govuk-body">Content must be robust enough to be interpreted reliably by a wide variety of user agents, including assistive technologies. This means ensuring compatibility as technologies evolve.</p>
+                    <p class="govuk-body">
+                        <a href="/guidelines/wcag/explorer/robust" class="govuk-link govuk-link--no-visited-state">Use the guidelines to meet the Robust principle</a>.</p>
+
+                    <h2 class="govuk-heading-l" id="what-we-have-to-meet">What we have to meet</h2>
                     <p class="govuk-body">WCAG 2.2 is organised into 3 conformance levels: A, AA and AAA. Each level builds on the previous one, adding more requirements to improve accessibility.</p>
 
                     <p class="govuk-body">Start by aiming for Level A to cover essential barriers, then work towards Level AA to address the most frequent issues. Consider Level AAA where feasible to offer the fullest accessibility possible.</p>
@@ -79,7 +80,7 @@
 
                     <p class="govuk-body">It includes additional improvements that will make content accessible to the maximum number of users. However, it is recognised that it may not be possible to meet all Level AAA success criteria for all content.</p>
 
-                    <h2 class="govuk-heading-l" id="principles">Declaring compliance</h2>
+                    <h2 class="govuk-heading-l" id="declaring-compliance">Declaring compliance</h2>
                     <p class="govuk-body">Your accessibility statement must tell people how compliant the product or website is in meeting the declared level of conformance.</p>
 
                     <p class="govuk-body">The statement must declare one of following.</p>
@@ -95,23 +96,21 @@
                     <h3 class="govuk-heading-m" id="perceivable">Non-compliant</h3>
 
                     <p class="govuk-body">More than half of all WCAG Level A and AA success criteria have not been met.</p>
-                   
-                </div>
 
+                </div>
 
             </div>
         </div>
     </section>
 
-      
-   <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section--header--with-breadcrumbs dfe-manual-section-header--white  dfe-manual-section-header--bordered--top govuk-!-margin-top-9 govuk-!-padding-top-7 govuk-!-padding-bottom-0">
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section--header--with-breadcrumbs dfe-manual-section-header--white  dfe-manual-section-header--bordered--top govuk-!-margin-top-9 govuk-!-padding-top-7 govuk-!-padding-bottom-0">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <h2 class="govuk-heading-l">Also see</h2>
 
-                   <div class="dfe-grid-container govuk-!-margin-top-2">
-                       
+                    <div class="dfe-grid-container govuk-!-margin-top-2">
+
                         <div class="dfe-card">
                             <div class="dfe-card-container">
                                 <h3 class="govuk-heading-s">
@@ -120,7 +119,7 @@
                                 <p>Making content usable for people who have thinking, learning, remembering, and problem-solving challenges.</p>
                             </div>
                         </div>
-                          <div class="dfe-card">
+                        <div class="dfe-card">
                             <div class="dfe-card-container">
                                 <h3 class="govuk-heading-s">
                                     <a href="/guidelines/universal-design" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Universal design principles </a>
