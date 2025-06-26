@@ -4,36 +4,79 @@
 {% set path = "/tools-testing/tool/resize-text" %}
 
 {% block content %}
-<section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Tools</span>
-        <h1 class="govuk-heading-xl">Resize text</h1>
-        <p class="govuk-body-l">Tests text and layout responsiveness to user scaling.</p>
+  <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-caption-xl">Tools</span>
+          <h1 class="govuk-heading-xl">Resize text</h1>
+          <p class="govuk-body-l">Tests text and layout responsiveness to user scaling.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="dfe-manual-section">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Use to test</h2>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Vision</li>
-        </ul>
-        <h2 class="govuk-heading-l">How to install</h2>
-        <p class="govuk-body">[Add guidance on how to use ARC Toolkit]</p>
-        <h2 class="govuk-heading-l">How to use</h2>
-        <p class="govuk-body">[Add guidance on when to use ARC Toolkit]</p>
-                <p class="govuk-body">[Add guidance on how to use ARC Toolkit]</p>
-        <h2 class="govuk-heading-l">What results could look like</h2>
-        <p class="govuk-body">[Add guidance on when to use ARC Toolkit]</p>
-        <h2 class="govuk-heading-l">What to do next</h2>
-        <p class="govuk-body">[Add guidance on when to use ARC Toolkit]</p>
+  </section>
+  <section class="dfe-manual-section">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">Use to test</h2>
+          <p class="govuk-body">Impairments this tool can test for:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
+            </li>
+          </ul>
+          <h2 class="govuk-heading-l">How to use</h2>
+
+          <p class="govuk-body">Drag the   <a href="javascript: (function () {
+  const htmlElement = document.querySelector('html');
+  const currentFontSize = htmlElement.style.getPropertyValue('font-size');
+  const isZoomed = currentFontSize === '200%';
+  const newFontSize = isZoomed ? null : '200%';
+  htmlElement.style.setProperty('font-size', newFontSize);
+})();
+" class="govuk-link govuk-link--no-visited-state">resize text</a> link to your bookmark bar.</p>
+
+          <p class="govuk-body">Once the tool is installed, visit a webpage and select the tool in your bookmark bar.</p>
+          <p class="govuk-body">This should resize the text of the webpage. Selecting the bookmark again will reset the text to its original size.</p>
+
+          <h3 class="govuk-heading-m">Meeting WCAG criterion 1.4.4</h3>
+
+          <p class="govuk-body"><a href="/guidelines/wcag/explorer/criteria/perceivable#1-4-4" class="govuk-link govuk-link--no-visited-state">WCAG criterion 1.4.4</a> relates to resizing the text on screen, this is different to zooming in on the screen.</p>
+          <p class="govuk-body">Not all browsers, devices or operating systems have the ability to zoom, therefore it's important that users can use other methods to increase text size.</p>
+
+          <p class="govuk-body">To meet this standard it's good practice to use rem units for the CSS font-size property rather than percentages or pixels, and no units for the line-height property.</p>
+
+          <p class="govuk-body">Being able to resize text on a page can benefit users with low vision and other sight-related disabilities to ensure that they can still perceive the content on screen.</p>
+
+          <h2 class="govuk-heading-l">Example of using resize text</h2>
+
+          <p class="govuk-body">The tool will force the browser to render the text size of the service at 200%.</p>
+          <p class="govuk-body">WCAG stipulates that users should be able to change the size of the text by at least this percentage in order to meet AA standards. The only exceptions for this criterion are captions and images of text.</p>
+
+          <p class="govuk-body">When using the tool, you should be able to see visually that the font size on the page has increased. If the font size does not change, you need to ensure that the font size of the service has not been locked to a specific size.</p>
+
+          <p class="govuk-body">Below is an example of the tool being used on a page in <a href="https://getintoteaching.education.gov.uk/help-and-support" class="govuk-link govuk-link--no-visited-state">Get into teaching</a>.</p>
+
+          <h3 class="govuk-heading-m">Before</h3>
+          <img src="/assets/images/gitbefore.png" alt="Screenshot of the Get into teaching help and support page before using the resize text tool (default text size)." class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+          <p class="govuk-body">
+            <a href="/assets/images/gitbefore.png" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">View larger image in a new tab</a>
+          </p>
+
+          <h3 class="govuk-heading-m">After</h3>
+          <img src="/assets/images/gitafter.png" alt="Screenshot of the Get into teaching help and support page after using the resize text tool (text size increased to 200%)." class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+          <p class="govuk-body">
+            <a href="/assets/images/gitafter.png" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">View larger image in a new tab</a>
+          </p>
+
+          <h3 class="govuk-heading-m">Fixing text resizing issues</h3>
+
+          <p class="govuk-body">If when you run the tool, the text size does not increase, this may be because of the method used to specify the text size in your CSS. This is often because pixel (px) units have been used.</p>
+
+          <p class="govuk-body">Pixels are an absolute unit, so when you set the font size to 24 pixels, it's going to be 24 pixels and is not responsive. It's better to use a relative unit, such as REM units, this will allow the text size to respond to any increases by users.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-{% endblock %} 
+  </section>
+{% endblock %}
