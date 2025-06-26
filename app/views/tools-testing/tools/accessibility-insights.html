@@ -1,7 +1,7 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Accessibility Insights" %}
-{% set path = "/tools-testing/tool/accessibility-insights" %}
+{% set path = "/tools-testing/tools/accessibility-insights" %}
 
 {% block content %}
   <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
@@ -18,8 +18,13 @@
   <section class="dfe-manual-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
+       <div class="govuk-grid-column-one-third sticky">
+
+                    {% include "tools-testing/tools/_nav.html" %}
+
+                </div>
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Use to test</h2>
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
           <p class="govuk-body">Impairments this tool can test for:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>
@@ -28,7 +33,7 @@
             <li> <a href="/tools-testing/cognitive" class="govuk-link govuk-link--no-visited-state">Cognitive</a></li>
             <li> <a href="/tools-testing/physical" class="govuk-link govuk-link--no-visited-state">Physical</a></li>
           </ul>
-          <h2 class="govuk-heading-l">How to install</h2>
+          <h2 class="govuk-heading-l" id="how-to-install">How to install</h2>
           <p class="govuk-body">Accessibility Insights is a browser extension.</p>
           <p class="govuk-body">Use the links to install:</p>
           <ul class="govuk-list govuk-list--bullet">
@@ -40,7 +45,7 @@
             </li>
           </ul>
           <p class="govuk-body">It's not available for Safari or Firefox.</p>
-          <h2 class="govuk-heading-l">How to use</h2>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
           <p>Once installed, you can launch the tool from your extensions bar. It will appear as a heart icon with a magnifying glass inside.</p>
 
           <p class="govuk-body">There are 4 options to choose from:</p>
@@ -53,7 +58,7 @@
           </ul>
           <p>These options provide guided tests and can act as a checklist to ensure you've tested and assured all parts of your product or website.</p>
 
-          <h2 class="govuk-heading-l">What results could look like</h2>
+          <h2 class="govuk-heading-l" id="what-results-could-look-like">What results could look like</h2>
           <h3 class="govuk-heading-m">Results for FastPass</h3>
 
           <p>Automated checks will run on your target page. The Accessibility Insights for Web page will open in a new browser window and the individual failures will be highlighted directly in the target page.</p>
@@ -117,7 +122,7 @@
             <a href="/public/images/acc_ins_quick.png" target="_blank" class="govuk-link govuk-link--no-visited-state">View larger image in a new tab</a>
           </p>
 
-          <h2 class="govuk-heading-l">What to do next</h2>
+          <h2 class="govuk-heading-l" id="what-to-do-next">What to do next</h2>
 
           <p>You need to check or verify that the accessibility issues the tool finds are issues, rather than <a href="/tools-testing/false-positives" class="govuk-link govuk-link--no-visited-state">false positives or false assurances</a>.</p>
 

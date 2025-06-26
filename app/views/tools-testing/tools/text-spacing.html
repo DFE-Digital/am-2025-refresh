@@ -1,13 +1,13 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Text spacing" %}
-{% set path = "/tools-testing/tool/text-spacing" %}
+{% set path = "/tools-testing/tools/text-spacing" %}
 
 {% block content %}
   <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-two-third sticky">
           <span class="govuk-caption-xl">Tools</span>
           <h1 class="govuk-heading-xl">Text spacing</h1>
           <p class="govuk-body-l">Tests increased spacing between letters, lines and paragraphs.</p>
@@ -18,15 +18,20 @@
   <section class="dfe-manual-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Use to test</h2>
+        <div class="govuk-grid-column-one-third sticky">
+          {% include "tools-testing/tools/_nav.html" %}
+        </div>
+        <div class="govuk-grid-column-two-thirds sticky">
+     
+
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
           <p class="govuk-body">Impairments this tool can test for:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="/tools-testing/cognitive" class="govuk-link govuk-link--no-visited-state">Cognitive</a>
             </li>
           </ul>
-          <h2 class="govuk-heading-l">How to use</h2>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
 
           <p class="govuk-body">Drag the <a href="javascript:(function()%7B%0A%09document.querySelectorAll('*').forEach(function%20(el)%20%7B%0A%09%09if%20(el.nodeName.toLowerCase()%20%3D%3D%3D%20'p')%20%7B%0A%09%09%09el.style.setProperty('margin-bottom'%2C%20'2em'%2C%20'important')%3B%0A%09%09%7D%0A%09%09el.style.setProperty('line-height'%2C%20'1.5'%2C%20'important')%3B%0A%09%09el.style.setProperty('letter-spacing'%2C%20'0.12em'%2C%20'important')%3B%0A%09%09el.style.setProperty('word-spacing'%2C%20'0.16em'%2C%20'important')%3B%0A%09%7D)%0A%7D)()%3B" class="govuk-link govuk-link--no-visited-state">text spacing</a> link to your bookmark bar to install the tool.</p>
 
@@ -49,7 +54,7 @@
 
           <p class="govuk-body">Some people with dyslexia and other cognitive disabilities often find it easier to read and understand content that has been given spacing.</p>
 
-          <h2 class="govuk-heading-l">Example of using text spacing</h2>
+          <h2 class="govuk-heading-l" id="example-of-using-text-spacing">Example of using text spacing</h2>
 
           <p class="govuk-body">Below is an example of the bookmarklet being used on <a href="https://getintoteaching.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">Get into Teaching</a>.</p>
 

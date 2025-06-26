@@ -1,7 +1,7 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "ARC Toolkit" %}
-{% set path = "/tools-testing/tool/arc-toolkit" %}
+{% set path = "/tools-testing/tools/arc-toolkit" %}
 
 {% block content %}
 <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
@@ -18,8 +18,13 @@
 <section class="dfe-manual-section">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third sticky">
+
+                    {% include "tools-testing/tools/_nav.html" %}
+
+                </div>
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Use to test</h2>
+        <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
         <p class="govuk-body">Impairments this tool can test for:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li> <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a></li>

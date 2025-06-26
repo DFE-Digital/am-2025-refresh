@@ -1,7 +1,7 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Contrast Checker" %}
-{% set path = "/tools-testing/tool/contrast-checker" %}
+{% set path = "/tools-testing/tools/contrast-checker" %}
 
 {% block content %}
   <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
@@ -18,15 +18,20 @@
   <section class="dfe-manual-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Use to test</h2>
+      <div class="govuk-grid-column-one-third sticky">
+
+                    {% include "tools-testing/tools/_nav.html" %}
+
+                </div>
+          <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
           <p class="govuk-body">Impairments this tool can test for:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
             </li>
           </ul>
-          <h2 class="govuk-heading-l">How to use</h2>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
           <p class="govuk-body">Visit <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">Contrast Checker (opens in new tab)</a>.</p>
           <p class="govuk-body">You can use the website to measure the contrast ratio of your product or webpage.</p>
 
@@ -49,7 +54,7 @@
     </video>
 
 
-          <h2 class="govuk-heading-l">What results could look like</h2>
+          <h2 class="govuk-heading-l" id="what-results-could-look-like">What results could look like</h2>
 
           <p class="govuk-body">Example of some content to check the contrast ratio.</p>
 
@@ -63,7 +68,7 @@
 
           <img src="/public/images/cr_result.png" alt="Show contrast ratio of 9.29:1 of black text on yellow. This passes all the relevant WCAG criteria" class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
 
-          <h2 class="govuk-heading-l">What to do next</h2>
+            <h2 class="govuk-heading-l" id="what-to-do-next">What to do next</h2>
            <p class="govuk-body">You need to check or verify that the accessibility issues the tool finds are issues, rather than <a href="/tools-testing/false-positives" class="govuk-link govuk-link--no-visited-state">false positives or false assurances</a>.</p>
 
            <p class="govuk-body">If an issue is genuine, speak to your developer or design team to consider, then implement, a fix.</p>

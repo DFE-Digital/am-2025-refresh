@@ -1,14 +1,15 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Lists" %}
-{% set path = "/tools-testing/tool/lists" %}
+{% set path = "/tools-testing/tools/lists" %}
 
 {% block content %}
   <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <span class="govuk-caption-xl">Tools</span>
+        <div class="govuk-grid-column-two-third sticky">
+        <span class="govuk-caption-xl">Tools</span>
+
           <h1 class="govuk-heading-xl">Lists</h1>
           <p class="govuk-body-l">Tests semantic structure and accessibility of list content.</p>
         </div>
@@ -18,8 +19,12 @@
   <section class="dfe-manual-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third sticky">
+        
+          {% include "tools-testing/tools/_nav.html" %}
+        </div>
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Use to test</h2>
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
           <p class="govuk-body">Impairments this tool can test for:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>
@@ -29,11 +34,9 @@
               <a href="/tools-testing/cognitive" class="govuk-link govuk-link--no-visited-state">Cognitive</a>
             </li>
           </ul>
-          <h2 class="govuk-heading-l">How to use</h2>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
           <p class="govuk-body">Drag the <a href="javascript:if(window.a11yLists)window.a11yLists.run();else{(function(){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://accessibility-bookmarklets.org/build/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var script=document.createElement('script');script.type='text/javascript';script.src='https://accessibility-bookmarklets.org/build/lists.js';document.getElementsByTagName('head')[0].appendChild(script);})();}" class="govuk-link govuk-link--no-visited-state">view lists</a> link to your bookmark bar.</p>
 
-          
-     
           <p class="govuk-body">Once the tool is installed, visit a webpage and select the tool in your bookmark bar.</p>
 
           <p class="govuk-body">When you have run the check, the following list types, and the type of list, will be highlighted.</p>
@@ -49,7 +52,7 @@
               <code>&lt;dl&gt;</code> definition list</li>
           </ul>
 
-          <h2 class="govuk-heading-l">Example of using lists</h2>
+          <h2 class="govuk-heading-l" id="example-of-using-lists">Example of using lists</h2>
 
           <p class="govuk-body">Example of a page in the <a href="https://design.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">DfE Design manual</a> with lists highlighted.</p>
 

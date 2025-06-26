@@ -1,13 +1,13 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Resize text" %}
-{% set path = "/tools-testing/tool/resize-text" %}
+{% set path = "/tools-testing/tools/resize-text" %}
 
 {% block content %}
   <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-two-third sticky">
           <span class="govuk-caption-xl">Tools</span>
           <h1 class="govuk-heading-xl">Resize text</h1>
           <p class="govuk-body-l">Tests text and layout responsiveness to user scaling.</p>
@@ -18,15 +18,19 @@
   <section class="dfe-manual-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Use to test</h2>
+        <div class="govuk-grid-column-one-third sticky">
+          {% include "tools-testing/tools/_nav.html" %}
+        </div>
+        <div class="govuk-grid-column-two-thirds sticky">
+
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
           <p class="govuk-body">Impairments this tool can test for:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
             </li>
           </ul>
-          <h2 class="govuk-heading-l">How to use</h2>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
 
           <p class="govuk-body">Drag the   <a href="javascript: (function () {
   const htmlElement = document.querySelector('html');
@@ -49,7 +53,7 @@
 
           <p class="govuk-body">Being able to resize text on a page can benefit users with low vision and other sight-related disabilities to ensure that they can still perceive the content on screen.</p>
 
-          <h2 class="govuk-heading-l">Example of using resize text</h2>
+          <h2 class="govuk-heading-l" id="example-of-using-resize-text">Example of using resize text</h2>
 
           <p class="govuk-body">The tool will force the browser to render the text size of the service at 200%.</p>
           <p class="govuk-body">WCAG stipulates that users should be able to change the size of the text by at least this percentage in order to meet AA standards. The only exceptions for this criterion are captions and images of text.</p>

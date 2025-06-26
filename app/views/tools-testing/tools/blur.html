@@ -1,7 +1,7 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Blur" %}
-{% set path = "/tools-testing/tool/blur" %}
+{% set path = "/tools-testing/tools/blur" %}
 
 {% block content %}
 <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
@@ -17,14 +17,19 @@
 </section>
 <section class="dfe-manual-section">
   <div class="govuk-width-container">
-    <div class="govuk-grid-row">
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third sticky">
+
+                    {% include "tools-testing/tools/_nav.html" %}
+
+                </div>
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Use to test</h2>
+        <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
         <p class="govuk-body">Impairments this tool can test for:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li> <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a></li>
         </ul>
-        <h2 class="govuk-heading-l">How to use</h2>
+        <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
         <p class="govuk-body">Drag the links to your bookmark bar:</p>
 
         <ul class="govuk-list govuk-list--bullet">
@@ -35,7 +40,7 @@
 
     <p>Once the blur tools are saved to your bookmark bar, visit a webpage and select the one you want to try.</p>
 
-   <h2 class="govuk-heading-l">Example of using blur</h2>
+   <h2 class="govuk-heading-l" id="example-of-using-blur">Example of using blur</h2>
    <p>The tool will blur the content on the page. This simulates someone with cataracts or poor vision.</p>
    <h3 class="govuk-heading-m">Before</h3>
    <p>Example of a page on the <a href="https://design.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">DfE Design manual</a> with no blur applied.</p>

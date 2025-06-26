@@ -2014,4 +2014,5 @@ body {
         position: relative;
     }
 }
-.screenshot{width:100%;}
+.screenshot{width:100%; padding: 15px; border: 1px solid #d8dde0; border-radius: 2px;}
+code{ background-color: #f8f8f8; padding: 2px 4px; border-radius: 2px; color: #cc0000;}

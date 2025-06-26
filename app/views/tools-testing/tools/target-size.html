@@ -1,14 +1,14 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Target size" %}
-{% set path = "/tools-testing/tool/target-size" %}
+{% set path = "/tools-testing/tools/target-size" %}
 
 {% block content %}
   <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <span class="govuk-caption-xl">Tools</span>
+        <div class="govuk-grid-column-two-third sticky">
+
           <h1 class="govuk-heading-xl">Target size</h1>
           <p class="govuk-body-l">Ensures touch and click areas meet minimum size guidelines.</p>
         </div>
@@ -18,8 +18,13 @@
   <section class="dfe-manual-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Use to test</h2>
+        <div class="govuk-grid-column-one-third sticky">
+          {% include "tools-testing/tools/_nav.html" %}
+        </div>
+        <div class="govuk-grid-column-two-thirds sticky">
+          <span class="govuk-caption-xl">Tools</span>
+
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
           <p class="govuk-body">Impairments this tool can test for:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>
@@ -29,7 +34,7 @@
               <a href="/tools-testing/cognitive" class="govuk-link govuk-link--no-visited-state">Cognitive</a>
             </li>
           </ul>
-          <h2 class="govuk-heading-l">How to use</h2>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
           <p class="govuk-body">Drag the <a href="javascript:(function(){function t(e){const t=e.getBoundingClientRect();return{top:t.top+window.scrollY+t.height/2,left:t.left+window.scrollX+t.width/2}}function e(e){let t=e;while(t){const e=getComputedStyle(t);if('none'===e.display||'hidden'===e.visibility)return!1;t=t.parentElement}return!0}const n='http://www.w3.org/2000/svg',o=[...document.querySelectorAll('a, label, button, input:not([type=hidden]), select, textarea, [tabindex], [role=button], [role=checkbox], [role=link], [role=menuitem], [role=option], [role=radio], [role=switch], [role=tab]')].filter(e),s=[];o.forEach(function(e){if(!e.matches('label')&&e.closest('label'))return;const o=t(e);s.push({element:e,center:o});const r=document.createElementNS(n,'svg');r.style.position='absolute',r.style.top=`${o.top-12}px`,r.style.left=`${o.left-12}px`,r.style.width='24px',r.style.height='24px',r.style.zIndex='9999',r.style.margin='0',r.style.pointerEvents='none',r.setAttribute('aria-hidden','true');const l=document.createElementNS(n,'circle');l.setAttribute('cx','12'),l.setAttribute('cy','12'),l.setAttribute('r','12');const a=document.createElementNS(n,'clipPath');a.setAttribute('id','clip'),a.appendChild(l.cloneNode()),r.appendChild(a),l.setAttribute('clip-path','url(#clip)'),e.getBoundingClientRect().width%3C24||e.getBoundingClientRect().height%3C24?l.setAttribute('fill','rgba(0,%200,%20255,%200.3)'):(l.setAttribute('fill','rgba(0,%20200,%200,%200.3)'),l.setAttribute('stroke','rgba(0,%20200,%200,%200.8)'),l.setAttribute('stroke-width','4')),r.appendChild(l),document.body.appendChild(r)});const%20r=[];s.forEach(function(e,t){s.slice(t+1).forEach(function(n){Math.sqrt(Math.pow(n.center.left-e.center.left,2)+Math.pow(n.center.top-e.center.top,2))%3C24&&(r.push(e.element),r.push(n.element))})});const%20l=[...new%20Set(r)];l.forEach(function(e){e.setAttribute('aria-description','overlap')}),alert(%60There%20are%20${l.length}%20overlapping%20controls.%60)})();" class="govuk-link govuk-link--no-visited-state">Target size</a> link to your bookmark bar to install the tool.</p>
 
           <p class="govuk-body">Once installed, visit a webpage and select the tool in your bookmark bar.</p>
@@ -55,12 +60,12 @@
     </dd>
             </div>
           </dl>
-          <h2 class="govuk-heading-m">Meeting WCAG</h2>
+          <h2 class="govuk-heading-l" id="meeting-wcag">Meeting WCAG</h2>
           <p class="govuk-body">Target size was introduced in the WCAG 2.2 update as <a href="/guidelines/wcag/explorer/criteria/target-size" class="govuk-link govuk-link--no-visited-state">criterion 2.5.8</a>.</p>
           <p class="govuk-body">By ensuring that all relevant controls meet the 24x24 pixels size, it allows users who may struggle with precise movements, have limited dexterity or even some eye conditions to access the correct controls.</p>
           <p class="govuk-body">Although there are exceptions for this rule, target size takes all exceptions into account and will give you a visual of which pass or fail and for what reason.</p>
 
-          <h2 class="govuk-heading-l">Example of using target size</h2>
+          <h2 class="govuk-heading-l" id="example-of-using-target-size">Example of using target size</h2>
 
           <p class="govuk-body">Below is an example of the bookmarklet being used on <a href="https://getintoteaching.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">Get into Teaching</a>.</p>
 
@@ -78,7 +83,7 @@
             <a href="/assets/images/target-size-after.png" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">View larger image in a new tab</a>
           </p>
 
-          <h2 class="govuk-heading-l">Fixing target size issues</h2>
+          <h2 class="govuk-heading-l" id="fixing-target-size-issues">Fixing target size issues</h2>
 
           <p class="govuk-body">When you run the target size tool, you might see that some elements on a product or webpage are too small. This can cause the blue bounding circle overlap with other elements.</p>
 
