@@ -12,15 +12,55 @@
 
 
     <ul class="dfe-vertical-nav__section" id="vertical-nav-list">
+
+    <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/tools-testing/cognitive' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive">Cognitive</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/tools-testing/cognitive' %}block{% else %}none{% endif %}"> 
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive#testing-tools">Tools to identify barriers</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive#testing-checklist">Testing checklist</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+              <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/cognitive#personas">Testing with personas</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/tools-testing/hearing' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/hearing">Hearing</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/tools-testing/hearing' %}block{% else %}none{% endif %}">
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/hearing#testing-tools">Tools to identify barriers</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/hearing#testing-checklist">Testing checklist</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/hearing#personas">Testing with personas</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/tools-testing/physical' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/physical">Physical</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/tools-testing/physical' %}block{% else %}none{% endif %}">
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/physical#testing-tools">Tools to identify barriers</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/physical#testing-checklist">Testing checklist</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/physical#personas">Testing with personas</a>
+          </li>
+        </ul>
+      </li>
       
        <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/tools-testing/vision' %} dfe-vertical-nav__section-item--current{% endif %}">
         <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/vision">Vision</a>
         <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/tools-testing/vision' %}block{% else %}none{% endif %}">
           <li class="dfe-vertical-nav__section-item">
-            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/vision#understanding-visual-impairments">Understanding visual impairments</a>
-          </li>
-          <li class="dfe-vertical-nav__section-item">
-            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/vision#testing-tools">Essential testing tools</a>
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/vision#testing-tools">Tools to identify barriers</a>
           </li>
           <li class="dfe-vertical-nav__section-item">
             <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/vision#testing-checklist">Testing checklist</a>
@@ -33,6 +73,14 @@
 
       <li class="dfe-vertical-nav__section-item{% if path == '/tools-testing/false-positives' %} dfe-vertical-nav__section-item--current{% endif %}">
         <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/false-positives">False positives</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/tools-testing/false-positives' %}block{% else %}none{% endif %}">
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/false-positives#understanding-false-positives">Understand false positives</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/tools-testing/false-positives#understand-false-assurance">Understand false assurance</a>
+          </li>
+        </ul>
       </li>
     
   
