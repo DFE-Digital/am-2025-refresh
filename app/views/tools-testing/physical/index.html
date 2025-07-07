@@ -1,0 +1,140 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Tools and testing" %}
+{% set path = "/tools-testing/physical" %}
+{% set title = "Physical" %}
+{% set description = "Tools and techniques to help you test for physical impairments" %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Tools and testing</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third sticky">
+                    {% include "tools-testing/_nav.html" %}
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-body">
+                        Physical impairments affect how people perceive and interact with digital content.
+                    </p>
+                    <p class="govuk-body">Common conditions include:
+                    </p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>difficulty using a mouse or trackpad</li>
+                        <li>difficulty using a keyboard</li>
+                        <li>difficulty using a touch screen</li>
+                        <li>difficulty using a voice control</li>
+                    </ul>
+
+                    <h3 class="govuk-heading-m">Challenges for people with physical impairments</h3>
+                    <p class="govuk-body">Physical impairments can make it difficult to:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>read small or low-contrast text</li>
+                        <li>understand information conveyed by .......alone</li>
+                        <li>understand speech in noisy environments</li>
+                        <li>understand content when......</li>
+                    </ul>
+
+                    <h2 class="govuk-heading-l" id="testing-tools">Testing tools to identify barriers</h2>
+                    
+                    <h3 class="govuk-heading-m" id="automated-tools">Run automated tests</h3>
+                    <p class="govuk-body">
+                        Automated tools can help identify common accessibility issues quickly. While they can't catch everything, they're a good starting point for testing.
+                    </p>
+                    <p class="govuk-body">You could install and use:</p>
+                     <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/tools-testing/tools/axe-devtools" class="govuk-link">axe DevTools</a></li>
+                        <li><a href="/tools-testing/tools/wave-evaluation" class="govuk-link">WAVE</a></li>
+                        <li><a href="/tools-testing/tools/arc-toolkit" class="govuk-link">ARC Toolkit</a></li>
+                     </ul>
+
+                    <h3 class="govuk-heading-m" id="manual-tools">Run manual tests</h3>
+                    <p class="govuk-body">
+                        After automated tests, you should do manual tests next. Manual tests can identify more accessibility problems and can let you see how your product or website works for people with different physical impairments.
+                    </p>
+                    <p class="govuk-body">You could use:</p>
+                     <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/tools-testing/tools/target-size" class="govuk-link">Target size</a></li>
+                        <li><a href="/tools-testing/tools/resize-text" class="govuk-link">Resize text</a></li>
+                     </ul>
+
+                    <h3 class="govuk-heading-m" id="screen-readers">Run screen reader tests</h3>
+                    <p class="govuk-body">You should also test with a <a href="/tools-testing/tools/screen-readers" class="govuk-link">screen reader</a>, to understand how people who use one might navigate your product or website.</p>
+
+                    <h2 class="govuk-heading-l" id="testing-checklist">Testing checklist</h2> 
+                    <p class="govuk-body">You can use an <a href="/tools-testing/tools/accessibility-testing-checklist" class="govuk-link">accessibility testing checklist</a> to help you find accessibility issues relating to physical impairments.</p>
+
+                    <h2 class="govuk-heading-l" id="personas">Testing with personas</h2>
+                    <p class="govuk-body">
+                        You could use the <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles" class="govuk-link">GOV.UK accessibility personas</a> to test your product or website. Published in 2017, the personas are a good starting point to understand the user needs of people with disabilities.
+                    </p>
+
+                    <div class="govuk-card govuk-!-margin-bottom-6">
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Christopher</h3>
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+                                User with rheumatoid arthritis
+                            </p>
+                            <div class="govuk-body govuk-!-margin-bottom-4">
+                                <p class="govuk-!-margin-bottom-2">Christopher mainly uses a keyboard to navigate content. He needs:</p>
+                                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                                    <li>keyboard navigation</li>
+                                    <li>some screen reader use</li>
+                                    <li>clearly labelled HTML elements</li>
+                                </ul>
+                            </div>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/christopher-user-with-rheumatoid-arthritis" class="govuk-link govuk-link--no-visited-state">
+                                    View Christopher's full profile
+                                    <span class="govuk-visually-hidden"> - User with rheumatoid arthritis</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="govuk-card">
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Ron</h3>
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+                                Older user with multiple conditions
+                            </p>
+                            <div class="govuk-body govuk-!-margin-bottom-4">
+                                <p class="govuk-!-margin-bottom-2">Ron uses offline support for services when available. He needs:</p>
+                                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                                    <li>accessible offline support</li>
+                                    <li>high contrast and clear text</li>
+                                    <li>clear page structure</li>
+                                </ul>
+                            </div>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ron-older-user-with-multiple-conditions" class="govuk-link govuk-link--no-visited-state">
+                                    View Ron's full profile
+                                    <span class="govuk-visually-hidden"> - User with multiple conditions</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                  
+                     
+
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

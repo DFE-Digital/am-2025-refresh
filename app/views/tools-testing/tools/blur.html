@@ -1,7 +1,7 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Blur" %}
-{% set path = "/tools-testing/tool/blur" %}
+{% set path = "/tools-testing/tools/blur" %}
 
 {% block content %}
 <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
@@ -10,23 +10,55 @@
       <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-xl">Tools</span>
         <h1 class="govuk-heading-xl">Blur</h1>
-        <p class="govuk-body-l">Simulates blurred vision to test visibility of key content.</p>
+        <p class="govuk-body-l">Simulates blurred vision to test visibility of content.</p>
       </div>
     </div>
   </div>
 </section>
 <section class="dfe-manual-section">
   <div class="govuk-width-container">
-    <div class="govuk-grid-row">
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third sticky">
+
+                    {% include "tools-testing/tools/_nav.html" %}
+
+                </div>
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Use for testing</h2>
+        <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
+        <p class="govuk-body">Impairments this tool can test for:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Vision</li>
+          <li> <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a></li>
         </ul>
-        <h2 class="govuk-heading-m">How to use</h2>
-        <p class="govuk-body">[Add guidance on how to use Blur]</p>
-        <h2 class="govuk-heading-m">When to use</h2>
-        <p class="govuk-body">[Add guidance on when to use Blur]</p>
+        <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
+        <p class="govuk-body">Drag the links to your bookmark bar:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li><a href="javascript:(function() {    document.body.style.filter = 'blur(0.7px)';})();" class="govuk-link govuk-link--no-visited-state">Light blur</a></li>
+        <li><a href="javascript:(function() {    document.body.style.filter = 'blur(1.4px)';})();" class="govuk-link govuk-link--no-visited-state">Medium blur</a></li>
+        <li><a href="javascript:(function() {    document.body.style.filter = 'blur(2.1px)';})();" class="govuk-link govuk-link--no-visited-state">Heavy blur</a></li>
+        </ul>
+
+    <p>Once the blur tools are saved to your bookmark bar, visit a webpage and select the one you want to try.</p>
+
+   <h2 class="govuk-heading-l" id="example-of-using-blur">Example of using blur</h2>
+   <p>The tool will blur the content on the page. This simulates someone with cataracts or poor vision.</p>
+   <h3 class="govuk-heading-m">Before</h3>
+   <p>Example of a page on the <a href="https://design.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">DfE Design manual</a> with no blur applied.</p>
+
+   <img src="/public/images/blur-before.png" alt="The design system page in the DfE Design manual without any blur being applied." class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+   <p>
+      <a href="/public/images/blur-before.png" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">View larger image in a new tab</a>
+   </p>
+   <h3 class="govuk-heading-m">After</h3>
+   <p>Example of a page on the <a href="https://design.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">DfE Design manual</a> with a medium blur applied.</p>
+   <img src="/public/images/blur.png" alt="The design system page in the DfE Design manual showing a medium level of blur being applied to the page." class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+   <p>
+      <a href="/public/images/blur.png" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">View larger image in a new tab</a>
+   </p>
+
+
+
+
       </div>
     </div>
   </div>

@@ -1,0 +1,118 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Tools and testing" %}
+{% set path = "/tools-testing/cognitive" %}
+{% set title = "Cognitive" %}
+{% set description = "Tools and techniques to help you test for cognitive impairments" %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Tools and testing</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third sticky">
+                    {% include "tools-testing/_nav.html" %}
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-body">
+                        Cognitive impairments affect how people process and understand information.
+                    </p>
+                    <p class="govuk-body">Common conditions include:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>difficulty remembering information</li>
+                        <li>difficulty concentrating</li>
+                        <li>difficulty making decisions</li>
+                        <li>difficulty entering precise information</li> 
+                    </ul>
+
+                    <h3 class="govuk-heading-m">Challenges for people with cognitive impairments</h3>
+                    <p class="govuk-body">Cognitive impairments can make it difficult to:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>process information</li>
+                        <li>focus for long periods of time</li>
+                        <li>recall information, such as passwords</li>
+                        <li>complete tasks without help</li>
+                    </ul>
+
+                    <h2 class="govuk-heading-l" id="testing-tools">Testing tools to identify barriers</h2>
+                    
+                    <h3 class="govuk-heading-m" id="automated-tools">Run automated tests</h3>
+                    <p class="govuk-body">
+                        Start by using automated tools to identify accessibility issues, including cognitive impairments. Automated tools work best when used collectively, so you should use all 3 together.
+                    </p>
+                    <p class="govuk-body">You could install and use:</p>
+                     <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/tools-testing/tools/axe-devtools" class="govuk-link">axe DevTools</a></li>
+                        <li><a href="/tools-testing/tools/wave-evaluation" class="govuk-link">WAVE</a></li>
+                        <li><a href="/tools-testing/tools/arc-toolkit" class="govuk-link">ARC Toolkit</a></li>
+                     </ul>
+
+                    <h3 class="govuk-heading-m" id="manual-tests">Run manual tests</h3>
+                    <p class="govuk-body">After automated tests, you should do manual tests next. Manual tests can identify more accessibility problems and can let you see how your product or website works for people with different cognitive impairments.</p>
+                    <p class="govuk-body">You could use:</p>
+                     <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/tools-testing/tools/headings-map" class="govuk-link">Headings map</a></li>
+                        <li><a href="/tools-testing/tools/lists" class="govuk-link">Lists</a></li>
+                        <li><a href="/tools-testing/tools/target-size" class="govuk-link">Target size</a></li>
+                        <li><a href="/tools-testing/tools/text-spacing" class="govuk-link">Text spacing</a></li> 
+                     </ul>
+
+                    <h3 class="govuk-heading-m" id="screen-readers">Run screen reader tests</h3>
+                    <p class="govuk-body">You should also test with a <a href="/tools-testing/tools/screen-readers" class="govuk-link">screen reader</a>, to understand how people who use one might navigate your product or website.</p>
+            
+
+                    <h2 class="govuk-heading-l" id="testing-checklist">Testing checklist</h2> 
+                    <p class="govuk-body">You can use an <a href="/tools-testing/tools/accessibility-testing-checklist" class="govuk-link">accessibility testing checklist</a> to help you find accessibility issues relating to cognitive impairments.</p>
+
+                    <h2 class="govuk-heading-l" id="personas">Testing with personas</h2>
+                    <p class="govuk-body">
+                        You could use the <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles" class="govuk-link">GOV.UK accessibility personas</a> to test your product or website. Published in 2017, the personas are a good starting point to understand the user needs of people with disabilities.
+                    </p>
+
+                    <div class="govuk-card govuk-!-margin-bottom-6">
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Simone</h3>
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+                                Dyslexic user   
+                            </p>
+                            <div class="govuk-body govuk-!-margin-bottom-4">
+                                <p class="govuk-!-margin-bottom-2">Simone uses specialist dyslexia software which reads out documents and web pages for her, and helps her read and spell.</p>
+                                <p class="govuk-!-margin-bottom-2">She needs:</p>
+                                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+                                    <li>plain language</li>
+                                    <li>save and return functionality</li>
+                                    <li>clear, structured content</li>
+                                </ul>
+                            </div>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/simone-dyslexic-user" class="govuk-link govuk-link--no-visited-state">
+                                    View Simone's full profile
+                                    <span class="govuk-visually-hidden"> - Dyslexic user</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                  
+                     
+
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

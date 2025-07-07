@@ -26,105 +26,54 @@
                     {% include "tools-testing/_nav.html" %}
                 </div>
                 <div class="govuk-grid-column-two-thirds">
-                    <h2 class="govuk-heading-l" id="understanding-visual-impairments">Understanding visual impairments</h2>
                     <p class="govuk-body">
-                        Visual impairments affect how people perceive and interact with digital content. Common conditions include:
-                    </p>
+                        Visual impairments affect how people perceive and interact with digital content.</p>
+                        
+                        <p class="govuk-body">Common conditions include:</p>
                     <ul class="govuk-list govuk-list--bullet">
+                        <li>low vision (difficulty reading small text)</li>
+                        <li>blindness (inability to see or lack of vision)</li>
+                        <li>eye conditions (cataracts or glaucoma)</li>
                         <li>colour blindness (difficulty distinguishing certain colours)</li>
-                        <li>low vision (reduced visual acuity requiring magnification)</li>
-                        <li>blindness (relying on screen readers)</li>
-                        <li>eye conditions (cataracts, glaucoma, etc.)</li>
                     </ul>
 
-                    <h3 class="govuk-heading-m" id="key-challenges">Key challenges</h3>
+                    <h3 class="govuk-heading-m">Challenges for people with visual impairments</h3>
+                    <p class="govuk-body">Visual impairments can make it difficult to:
+                    </p>
                     <ul class="govuk-list govuk-list--bullet">
                         <li>reading small or low-contrast text</li>
                         <li>distinguishing information conveyed by colour alone</li>
                         <li>navigating with keyboard or screen reader</li>
                         <li>reading text when zoomed or magnified</li>
-                        <li>understanding content when text spacing is adjusted</li>
                     </ul>
 
-                    <h2 class="govuk-heading-l" id="testing-tools">Essential testing tools</h2>
+                    <h2 class="govuk-heading-l" id="testing-tools">Testing tools to identify barriers</h2>
                     
-                    <h3 class="govuk-heading-m" id="automated-tools">Automated testing tools</h3>
-                    <p class="govuk-body">
-                        Automated tools can help identify common accessibility issues quickly. While they can't catch everything, they're a good starting point for testing.
-                    </p>
+                    <h3 class="govuk-heading-m" id="automated-tools">Run automated tests</h3>
+                    <p class="govuk-body">Start by using automated tools to identify accessibility issues, including visual impairments. Automated tools work best when used collectively, so you should use all 3 together.</p>
+                     <p class="govuk-body">You could install and use:</p>
+                     <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/tools-testing/tools/axe-devtools" class="govuk-link">axe DevTools</a></li>
+                        <li><a href="/tools-testing/tools/wave-evaluation" class="govuk-link">WAVE</a></li>
+                        <li><a href="/tools-testing/tools/arc-toolkit" class="govuk-link">ARC Toolkit</a></li>
+                     </ul>
 
-                    <h4 class="govuk-heading-s" id="axe-devtools">axe DevTools</h4>
-                    <p class="govuk-body">
-                        A browser extension that provides automated accessibility testing. It checks for contrast issues, missing text alternatives, and semantic structure problems. Available for Chrome, Firefox, and Edge.
-                    </p>
-
-                    <h4 class="govuk-heading-s" id="wave">WAVE</h4>
-                    <p class="govuk-body">
-                        Web Accessibility Evaluation Tool provides visual feedback about accessibility issues on your page. It highlights problems directly on the page and offers detailed explanations of each issue.
-                    </p>
-
-                    <h4 class="govuk-heading-s" id="lighthouse">Lighthouse</h4>
-                    <p class="govuk-body">
-                        Built into Chrome DevTools, Lighthouse provides quick accessibility audits with actionable insights. It's particularly useful for checking basic accessibility requirements and performance metrics.
-                    </p>
-
-                    <h3 class="govuk-heading-m" id="manual-tools">Manual testing tools</h3>
-                    <p class="govuk-body">
-                        Manual testing tools help you simulate different visual impairments and verify accessibility features. These tools are essential for understanding how users with visual impairments experience your service.
-                    </p>
-
-                    <h4 class="govuk-heading-s" id="colour-contrast-checkers">Colour contrast checkers</h4>
-                    <p class="govuk-body">
-                        Tools like the <a href="https://webaim.org/resources/contrastchecker/" class="govuk-link">WebAIM Contrast Checker</a> and <a href="https://developer.paciellogroup.com/resources/contrastanalyser/" class="govuk-link">Colour Contrast Analyser</a> help verify that text meets WCAG contrast requirements. They're essential for ensuring text remains readable for users with low vision or colour blindness.
-                    </p>
-
-                    <h4 class="govuk-heading-s" id="visual-simulation-tools">Visual simulation tools</h4>
-                    <p class="govuk-body">
-                        Chrome DevTools includes built-in vision deficiency emulation, allowing you to simulate different types of colour blindness. You can access this through the Rendering tab in DevTools. This helps you understand how users with various types of colour vision deficiency might experience your content.
-                    </p>
-
-                    <h4 class="govuk-heading-s" id="screen-readers">Screen readers</h4>
-                    <p class="govuk-body">
-                        Essential tools for testing with screen reader users. NVDA is free for Windows users, while VoiceOver comes built into macOS and iOS devices. TalkBack is available on Android devices. These tools help verify that your content is properly structured and announced to screen reader users.
-                    </p>
-
-                    <div class="govuk-inset-text">
-                        <p class="govuk-body">
-                            Remember: While automated tools are helpful, they can only catch about 30% of accessibility issues. Always combine automated testing with manual testing and real user feedback.
-                        </p>
-                    </div>
-
-                    <h2 class="govuk-heading-l" id="testing-checklist">Testing checklist</h2>
+                    <h3 class="govuk-heading-m" id="manual-tests">Run manual tests</h3>
+                    <p class="govuk-body">After automated tests, you should do manual tests next. Manual tests can identify more accessibility problems and can let you see how your product or website works for people with different visual impairments.</p>
+                    <p class="govuk-body">You could use:</p>
+                     <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/tools-testing/tools/contrast-checker" class="govuk-link">Contrast Checker</a></li>
+                        <li><a href="/tools-testing/tools/resize-text" class="govuk-link">resize text</a></li>
+                     </ul>
+                    <h3 class="govuk-heading-m" id="screen-readers">Run screen reader tests</h3>
+                    <p class="govuk-body">You should also test with a <a href="/tools-testing/tools/screen-readers" class="govuk-link">screen reader</a>, to understand how people who use one might navigate your product or website.</p>
                     
-                    <h3 class="govuk-heading-m">Visual testing</h3>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>Verify text contrast meets WCAG 2.2 requirements (4.5:1 for normal text, 3:1 for large text)</li>
-                        <li>Test with different vision deficiency simulations</li>
-                        <li>Ensure information isn't conveyed by colour alone</li>
-                        <li>Check focus indicators are visible (3:1 contrast)</li>
-                        <li>Verify text remains readable when zoomed to 200%</li>
-                    </ul>
-
-                    <h3 class="govuk-heading-m">Screen reader testing</h3>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>Verify all content is announced correctly</li>
-                        <li>Check heading structure and navigation</li>
-                        <li>Test form labels and error messages</li>
-                        <li>Verify dynamic content updates are announced</li>
-                        <li>Test keyboard navigation and focus management</li>
-                    </ul>
-
-                    <h3 class="govuk-heading-m">Responsive testing</h3>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>Test text spacing adjustments (line height, letter spacing, word spacing)</li>
-                        <li>Verify layout remains usable at 200% zoom</li>
-                        <li>Check touch targets are at least 44x44 pixels</li>
-                        <li>Test with different viewport sizes</li>
-                    </ul>
+                    <h2 class="govuk-heading-l" id="testing-checklist">Testing checklist</h2> 
+                    <p class="govuk-body">You can use an <a href="/tools-testing/tools/accessibility-testing-checklist" class="govuk-link">accessibility testing checklist</a> to help you find accessibility issues relating to visual impairments.</p>
 
                     <h2 class="govuk-heading-l" id="personas">Testing with personas</h2>
                     <p class="govuk-body">
-                        GOV.UK provides detailed accessibility personas to help you understand and test for different user needs. These personas are based on real user research and help teams empathize with users' experiences.
+                        You could use the <a href="https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles" class="govuk-link">GOV.UK accessibility personas</a> to test your product or website. Published in 2017, the personas are a good starting point to understand the user needs of people with disabilities.
                     </p>
 
                     <div class="govuk-card govuk-!-margin-bottom-6">

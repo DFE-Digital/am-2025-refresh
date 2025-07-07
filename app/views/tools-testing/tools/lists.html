@@ -1,35 +1,66 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Lists" %}
-{% set path = "/tools-testing/tool/lists" %}
+{% set path = "/tools-testing/tools/lists" %}
 
 {% block content %}
-<section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+  <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-third sticky">
         <span class="govuk-caption-xl">Tools</span>
-        <h1 class="govuk-heading-xl">Lists</h1>
-        <p class="govuk-body-l">Tests semantic structure and accessibility of list content.</p>
+
+          <h1 class="govuk-heading-xl">Lists</h1>
+          <p class="govuk-body-l">Tests semantic structure and accessibility of list content.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="dfe-manual-section">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Use for testing</h2>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Vision</li>
-          <li>Cognitive</li>
-        </ul>
-        <h2 class="govuk-heading-m">How to use</h2>
-        <p class="govuk-body">[Add guidance on how to use Lists]</p>
-        <h2 class="govuk-heading-m">When to use</h2>
-        <p class="govuk-body">[Add guidance on when to use Lists]</p>
+  </section>
+  <section class="dfe-manual-section">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third sticky">
+        
+          {% include "tools-testing/tools/_nav.html" %}
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
+          <p class="govuk-body">Impairments this tool can test for:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
+            </li>
+            <li>
+              <a href="/tools-testing/cognitive" class="govuk-link govuk-link--no-visited-state">Cognitive</a>
+            </li>
+          </ul>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
+          <p class="govuk-body">Drag the <a href="javascript:if(window.a11yLists)window.a11yLists.run();else{(function(){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://accessibility-bookmarklets.org/build/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var script=document.createElement('script');script.type='text/javascript';script.src='https://accessibility-bookmarklets.org/build/lists.js';document.getElementsByTagName('head')[0].appendChild(script);})();}" class="govuk-link govuk-link--no-visited-state">view lists</a> link to your bookmark bar.</p>
+
+          <p class="govuk-body">Once the tool is installed, visit a webpage and select the tool in your bookmark bar.</p>
+
+          <p class="govuk-body">When you have run the check, the following list types, and the type of list, will be highlighted.</p>
+
+          <p class="govuk-body">Types of lists:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <code>&lt;ol&gt;</code> ordered list</li>
+            <li>
+              <code>&lt;ul&gt;</code> unordered list</li>
+            <li>
+              <code>&lt;dl&gt;</code> definition list</li>
+          </ul>
+
+          <h2 class="govuk-heading-l" id="example-of-using-lists">Example of using lists</h2>
+
+          <p class="govuk-body">Example of a page in the <a href="https://design.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">DfE Design manual</a> with lists highlighted.</p>
+
+          <img src="/assets/images/lists.png" alt="The tools page in the DfE Design manual showing the highlighted lists with a border and an indicator of the list type." class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+          <p>
+            <a href="/assets/images/lists.png" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">View larger image in a new tab</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-{% endblock %} 
+    </section>
+  {% endblock %}

@@ -1,13 +1,13 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Screen readers" %}
-{% set path = "/tools-testing/tool/screen-readers" %}
+{% set path = "/tools-testing/tools/screen-readers" %}
 
 {% block content %}
 <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-third sticky">
         <span class="govuk-caption-xl">Tools</span>
         <h1 class="govuk-heading-xl">Screen readers</h1>
         <p class="govuk-body-l">Tools like NVDA, JAWS, VoiceOver that read out content aloud.</p>
@@ -18,17 +18,62 @@
 <section class="dfe-manual-section">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Use for testing</h2>
+      <div class="govuk-grid-column-one-third sticky">
+        {% include "tools-testing/tools/_nav.html" %}
+      </div>
+      <div class="govuk-grid-column-two-thirds sticky">
+        <span class="govuk-caption-xl">Tools</span>
+
+        <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
+        <p class="govuk-body">Impairments this tool can test for:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Vision</li>
-          <li>Cognitive</li>
-          <li>Physical</li>
+          <li>
+            <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
+          </li>
+          <li>
+            <a href="/tools-testing/cognitive" class="govuk-link govuk-link--no-visited-state">Cognitive</a>
+          </li>
+          <li>
+            <a href="/tools-testing/physical" class="govuk-link govuk-link--no-visited-state">Physical</a>
+          </li>
         </ul>
-        <h2 class="govuk-heading-m">How to use</h2>
-        <p class="govuk-body">[Add guidance on how to use Screen readers]</p>
-        <h2 class="govuk-heading-m">When to use</h2>
-        <p class="govuk-body">[Add guidance on when to use Screen readers]</p>
+
+         <h2 class="govuk-heading-l" id="types-of-screen-reader">Types of screen reader</h2>
+                 <p class="govuk-body">There are 3 main types of screen reader:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>paid ones, such as JAWS (Job Access With Speech)</li>
+          <li>free ones, such as NVDA (Non-Visual Desktop Access)</li>
+          <li>built-in ones, such as Narrator (on Windows devices) and <a href="/tools-testing/tools/voiceover" class="govuk-link govuk-link--no-visited-state">VoiceOver (on Apple devices)</a></li>
+        </ul>
+         
+        <h2 class="govuk-heading-l" id="who-should-test-with-a-screen-reader">Who should test with a screen reader</h2>
+        <p class="govuk-body">Everyone can test with a screen reader. It's useful to understand how people who use one might navigate a service you're creating, content you're writing, or a document you're drafting.</p>
+        <p class="govuk-body">Interaction designers and developers especially, should know the basics of a screen reader and be able to carry out checks on a service they're designing or developing.</p>
+
+        <h2 class="govuk-heading-l" id="how-to-start-testing-with-a-screen-reader">How to start testing with a screen reader</h2>
+        <p class="govuk-body">Most screen readers are used in the same way, but they all have their own keyboard shortcuts and commands.</p>
+        <p class="govuk-body">The easier way to start testing with one is to switch the screen reader on and use the tab key to navigate through your service. This will give a basic idea of how a screen reader works and the type of information that is relayed audibly to a user.</p>
+        <p class="govuk-body">However, this will only give you information on interactive components, such as links and buttons in your service. There are many other types of web content that should be tested to ensure your website is accessible.</p>
+
+
+        <h2 class="govuk-heading-l" id="how-to-use-each-screen-reader">How to use each screen reader</h2>
+
+    <h3 class="govuk-heading-m">Voiceover</h3>
+
+    <p class="govuk-body">Voiceover is available on Apple devices. It's a built-in screen reader that can be used on iPhones, iPads and Macs. </p>
+
+    <p class="govuk-body"><a href="/tools-testing/tools/voiceover" class="govuk-link govuk-link--no-visited-state">Guidance to use Voiceover</a> and a <a href="https://www.youtube.com/watch?v=9LmJacSH_90" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">tutorial video (8 minutes, 45 seconds</a> for features and testing for common issues.</p>
+
+    <h3 class="govuk-heading-m">NVDA</h3>
+    <p class="govuk-body">NVDA (NonVisual Desktop Access) is a free screen reader for Microsoft Windows. </p>
+
+    <p class="govuk-body">Guidance and a tutorial video for this tool is being worked on.</p>
+
+    <h3 class="govuk-heading-m">Jaws</h3>
+
+    <p class="govuk-body">JAWS (Job Access With Speech) is a paid version of a screen reader. </p>
+    <p class="govuk-body">Guidance and a tutorial video for this tool is being worked on.</p>
+        
       </div>
     </div>
   </div>

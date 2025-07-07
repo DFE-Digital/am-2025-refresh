@@ -1,34 +1,81 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "Contrast Checker" %}
-{% set path = "/tools-testing/tool/contrast-checker" %}
+{% set path = "/tools-testing/tools/contrast-checker" %}
 
 {% block content %}
-<section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Tools</span>
-        <h1 class="govuk-heading-xl">Contrast Checker</h1>
-        <p class="govuk-body-l">Tests text colour contrast against WCAG levels.</p>
+  <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-caption-xl">Tools</span>
+          <h1 class="govuk-heading-xl">Contrast Checker</h1>
+          <p class="govuk-body-l">Tests text colour contrast against WCAG levels.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="dfe-manual-section">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Use for testing</h2>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Vision</li>
-        </ul>
-        <h2 class="govuk-heading-m">How to use</h2>
-        <p class="govuk-body">[Add guidance on how to use Contrast Checker]</p>
-        <h2 class="govuk-heading-m">When to use</h2>
-        <p class="govuk-body">[Add guidance on when to use Contrast Checker]</p>
+  </section>
+  <section class="dfe-manual-section">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third sticky">
+
+                    {% include "tools-testing/tools/_nav.html" %}
+
+                </div>
+          <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
+          <p class="govuk-body">Impairments this tool can test for:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
+            </li>
+          </ul>
+          <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
+          <p class="govuk-body">Visit <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer" class="govuk-link govuk-link--no-visited-state">Contrast Checker (opens in new tab)</a>.</p>
+          <p class="govuk-body">You can use the website to measure the contrast ratio of your product or webpage.</p>
+
+          <p class="govuk-body">The site will tell you whether the colour combination passes or fails any of the WCAG minimum criteria. </p>
+          <p class="govuk-body">You will need to provide the foreground and background colours for text or graphic objects on the website to get the results.</p>
+
+          <h3 class="govuk-heading-m">How to get colour codes from a webpage</h3>
+
+          <p class="govuk-body">Use the browser dev tools to inspect the element and get the colour codes.</p>
+
+          <p class="govuk-body">In Edge or Chrome, right-click on the element you want to get the colour code for and select 'Inspect' from the context menu. This will open the dev tools panel.</p>
+
+          <p class="govuk-body">From the dev tools panel, you can select the 'Styles' tab to see the colour codes for the element, they will probably start with a # symbol and contain 6 alphanumeric characters. For example: <code>#F3F2F1</code>.</p>
+
+          <p class="govuk-body">Watch a video on how to get colour codes from a webpage. This video does not have audio.</p>
+
+          <video controls class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+            <source src="/public/video/get_color.webm" type="video/webm" >
+        Your browser does not support the video tag.
+    </video>
+
+
+          <h2 class="govuk-heading-l" id="what-results-could-look-like">What results could look like</h2>
+
+          <p class="govuk-body">Example of some content to check the contrast ratio.</p>
+
+          <img src="/public/images/get_help.png" alt="The words 'Get help and support' in black text on a yellow background" class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+
+           <p class="govuk-body">When you have the colour codes, you can enter them into the Contrast Checker website to get the results.</p>
+
+           <p class="govuk-body">The black text has the code <code>#1D1D1B</code> and the yellow background has the code <code>#F9B401</code>.</p>
+
+           <p class="govuk-body">Contrast Checker shows this is a contrast ratio of 9.29:1 of black text on yellow. This passes all the relevant WCAG criteria.</p>
+
+          <img src="/public/images/cr_result.png" alt="Show contrast ratio of 9.29:1 of black text on yellow. This passes all the relevant WCAG criteria" class="screenshot govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+
+            <h2 class="govuk-heading-l" id="what-to-do-next">What to do next</h2>
+           <p class="govuk-body">You need to check or verify that the accessibility issues the tool finds are issues, rather than <a href="/tools-testing/false-positives" class="govuk-link govuk-link--no-visited-state">false positives or false assurances</a>.</p>
+
+           <p class="govuk-body">If an issue is genuine, speak to your developer or design team to consider, then implement, a fix.</p>
+
+          <p>You can read guidance for how to <a href="/audits-issues-statements/issues/manage-and-prioritise-issues" class="govuk-link govuk-link--no-visited-state">manage and prioritise issues</a>.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-{% endblock %} 
+  </section>
+{% endblock %}

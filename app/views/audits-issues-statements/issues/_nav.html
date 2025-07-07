@@ -7,9 +7,22 @@
 
   
   <ul class="dfe-vertical-nav__section">
-   
     <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues' %} dfe-vertical-nav__section-item--current{% endif %}">
       <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues">Common issues</a>
+      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/issues/common-issues' %}block{% else %}none{% endif %}">
+        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#top-issues' %} dfe-vertical-nav__section-item--current{% endif %}">
+          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#top-issues">Top issues in DfE</a>
+        </li>
+        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#error-messages' %} dfe-vertical-nav__section-item--current{% endif %}">
+          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#error-messages">Error messages</a>
+        </li>
+        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#images-charts-and-alt-text' %} dfe-vertical-nav__section-item--current{% endif %}">
+          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#images-charts-and-alt-text">Images, charts and alt text</a>
+        </li>
+        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#headings' %} dfe-vertical-nav__section-item--current{% endif %}">
+          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#headings">Headings</a>
+        </li>
+      </ul>
     </li>
       
     <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/manage-and-prioritise-issues' %} dfe-vertical-nav__section-item--current{% endif %}">

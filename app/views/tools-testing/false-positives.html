@@ -1,0 +1,98 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Tools and testing" %}
+    {% set path = "/tools-testing/false-positives" %}
+{% set title = "False positives" %}
+{% set description = "Guidance on how to deal with false positives and false assurances" %}
+
+{% block content %}
+
+    <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <span class="govuk-caption-xl">Tools and testing</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+    <section class="dfe-manual-section dfe-manual-section-header--white">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third sticky">
+                    {% include "tools-testing/_nav.html" %}
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                
+                       <p class="govuk-body">When using <a href="/tools-testing/tools" class="govuk-link govuk-link--no-visited-state">accessibility testing tools</a>, it's important to validate the results to avoid identifying false positives and ensure that no issues have been missed, thereby preventing false assurances.</p>
+
+   <h2 class="govuk-heading-l" id="understanding-false-positives">Understand false positives</h2>
+
+   <p class="govuk-body">False positives are issues that are flagged by testing tools as accessibility issues, but are not actually issues when reviewed manually.</p>
+
+   <p>Accessibility tools do not understand context, for example:</p>
+
+   <ul class="govuk-list govuk-list--bullet">
+      <li>they will not understand the content of an image</li>
+      <li>the words in a link being descriptive or generic</li>
+      <li>the content and context of an error message</li>
+   </ul>
+
+   <div class="govuk-inset-text">
+      <p class="govuk-body">
+         <span class="govuk-!-font-weight-bold">Contrast in images</span><br /><br />Checks may raise issues related to <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" rel="noopener noreferrer" target="_blank">contrast minimum <span class="govuk-visually-hidden">(opens in new tab)</span></a> even for content that is exempt, such as logos and branding.
+                    </p>
+   </div>
+
+   <p>Logos, which might not always have sufficiently contrasting foreground and background colours are not required to meet these criteria. Therefore, this is considered a false positive.</p>
+
+   <h2 class="govuk-heading-l" id="understand-false-assurance">Understand false assurance</h2>
+
+   <p class="govuk-body">Accessibility testing tools may also give a false sense of compliance, this is not only because the tools only identify around 30 to 40% of issues, but also because of how the tools scan code to decide if accessibility issues are present.</p>
+
+   <div class="govuk-inset-text">
+      <p class="govuk-body">
+         <span class="govuk-!-font-weight-bold">For example</span><br /><br />When scanning images for alt text, testing tools are looking for a yes, or no answer, to whether the image has alt text or not.
+                    </p>
+   </div>
+
+   <p>This can provide false assurance because if an image contains alt text it would pass this test, but the alt text may not be descriptive. </p>
+
+   <p>There is an exception to when alt text can be omitted, such as when an image is purely decorative and does not add context to the page.</p>
+   <p>In this case, add an empty alt tag, as follows <code>alt=""</code>.</p>
+
+   <div class="dfe-manual-callout">
+      <div class="dfe-manual-callout--header">
+         <img src="/assets/images/new-window.png" alt="" />
+         <h3 class="govuk-heading-m">Use the alt decision tree</h3>
+      </div>
+
+      <div class="dfe-manual-callout--content">
+         <p>Follow the <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/"
+                    rel="noopener noreferrer" target="_blank">alt decision tree <span class="govuk-visually-hidden">link opens in a new tab</span></a> if you're unsure whether you need to use alt text.
+            </p>
+      </div>
+   </div>
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+    </div>
+    </section>
+
+
+
+
+
+
+{% endblock %}  

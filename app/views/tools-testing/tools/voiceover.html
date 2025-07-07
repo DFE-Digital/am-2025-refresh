@@ -1,13 +1,13 @@
 {% extends "layouts/layout.html" %}
 {% set serviceNav = "Tools and testing" %}
 {% set title = "VoiceOver" %}
-{% set path = "/tools-testing/tool/voiceover" %}
+{% set path = "/tools-testing/tools/voiceover" %}
 
 {% block content %}
 <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-third sticky">
         <span class="govuk-caption-xl">Tools</span>
         <h1 class="govuk-heading-xl">VoiceOver</h1>
         <p class="govuk-body-l">Built-in Apple screen reader for macOS and iOS.</p>
@@ -18,16 +18,52 @@
 <section class="dfe-manual-section">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Use for testing</h2>
+      <div class="govuk-grid-column-one-third sticky">
+        {% include "tools-testing/tools/_nav.html" %}
+      </div>
+      <div class="govuk-grid-column-two-thirds sticky">
+
+        <h2 class="govuk-heading-l" id="use-to-test">Use to test</h2>
+        <p class="govuk-body">Impairments this tool can test for:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Vision</li>
-          <li>Physical</li>
+          <li>
+            <a href="/tools-testing/vision" class="govuk-link govuk-link--no-visited-state">Vision</a>
+          </li>
+          <li>
+            <a href="/tools-testing/physical" class="govuk-link govuk-link--no-visited-state">Physical</a>
+          </li>
         </ul>
-        <h2 class="govuk-heading-m">How to use</h2>
-        <p class="govuk-body">[Add guidance on how to use VoiceOver]</p>
-        <h2 class="govuk-heading-m">When to use</h2>
-        <p class="govuk-body">[Add guidance on when to use VoiceOver]</p>
+        <h2 class="govuk-heading-l" id="how-to-install">How to install</h2>
+        <p class="govuk-body">On macOS:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>press <strong>Command + F5</strong> to toggle VoiceOver on or off</li>
+          <li>alternatively, triple-tap the Touch ID button (top row, far right on keyboard) and select VoiceOver from accessibility shortcuts</li>
+        </ul>
+        <p class="govuk-body">On iOS:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>go to <strong>Settings → Accessibility → VoiceOver</strong> and toggle VoiceOver on</li>
+          <li>ask Siri to "turn on VoiceOver"</li>
+          <li>from the Control Centre, select the accessibility button and choose VoiceOver</li>
+        </ul>
+        <h2 class="govuk-heading-l" id="how-to-use">How to use</h2>
+        <p class="govuk-body">The quickest way to start testing with VoiceOver is to tab through your content using the Tab key (Shift + Tab to move backwards) and listen to the information VoiceOver provides.</p>
+        <p class="govuk-body">This helps you understand how accessible your service is for screen reader users.</p>
+        <p class="govuk-body">When navigating, VoiceOver should announce the type of control in focus (for example, a link or button) and its accessible name, providing enough context for users to understand its purpose.</p>
+        <p class="govuk-body">Common keyboard shortcuts (macOS):</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><strong>VO + Right Arrow</strong>: read next item</li>
+          <li><strong>VO + Command + H</strong>: next heading</li>
+          <li><strong>VO + Command + L</strong>: next link</li>
+        </ul>
+        <p class="govuk-body">Note: VO refers to holding <strong>Control</strong> and <strong>Option</strong> together.</p>
+        <h3 class="govuk-heading-m">On iOS</h3>
+        <p class="govuk-body">Navigate by swiping right to move forward, left to move backward, and double-tap to activate the selected item. VoiceOver will announce the name and type of each element in focus.</p>
+        <h2 class="govuk-heading-l" id="what-results-could-look-like">What results could look like</h2>
+        <p class="govuk-body">As you navigate, listen for clear, descriptive announcements for each element. For example, links should have meaningful names, and buttons should describe their action. If VoiceOver announces generic or unclear information, this may indicate an accessibility issue.</p>
+        <h2 class="govuk-heading-l" id="what-to-do-next">What to do next</h2>
+        <p class="govuk-body">You need to check or verify that the accessibility issues the tool finds are issues, rather than <a href="/tools-testing/false-positives" class="govuk-link govuk-link--no-visited-state">false positives or false assurances</a>.</p>
+        <p class="govuk-body">If an issue is genuine, speak to your developer or design team to consider, then implement, a fix.</p>
+        <p class="govuk-body">You can read guidance for how to <a href="/audits-issues-statements/issues/manage-and-prioritise-issues" class="govuk-link govuk-link--no-visited-state">manage and prioritise issues</a>.</p>
       </div>
     </div>
   </div>
