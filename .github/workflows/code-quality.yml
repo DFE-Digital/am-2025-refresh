@@ -1,0 +1,68 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build assets
+      run: npm run build
+    
+    - name: Check external links for rel attributes
+      run: |
+        echo "Checking external links for rel attributes..."
+        if grep -r 'href="https://' app/views/ | grep -v 'rel="noopener noreferrer"'; then
+          echo "❌ Found external links without rel=\"noopener noreferrer\""
+          exit 1
+        fi
+        echo "✅ All external links have proper rel attributes"
+    
+    - name: Check link classes
+      run: |
+        echo "Checking link classes..."
+        if grep -r 'class="[^"]*"' app/views/ | grep -v 'govuk-link govuk-link--no-visited-state'; then
+          echo "❌ Found links without correct classes"
+          exit 1
+        fi
+        echo "✅ All links have correct classes"
+    
+    - name: HTML validation
+      run: |
+        echo "Running HTML validation..."
+        npm run lint:html
+    
+    - name: Check for typos
+      run: |
+        echo "Checking for common typos..."
+        if grep -r -i "neccessary\|occured\|recieve\|seperate" app/views/; then
+          echo "❌ Found potential typos"
+          exit 1
+        fi
+        echo "✅ No obvious typos found"
+    
+    - name: Accessibility checks
+      run: |
+        echo "Running basic accessibility checks..."
+        # Check for missing alt attributes on images
+        if grep -r '<img' app/views/ | grep -v 'alt='; then
+          echo "❌ Found images without alt attributes"
+          exit 1
+        fi
+        echo "✅ All images have alt attributes" 

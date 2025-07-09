@@ -1,0 +1,25 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running pre-commit checks..."
+
+# Run HTML validation
+npm run lint:html
+
+# Check for missing rel attributes on external links
+echo "Checking external links for rel attributes..."
+if npm run validate:attributes | grep -q "href=\"https://"; then
+    echo "❌ Found external links without rel=\"noopener noreferrer\""
+    npm run validate:attributes
+    exit 1
+fi
+
+# Check for correct link classes
+echo "Checking link classes..."
+if npm run validate:classes | grep -q "class="; then
+    echo "❌ Found links without correct classes"
+    npm run validate:classes
+    exit 1
+fi
+
+echo "✅ All pre-commit checks passed!" 

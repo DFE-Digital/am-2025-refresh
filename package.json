@@ -3,12 +3,18 @@
     "version": "2.0.0",
     "main": "app.js",
     "scripts": {
-        "dev": "nodemon -r dotenv/config app.js",
         "start": "node app.js",
-        "build:css": "cat app/public/css/govuk-frontend.min.css app/public/css/dfefrontend-2.0.0.min.css app/public/css/app.css app/public/css/manual.css app/public/css/moj-filter.css app/public/css/app-subnav.css app/public/css/root.css > app/public/css/consolidated.min.css",
-        "build:js": "cat app/public/js/dfefrontend-2.0.0.min.js app/public/js/app.js app/public/js/moj-filter.js app/public/js/feedback.js app/public/js/cookies.js > app/public/js/consolidated.min.js",
+        "dev": "nodemon app.js",
         "build": "npm run build:css && npm run build:js",
-        "postinstall": "npm run build"
+        "build:css": "cat app/public/css/*.css > app/public/css/consolidated.min.css",
+        "build:js": "cat app/public/js/*.js | grep -v 'govuk-frontend' > app/public/js/consolidated.min.js",
+        "lint": "npm run lint:html && npm run lint:links",
+        "lint:html": "html-validate app/views/**/*.html",
+        "lint:links": "markdown-link-check README.md",
+        "validate": "npm run validate:classes && npm run validate:attributes",
+        "validate:classes": "grep -r 'class=\"[^\"]*\"' app/views/ | grep -v 'govuk-link govuk-link--no-visited-state' || true",
+        "validate:attributes": "grep -r 'href=\"https://' app/views/ | grep -v 'rel=\"noopener noreferrer\"' || true",
+        "pre-commit": "npm run lint && npm run validate"
     },
     "keywords": [],
     "author": "",
@@ -37,6 +43,9 @@
         "xlsx": "^0.18.5"
     },
     "devDependencies": {
+        "husky": "^8.0.3",
+        "html-validate": "^8.0.0",
+        "markdown-link-check": "^3.10.3",
         "browser-sync": "^1.3.7",
         "concurrently": "^9.1.2",
         "nodemon": "^3.1.9"

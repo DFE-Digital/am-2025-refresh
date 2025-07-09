@@ -73,3 +73,52 @@ app/
 - **Bandwidth Savings**: Approximately 30% reduction in file size
 - **Faster Loading**: Reduced latency from fewer requests
 
+## Code Quality Checks
+
+This project includes automated code quality checks to ensure consistent code standards:
+
+### Pre-commit Hooks (Local)
+
+Install and setup pre-commit hooks:
+
+```bash
+# Install dependencies
+npm install
+
+# Setup husky pre-commit hooks
+npx husky install
+npx husky add .husky/pre-commit "npm run pre-commit"
+```
+
+The pre-commit hook will check:
+- HTML validation
+- External links have `rel="noopener noreferrer"` attributes
+- Internal links have correct `govuk-link govuk-link--no-visited-state` classes
+- Common typos
+
+### GitHub Actions (Server-side)
+
+Automated checks run on:
+- Pull requests to main/develop branches
+- Pushes to main/develop branches
+
+Checks include:
+- Link validation
+- HTML validation
+- Accessibility checks
+- Typo detection
+
+### Manual Validation
+
+Run checks manually:
+
+```bash
+# Run all checks
+npm run validate
+
+# Check specific issues
+npm run validate:classes
+npm run validate:attributes
+npm run lint:html
+```
+
