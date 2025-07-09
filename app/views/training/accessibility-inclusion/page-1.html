@@ -1,0 +1,35 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Training" %}
+{% set path = "/training/accessibility-inclusion/page-1" %}
+{% set dateModified = "2025-07-09" %}{% set title = "What accessibility means" %}
+{% set description = "Accessibility & Inclusion training: Welcome and introduction to the course (page 1)." %}
+
+{% block content %}
+    <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <h1 class="govuk-heading-xl">{{title}}</h1>
+
+                        <p class="govuk-body-l">Accessibility is about ensuring that people with disabilities can use our products, services, and documents without encountering barriers.</p>
+                        <p class="govuk-body-l">This means making sure our websites, mobile apps, and digital content are usable by people with a variety of disabilities.</p>
+                        <p class="govuk-body-l">This applies to everyone we provide services for. For example, members of the public, learners, school professionals, and our own staff.</p>
+
+                    </div>
+                    <div class="govuk-grid-column-one-third center-image"></div>
+                </div>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <p class="govuk-!-margin-top-6">
+
+                    <a href="/training/accessibility-inclusion/page-2"
+                    class="govuk-button" role="button">Next</a>
+                </p>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

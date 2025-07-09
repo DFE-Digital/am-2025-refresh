@@ -9,11 +9,7 @@
         <meta name="theme-color" content="#00294a">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="canonical" href="https://design.education.gov.uk/{{path}}">
-        <link rel="stylesheet" href="/public/css/govuk-frontend.min.css">
-        <link rel="stylesheet" href="/public/css/dfefrontend-2.0.0.min.css">
-        <link rel="stylesheet" href="/public/css/app.css">
-        <link rel="stylesheet" href="/public/css/manual.css">
-        <link rel="stylesheet" href="/public/css/moj-filter.css">
+        <link rel="stylesheet" href="/public/css/consolidated.min.css">
         <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
 
         <meta property="og:title" content="{{title}}">
@@ -23,6 +19,99 @@
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="Accessibility manual">
         
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "{% if path == '' %}WebSite{% else %}WebPage{% endif %}",
+            "name": "{{title}}",
+            "description": "{{description}}",
+            "url": "https://accessibility.education.gov.uk{{path}}",
+            "mainEntity": {
+                "@type": "{% if path == '' %}WebSite{% else %}WebPage{% endif %}",
+                "name": "{{title}}",
+                "description": "{{description}}"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Department for Education",
+                "url": "https://www.gov.uk/government/organisations/department-for-education",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://accessibility.education.gov.uk/public/images/dfe-logo.png"
+                }
+            },
+            "{% if path == '' %}potentialAction{% else %}breadcrumb{% endif %}": {% if path == '' %}{
+                "@type": "SearchAction",
+                "target": "https://accessibility.education.gov.uk/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }{% else %}{
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://accessibility.education.gov.uk"
+                    }{% if path.indexOf('/guidelines') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Guidelines",
+                        "item": "https://accessibility.education.gov.uk/guidelines"
+                    }{% if path.indexOf('/guidelines/wcag') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "WCAG",
+                        "item": "https://accessibility.education.gov.uk/guidelines/wcag"
+                    }{% endif %}{% endif %}{% if path.indexOf('/standards') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Standards",
+                        "item": "https://accessibility.education.gov.uk/standards"
+                    }{% endif %}{% if path.indexOf('/tools-testing') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Tools & Testing",
+                        "item": "https://accessibility.education.gov.uk/tools-testing"
+                    }{% endif %}{% if path.indexOf('/audits-issues-statements') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Audits & Issues",
+                        "item": "https://accessibility.education.gov.uk/audits-issues-statements"
+                    }{% endif %}{% if path.indexOf('/training') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Training",
+                        "item": "https://accessibility.education.gov.uk/training"
+                    }{% endif %}{% if path.indexOf('/professions') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Professions",
+                        "item": "https://accessibility.education.gov.uk/professions"
+                    }{% endif %}{% if path.indexOf('/support') == 0 %},
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Support",
+                        "item": "https://accessibility.education.gov.uk/support"
+                    }{% endif %}
+                ]
+            }{% endif %}{% if path != '' %},
+            "dateModified": "{{dateModified}}",
+            "inLanguage": "en-GB",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "Accessibility manual",
+                "url": "https://accessibility.education.gov.uk"
+            }{% endif %}
+        }
+        </script>
 
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
         {% block head %}{% endblock %}
@@ -66,12 +155,7 @@
             initAll();
         </script>
 
-          <!-- MOJ Filter component JavaScript -->
-    <script src="/public/js/moj-filter.js"></script>
-
-        <script src="/public/js/dfefrontend-2.0.0.min.js"></script>
-        <script src="/public/js/app.js"></script>
-        <script src="/public/js/feedback.js"></script>
+        <script src="/public/js/consolidated.min.js"></script>
 
         {% block scripts %}{% endblock %}
     </body>

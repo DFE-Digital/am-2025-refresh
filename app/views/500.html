@@ -1,0 +1,25 @@
+{% extends "layouts/layout.html" %}
+
+{% set serviceNav = "Home" %}
+{% set path = "500" %}
+{% set title = "Sorry, there’s a problem with the service" %}
+{% set description = "We’re experiencing technical difficulties. Please try again later." %}
+{% set dateModified = "2025-07-09" %}
+{% set mainClasses = 'govuk-!-padding-top-0 govuk-!-padding-bottom-0' %}
+
+{% block content %}
+    <section class="govuk-!-padding-top-9 govuk-!-padding-bottom-7">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h1 class="govuk-heading-xl govuk-!-margin-top-5">{{title}}</h1>
+                    <p class="govuk-body-l">{{description}}</p>
+                    <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-6">
+                        <li><a href="/" class="govuk-link govuk-link--no-visited-state">Return to the homepage</a></li>
+                        <li><a href="/sitemap" class="govuk-link govuk-link--no-visited-state">View the sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %} 

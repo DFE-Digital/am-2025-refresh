@@ -8,7 +8,8 @@
   <a href="/audits-issues-statements" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to audits, issues and statements</a>
 
   
-  <ul class="dfe-vertical-nav__section {% if path == '/audits-issues-statements/audits' %} dfe-vertical-nav__section-item--current{% endif %}">
+  <ul class="dfe-vertical-nav__section">
+    <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits' %} dfe-vertical-nav__section-item--current{% endif %}">
       <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits">Accessibility audits</a>
       <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/audits' %}block{% else %}none{% endif %}">
         <li class="dfe-vertical-nav__section-item">
@@ -19,27 +20,24 @@
         </li> 
       </ul>
     </li>
-     <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits/get-an-audit' %} dfe-vertical-nav__section-item--current{% endif %}">
+    <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits/get-an-audit' %} dfe-vertical-nav__section-item--current{% endif %}">
       <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/get-an-audit">Get an audit</a>
       <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/audits/get-an-audit' %}block{% else %}none{% endif %}">
         <li class="dfe-vertical-nav__section-item">
           <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/get-an-audit#get-help-to-plan-and-organise-your-audit">Get help to plan and organise your audit</a>
         </li>
-
       </ul>
     </li>
-      </li>
-     <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits/after-an-audit' %} dfe-vertical-nav__section-item--current{% endif %}">
+    <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/audits/after-an-audit' %} dfe-vertical-nav__section-item--current{% endif %}">
       <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/after-an-audit">After an audit</a>
       <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/audits/after-an-audit' %}block{% else %}none{% endif %}">
-          <li class="dfe-vertical-nav__section-item">
+        <li class="dfe-vertical-nav__section-item">
           <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/after-an-audit#actions-as-a-team">Actions as a team</a>
         </li>
         <li class="dfe-vertical-nav__section-item">
           <a class="dfe-vertical-nav__link" href="/audits-issues-statements/audits/after-an-audit#before-your-service-goes-live">Before your service goes live</a>
         </li>
-
       </ul>
     </li>
-</ul>
+  </ul>
 </nav>

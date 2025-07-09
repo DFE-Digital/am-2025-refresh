@@ -4,13 +4,15 @@
 {% set path = "/audits-issues-statements/accessibility-statements/non-compliant" %}
 {% set title = "Non-compliant accessibility statement template" %}
 {% set description = "Statement template for a product or website which is non-compliant with WCAG (Web Content Accessibility Guidelines) Level AA." %}
-
+{% set dateModified = "2025-07-09" %}
 {% block content %}
 
     <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
+
+                    <span class="govuk-caption-xl">Audits, issues and statements</span>
                     <h1 class="govuk-heading-xl">{{title}}</h1>
                     <p class="govuk-body-l">{{description}}</p>
                 </div>
@@ -86,7 +88,7 @@
 
                                     <p class="govuk-body">
                                         <a href="https://mcmw.abilitynet.org.uk/" target="_blank"
-                                    rel="noopner noreferrer">AbilityNet</a> has advice on making your device easier to use if you have a
+                                    rel="noopener noreferrer">AbilityNet</a> has advice on making your device easier to use if you have a
                                 disability.</p>
 
                                     <h2 class="govuk-heading-l">How accessible this website is</h2>
@@ -122,7 +124,7 @@
                                     <p class="govuk-body">The Equality and Human Rights Commission (EHRC) is responsible for enforcing the
                                 Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the
                                 'accessibility regulations'). If you're not happy with how we respond to your complaint, <a
-                                    rel="noopner noreferrer" href="https://www.equalityadvisoryservice.com/" target="_blank">contact the
+                                    rel="noopener noreferrer" href="https://www.equalityadvisoryservice.com/" target="_blank">contact the
                                     Equality Advisory and Support Service (<abbr
                                         title="Equality Advisory and Support Service">EASS</abbr>)</a>.</p>
 
@@ -190,7 +192,7 @@
                                 </div>
                             </div>
                             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full-html" data-module="app-copy">
-                                <div class="code-block-container" style="position: relative;">
+                                <div class="code-block-container">
                                     <div class="copy-button-container">
                                         <span class="govuk-visually-hidden" aria-live="assertive"></span>
                                         <button class="app-copy-button">Copy code</button>
