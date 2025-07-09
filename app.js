@@ -12,42 +12,52 @@ const marked = require('marked');
 const govukMarkdown = require('govuk-markdown');
 const session = require('express-session');
 const csrf = require('csurf');
-const { removeFilter, findServiceName, formatDateFilter, findById, formatNumber, getFileMetadata } = require('./middleware/filters');
-
+const {
+    removeFilter,
+    findServiceName,
+    formatDateFilter,
+    findById,
+    formatNumber,
+    getFileMetadata,
+} = require('./middleware/filters');
 
 const app = express();
 
 // Configure Nunjucks
-const nunjuckEnv = nunjucks.configure([
-    'app/views',
-    'node_modules/govuk-frontend/dist/',
-    'node_modules/dfe-frontend/packages/components'
-], {
-    autoescape: true,
-    express: app,
-    watch: process.env.NODE_ENV === 'development',
-    noCache: process.env.NODE_ENV === 'development'
-});
+const nunjuckEnv = nunjucks.configure(
+    [
+        'app/views',
+        'node_modules/govuk-frontend/dist/',
+        'node_modules/dfe-frontend/packages/components',
+    ], {
+        autoescape: true,
+        express: app,
+        watch: process.env.NODE_ENV === 'development',
+        noCache: process.env.NODE_ENV === 'development',
+    }
+);
 
 // Configure compression with better settings
-app.use(compression({
-    level: 6, // Good balance between compression and CPU usage
-    threshold: 1024, // Only compress responses larger than 1KB
-    filter: (req, res) => {
-        // Don't compress if the client doesn't support it
-        if (req.headers['x-no-compression']) {
-            return false;
-        }
-        // Use compression for all other requests
-        return compression.filter(req, res);
-    }
-}));
+app.use(
+    compression({
+        level: 6, // Good balance between compression and CPU usage
+        threshold: 1024, // Only compress responses larger than 1KB
+        filter: (req, res) => {
+            // Don't compress if the client doesn't support it
+            if (req.headers['x-no-compression']) {
+                return false;
+            }
+            // Use compression for all other requests
+            return compression.filter(req, res);
+        },
+    })
+);
 
 // Serve static files with caching headers
 const staticOptions = {
     maxAge: '1y', // Cache static assets for 1 year
     etag: true,
-    lastModified: true
+    lastModified: true,
 };
 
 // Specific caching for consolidated files
@@ -55,24 +65,42 @@ const consolidatedOptions = {
     maxAge: '1y',
     etag: true,
     lastModified: true,
-    immutable: true // Add immutable flag for better caching
+    immutable: true, // Add immutable flag for better caching
 };
 
-app.use('/govuk', express.static(path.join(__dirname, 'node_modules/govuk-frontend/govuk/assets'), staticOptions));
-app.use('/dfe', express.static(path.join(__dirname, 'node_modules/dfe-frontend/dist'), staticOptions));
+app.use(
+    '/govuk',
+    express.static(
+        path.join(__dirname, 'node_modules/govuk-frontend/govuk/assets'),
+        staticOptions
+    )
+);
+app.use(
+    '/dfe',
+    express.static(path.join(__dirname, 'node_modules/dfe-frontend/dist'), staticOptions)
+);
 app.use('/public', express.static('app/public', staticOptions));
 app.use('/assets', express.static('app/public', staticOptions));
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules'), staticOptions));
 
 // Serve consolidated files with specific caching
-app.use('/public/css/consolidated.min.css', express.static('app/public/css/consolidated.min.css', consolidatedOptions));
-app.use('/public/js/consolidated.min.js', express.static('app/public/js/consolidated.min.js', consolidatedOptions));
+app.use(
+    '/public/css/consolidated.min.css',
+    express.static('app/public/css/consolidated.min.css', consolidatedOptions)
+);
+app.use(
+    '/public/js/consolidated.min.js',
+    express.static('app/public/js/consolidated.min.js', consolidatedOptions)
+);
 app.use(express.json());
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/favicon.ico', express.static(path.join(__dirname, 'public/assets/images/favicon.ico')));
+app.use(
+    '/favicon.ico',
+    express.static(path.join(__dirname, 'public/assets/images/favicon.ico'))
+);
 
 // Add date filter
 nunjuckEnv.addFilter('date', dateFilter);
@@ -106,22 +134,27 @@ nunjuckEnv.addFilter('tojson', function(obj) {
 });
 
 nunjuckEnv.addFilter('find', function(arr, opts) {
-    if (!Array.isArray(arr) || !opts || !opts.attribute || typeof opts.value === 'undefined') return null;
-    return arr.find(item => item[opts.attribute] == opts.value);
+    if (!Array.isArray(arr) ||
+        !opts ||
+        !opts.attribute ||
+        typeof opts.value === 'undefined'
+    )
+        return null;
+    return arr.find((item) => item[opts.attribute] == opts.value);
 });
 
 // Register marked and markdown libraries
-marked.use(govukMarkdown({
-    headingsStartWith: 'xl'
-}));
+marked.use(
+    govukMarkdown({
+        headingsStartWith: 'xl',
+    })
+);
 
 markdown.register(nunjuckEnv, marked.parse);
 
 // Set view engine
 app.set('view engine', 'html');
-app.set('views', [
-    path.join(__dirname, 'app/views')
-]);
+app.set('views', [path.join(__dirname, 'app/views')]);
 
 // Add security and performance headers
 app.use((req, res, next) => {
@@ -155,11 +188,13 @@ app.get('/robots.txt', function(req, res) {
 });
 
 // Just do basic session handling
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true
-}));
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+    })
+);
 
 // Add navigation items and DfE-specific variables to all responses
 app.use((req, res, next) => {

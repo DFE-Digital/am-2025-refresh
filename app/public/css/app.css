@@ -825,28 +825,6 @@
     .code-block-container {
         position: relative;
     }
-    /* Background utility classes */
-    
-    .govuk-!-background-colour-light-blue {
-        background-color: #F3FAFE;
-    }
-    
-    .govuk-!-background-colour-white {
-        background-color: #ffffff;
-    }
-    
-    .govuk-!-background-colour-dark-blue {
-        background-color: #003a69;
-    }
-    
-    .govuk-!-background-colour-light-grey {
-        background-color: #aecbdd;
-    }
-    /* Width utility classes */
-    
-    .govuk-!-width-15 {
-        width: 15%;
-    }
     /* Accessibility improvements */
     
     .govuk-visually-hidden {
@@ -905,5 +883,94 @@
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
+        }
+    }
+    /* Mobile Navigation Styles - Override DfE Frontend */
+    
+    .dfe-vertical-nav__mobile-container {
+        position: relative;
+    }
+    
+    .dfe-vertical-nav__toggle {
+        display: none !important;
+        /* Hidden by default on desktop - override DfE Frontend */
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 12px 16px !important;
+        background: #f8f9fa !important;
+        border: 1px solid #b1b4b6 !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+        transition: background-color 0.2s ease !important;
+        color: #0b0c0c !important;
+        min-height: auto !important;
+        margin-bottom: 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+        box-shadow: none !important;
+        gap: 0 !important;
+        font-size: 1rem !important;
+    }
+    
+    .dfe-vertical-nav__toggle:hover {
+        background: #e9ecef !important;
+        color: #0b0c0c !important;
+    }
+    
+    .dfe-vertical-nav__toggle:focus {
+        outline: 3px solid #ffdd00 !important;
+        outline-offset: 0 !important;
+        background: #e9ecef !important;
+        color: #0b0c0c !important;
+    }
+    
+    .dfe-vertical-nav__chevron {
+        width: 0 !important;
+        height: 0 !important;
+        border-left: 5px solid transparent !important;
+        border-right: 5px solid transparent !important;
+        border-top: 5px solid #0b0c0c !important;
+        transition: transform 0.2s ease !important;
+        font-size: inherit !important;
+        vertical-align: middle !important;
+        margin-right: 0 !important;
+        font-variation-settings: none !important;
+    }
+    
+    .dfe-vertical-nav__chevron--up {
+        transform: rotate(180deg) !important;
+    }
+    /* Mobile styles */
+    
+    @media (max-width: 800px) {
+        .dfe-vertical-nav__toggle {
+            display: flex !important;
+            /* Show toggle on mobile */
+        }
+        .dfe-vertical-nav__section {
+            display: none !important;
+            /* Hide navigation by default on mobile */
+        }
+        .dfe-vertical-nav__mobile-container--expanded .dfe-vertical-nav__section {
+            display: block !important;
+            /* Show when expanded */
+        }
+    }
+    /* Desktop styles */
+    
+    @media (min-width: 801px) {
+        .dfe-vertical-nav__toggle {
+            display: none !important;
+            /* Always hide on desktop */
+        }
+        .dfe-vertical-nav__section {
+            display: block !important;
+            /* Always show on desktop */
+        }
+        .dfe-vertical-nav__mobile-container--expanded {
+            /* Reset any mobile expansion styles on desktop */
         }
     }

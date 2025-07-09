@@ -10,7 +10,7 @@
       <a href="/professions" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to professions</a>
 
 
-    <ul class="dfe-vertical-nav__section" id="vertical-nav-list">
+    <ul class="dfe-vertical-nav__section">
         
        <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/professions/content-designers' %} dfe-vertical-nav__section-item--current{% endif %}">
         <a class="dfe-vertical-nav__link" href="/professions/content-designers">Content designers</a>
@@ -31,7 +31,7 @@
       </li>
     
       
-      <li class="dfe-vertical-nav__section-item{% if path == '/professions/product-managers' %} dfe-vertical-nav__section-item--current{% endif %}" >
+      <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/professions/product-managers' %} dfe-vertical-nav__section-item--current{% endif %}" >
         <a class="dfe-vertical-nav__link" href="/professions/product-managers">Product managers</a>
         <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/professions/product-managers' %}block{% else %}none{% endif %}">
           <li class="dfe-vertical-nav__section-item">
@@ -45,42 +45,3 @@
     </ul>
   </div>
 </nav>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var toggle = document.querySelector('.dfe-vertical-nav__toggle');
-  var navList = document.getElementById('vertical-nav-list');
-  var chevron = document.querySelector('.dfe-vertical-nav__chevron');
-  var container = document.querySelector('.dfe-vertical-nav__mobile-container');
-  if (toggle && navList && chevron && container) {
-    toggle.addEventListener('click', function() {
-      var expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', !expanded);
-      navList.style.display = expanded ? 'none' : 'block';
-      if (!expanded) {
-        chevron.classList.add('dfe-vertical-nav__chevron--up');
-        container.classList.add('dfe-vertical-nav__mobile-container--expanded');
-      } else {
-        chevron.classList.remove('dfe-vertical-nav__chevron--up');
-        container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
-      }
-    });
-    // Hide nav by default on mobile
-    function handleResize() {
-      if (window.innerWidth <= 800) {
-        navList.style.display = 'none';
-        toggle.setAttribute('aria-expanded', 'false');
-        chevron.classList.remove('dfe-vertical-nav__chevron--up');
-        container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
-        toggle.style.display = 'flex';
-      } else {
-        navList.style.display = 'block';
-        toggle.style.display = 'none';
-        container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
-        chevron.classList.remove('dfe-vertical-nav__chevron--up');
-      }
-    }
-    window.addEventListener('resize', handleResize);
-    handleResize();
-  }
-});
-</script>

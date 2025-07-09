@@ -25,6 +25,11 @@ jobs:
     - name: Build assets
       run: npm run build
     
+    - name: Check code formatting
+      run: |
+        echo "Checking code formatting..."
+        npm run format:check
+    
     - name: Check external links for rel attributes
       run: |
         echo "Checking external links for rel attributes..."
@@ -47,6 +52,11 @@ jobs:
       run: |
         echo "Running HTML validation..."
         npm run lint:html
+    
+    - name: JavaScript linting
+      run: |
+        echo "Running JavaScript linting..."
+        npm run lint:js
     
     - name: Check for typos
       run: |

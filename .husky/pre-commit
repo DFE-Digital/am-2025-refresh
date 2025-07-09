@@ -3,6 +3,10 @@
 
 echo "Running pre-commit checks..."
 
+# Check code formatting
+echo "Checking code formatting..."
+npm run format:check
+
 # Run HTML validation
 npm run lint:html
 

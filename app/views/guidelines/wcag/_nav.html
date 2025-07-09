@@ -1,26 +1,32 @@
-<nav class="dfe-vertical-nav " aria-labelledby="vertical-nav-heading">
-  <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
-    Pages in this section
-  </h2>
+<nav class="dfe-vertical-nav govuk-!-margin-top-2" aria-labelledby="vertical-nav-heading">
+  <div class="dfe-vertical-nav__mobile-container">
+    <button class="dfe-vertical-nav__toggle" aria-expanded="false" aria-controls="vertical-nav-list">
+      <span class="dfe-vertical-nav__toggle-text">
+        <strong>Pages in this section</strong>
+      </span>
+      <span class="dfe-vertical-nav__chevron" aria-hidden="true"></span>
+    </button>
+    <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
+      Pages in this section
+    </h2>
 
-  <a href="/guidelines" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to guidelines</a>
+    <a href="/guidelines" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to guidelines</a>
 
-  
-  <ul class="dfe-vertical-nav__section">
-   
-    <li class="dfe-vertical-nav__section-item{% if path == '/guidelines/wcag' %} dfe-vertical-nav__section-item--current{% endif %}">
-      <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag">WCAG</a>
-      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/guidelines/wcag' %}block{% else %}none{% endif %}">
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag#principles">Principles</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag#what-we-have-to-meet">What we have to meet</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag#declaring-compliance">Declaring compliance</a>
-        </li>        
-      </ul>
-    </li>
-  </ul>
+    <ul class="dfe-vertical-nav__section">
+      <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/guidelines/wcag' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag">WCAG</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/guidelines/wcag' %}block{% else %}none{% endif %}">
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag#principles">Principles</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag#what-we-have-to-meet">What we have to meet</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state" href="/guidelines/wcag#declaring-compliance">Declaring compliance</a>
+          </li>        
+        </ul>
+      </li>
+    </ul>
+  </div>
 </nav>
