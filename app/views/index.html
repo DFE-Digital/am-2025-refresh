@@ -7,15 +7,13 @@
 
 {% block content %}
     <!-- Hero Section -->
-    <section class="dfe-manual-hero dfe-manual-hero--modern">
+    <section class="dfe-manual-hero govuk-!-padding-top-5 govuk-!-padding-bottom-5">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <div class="dfe-manual-hero__content">
-                        <span class="govuk-caption-xl govuk-!-margin-bottom-2">Department for Education</span>
                         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{title}}</h1>
                         <p class="govuk-body-l">{{description}}</p>
-
                     </div>
                 </div>
                 <div class="govuk-grid-column-one-third">
@@ -27,48 +25,78 @@
         </div>
     </section>
 
-    <!-- Impact Calculator Section -->
     <section class="dfe-manual-section dfe-manual-section--light">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <h2 class="govuk-heading-l">Why accessibility matters</h2>
-                    <p class="govuk-body-l">Accessibility isn't just about compliance - it's about ensuring your service works for everyone.</p>
+
+                    <h2 class="govuk-heading-l">Popular pages</h2>
+
+                    <ul class="dfe-chevron-card__list">
+                        <li class="dfe-chevron-card">
+                            <div class="dfe-chevron-card__wrapper">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/audits-issues-statements/audits/get-an-audit">
+                                            Get an accessibility audit
+                                        </a>
+                                </h3>
+                                <p class="dfe-chevron-card__description govuk-body">Guidance on how to get an accessibility audit and the audit triage process.</p>
+                                <a class="dfe-chevron-card__link" href="/audits-issues-statements/audits/get-an-audit" aria-hidden="true" tabindex="-1">
+                                    <span class="govuk-visually-hidden">Get an accessibility audit</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dfe-chevron-card">
+                            <div class="dfe-chevron-card__wrapper">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/tools-testing">
+                                            Guidance for testing by disability or impairment
+                                        </a>
+                                </h3>
+                                <p class="dfe-chevron-card__description govuk-body">Understand the impact of different impairments and the tools you can use to help identify potential barriers to accessibility.</p>
+                                <a class="dfe-chevron-card__link" href="/tools-testing" aria-hidden="true" tabindex="-1">
+                                    <span class="govuk-visually-hidden">Get an accessibility audit</span>
+                                </a>
+                            </div>
+                        </li>
+                         <li class="dfe-chevron-card">
+                            <div class="dfe-chevron-card__wrapper">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="/standards">
+                                            Standards
+                                        </a>
+                                </h3>
+                                <p class="dfe-chevron-card__description govuk-body">The accessibility standards all products and services must meet in DfE.</p>
+                                <a class="dfe-chevron-card__link" href="/standards" aria-hidden="true" tabindex="-1">
+                                    <span class="govuk-visually-hidden">Standards</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Impact Calculator Section -->
+    <section class="dfe-manual-section dfe-manual-section--light govuk-!-padding-top-0">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-                    <div class="card-grid govuk-!-margin-bottom-6">
-                        <article class="card">
-                            <div class="card-content">
-                                <h3 class="card-title">Understand impact</h3>
-                                <p class="card-description">Find out why it's important to ensure our products and websites are accessible to everyone.</p>
-                                <a href="/" class="card-link govuk-link govuk-link--no-visited-state">Read more about the impact of poor accessibility</a>
-                            </div>
-                        </article>
-
-                        <article class="card">
-                            <div class="card-content">
-                                <h3 class="card-title">How to do your own testing</h3>
-                                <p class="card-description">Understand how to test for accessibility issues and the tools everyone can use to identify issues.</p>
-                                <a href="/" class="card-link govuk-link govuk-link--no-visited-state">Find tools and techniques for testing</a>
-                            </div>
-                        </article>
-
-                    </div>
-
-                    <div class="card">
+                    <div class="dfe-hmp-tool">
                         <div class="card-content">
-                            <h3 class="card-title govuk-heading-m">Disability impact calculator</h3>
+                            <h2 class="card-title govuk-heading-m">How many people?</h2>
                             <p class="card-description">Find out how many people have a disability or condition that might impact their ability to use your service.</p>
-                            
-                            <form action="/how-many-people" method="post">
-                                <div class="govuk-form-group">
+
+                            <form action="/app/how-many-people" method="post">
+                                <div class="govuk-form-group govuk-!-margin-bottom-2">
                                     <label class="govuk-label" for="how-many-people-input">
                                         Enter the number of people who use your service
                                     </label>
-                                    <div class="calculator-input-wrapper">
-                                        <input class="govuk-input govuk-input--width-10" id="how-many-people-input" name="how-many-people" type="number" inputmode="numeric" pattern="[0-9]*" placeholder="e.g. 10000" required>
-                                        <button class="govuk-button" data-module="govuk-button" type="submit">
+                                    <div class="calculator-input-wrapper govuk-!-margin-bottom-0">
+                                        <input class="govuk-input govuk-input--width-10" id="how-many-people-input" name="numberOfUsers" type="number" inputmode="numeric" pattern="[0-9]*" placeholder="e.g. 10000" required>
+                                        <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button" type="submit">
                                             Calculate
                                         </button>
                                     </div>
@@ -77,94 +105,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
-    <style>
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #d8dde0;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: #0b0c0c;
-            font-weight: 600;
-        }
-
-        .card-description {
-            color: #505a5f;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-
-        .card-link {
-            color: #1d70b8;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .card-link:hover {
-            text-decoration: underline;
-        }
-
-        .calculator-input-wrapper {
-            display: flex;
-            gap: 8px;
-            align-items: stretch;
-            margin-top: 16px;
-        }
-
-        .calculator-input-wrapper .govuk-input {
-            flex: 1;
-            min-width: 200px;
-            height: 40px;
-            padding: 5px 10px;
-            font-size: 16px;
-            border: 2px solid #0b0c0c;
-        }
-
-        .calculator-input-wrapper .govuk-button {
-            margin: 0;
-            padding: 8px 15px;
-            background-color: #00703c;
-            box-shadow: none;
-            font-size: 16px;
-            min-height: 40px;
-            min-width: auto;
-            border: none;
-        }
-
-        .calculator-input-wrapper .govuk-button:hover {
-            background-color: #005a30;
-        }
-    </style>
 
 {% endblock %}

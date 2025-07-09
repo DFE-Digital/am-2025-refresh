@@ -5,13 +5,12 @@
 {% set title = "Training" %}
 {% set description = "Training to help you understand accessibility and inclusive design." %}
 
-
 {% block content %}
 
     <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-               <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-grid-column-two-thirds">
                     <h1 class="govuk-heading-xl">{{title}}</h1>
                     <p class="govuk-body-l">{{description}}</p>
                 </div>
@@ -19,6 +18,132 @@
         </div>
     </section>
 
-     
-  
+    <section class="dfe-manual-section dfe-manual-section--light">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <h2 class="govuk-heading-l">Training developed by DfE</h2>
+
+                    <p class="govuk-body">DfE has developed training to help you understand accessibility and inclusive design. It is available for anyone inside and outside of DfE to use.</p>
+
+                    <div class="dfe-grid-container govuk-!-margin-top-2">
+
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h2 class="govuk-heading-s">
+                                    <a href="/training/basic" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Basic training</a>
+                                </h2>
+                                <p class="govuk-body">Basic training for anyone to get an understanding of accessibility and inclusive design.</p>
+                            </div>
+                        </div>
+                        <div class="dfe-card">
+                            <div class="dfe-card-container">
+                                <h2 class="govuk-heading-s">
+                                    <a href="/training/intermediate" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Intermediate training</a>
+                                </h2>
+                                <p class="govuk-body">From basic concepts to more complex areas of accessibility and inclusive design.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="dfe-manual-section dfe-manual-section--light govuk-!-padding-top-0">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <h2 class="govuk-heading-l">Other training resources</h2>
+
+                    <p class="govuk-body">Training resources available from other organisations.</p>
+
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption">Accessibility training resources</caption>
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-table__header">Course</th>
+                                <th class="govuk-table__header">Provider</th>
+                                <th class="govuk-table__header">Cost</th>
+                                <th class="govuk-table__header">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <!-- Free -->
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link" href="https://abilitynet.org.uk/training/introduction-digital-accessibility-free" class="govuk-link govuk-link--no-visited-state">Introduction to Digital Accessibility</a>
+                                </td>
+                                <td class="govuk-table__cell">AbilityNet</td>
+                                <td class="govuk-table__cell">Free</td>
+                                <td class="govuk-table__cell">Introductory webinar covering accessibility principles, the UK legal context, and WCAG basics.</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link" href="https://abilitynet.org.uk/training" class="govuk-link govuk-link--no-visited-state">Building a Disability-Inclusive Workplace</a>
+                                </td>
+                                <td class="govuk-table__cell">AbilityNet</td>
+                                <td class="govuk-table__cell">Free</td>
+                                <td class="govuk-table__cell">Webinars exploring accessibility and inclusive practices in UK workplaces and teams.</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link" href="https://www.makethingsaccessible.com/guides/accessibility-courses-and-certification/" class="govuk-link govuk-link--no-visited-state">Free Courses Guide</a>
+                                </td>
+                                <td class="govuk-table__cell">Make Things Accessible</td>
+                                <td class="govuk-table__cell">Free</td>
+                                <td class="govuk-table__cell">A curated list of free and practical accessibility courses for UK-based teams and public services.</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link" href="https://www.w3.org/WAI/courses/foundations-course/" class="govuk-link govuk-link--no-visited-state">Introduction to Web Accessibility</a>
+                                </td>
+                                <td class="govuk-table__cell">W3C</td>
+                                <td class="govuk-table__cell">Free</td>
+                                <td class="govuk-table__cell">Self-paced course covering WCAG, user needs, and roles in making content accessible.</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link" href="https://learn.microsoft.com/en-us/training/paths/accessibility-fundamental/" class="govuk-link govuk-link--no-visited-state">Accessibility Fundamentals</a>
+                                </td>
+                                <td class="govuk-table__cell">Microsoft Learn</td>
+                                <td class="govuk-table__cell">Free</td>
+                                <td class="govuk-table__cell">Foundational training on digital accessibility and inclusive content for digital services.</td>
+                            </tr>
+
+                            <!-- Low-cost / Paid -->
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <a class="govuk-link" href="https://dequeuniversity.com" class="govuk-link govuk-link--no-visited-state">Deque University</a>
+                                </td>
+                                <td class="govuk-table__cell">Deque Systems</td>
+                                <td class="govuk-table__cell">From £36/year</td>
+                                <td class="govuk-table__cell">Online courses for developers, designers, and testers. Free for disabled learners.</td>
+                            </tr>
+                          
+                           
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                        <a class="govuk-link" href="https://www.gov.uk/guidance/guidance-and-tools-for-digital-accessibility" class="govuk-link govuk-link--no-visited-state">Accessibility guidance and tools</a>
+                                </td>
+                                <td class="govuk-table__cell">GOV.UK / GDS</td>
+                                <td class="govuk-table__cell">Free</td>
+                                <td class="govuk-table__cell">Guidance and links to tools and resources to meet accessibility regulations in the UK public sector.</td>
+                            </tr>
+                         
+                        </tbody>
+                    </table>
+
+                    <p class="govuk-body">There is also a <a href="https://www.makethingsaccessible.com/guides/accessibility-courses-and-certification/" class="govuk-link govuk-link--no-visited-state">comprehensive list of accessibility training resources</a> from <a href="https://www.makethingsaccessible.com/" class="govuk-link govuk-link--no-visited-state">Make Things Accessible</a>.</p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 {% endblock %}

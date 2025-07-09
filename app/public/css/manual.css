@@ -1,6 +1,5 @@
 @import "./root.css";
 @import "./app-subnav.css";
-
 .dfe-manual-viewed-list {
     list-style: none;
     padding: 0;
@@ -96,7 +95,6 @@
 }
 
 @media(min-width: 40.0625em) {
-
     .dfe-manual-action-link--with-subtext .dfe-manual-action-link__link-wrapper,
     .dfe-manual-action-link--with-subtext .dfe-manual-action-link__subtext-wrapper {
         display: table-cell;
@@ -145,7 +143,6 @@
         position: relative;
         padding-left: 20px
     }
-
     .dfe-manual-action-link__subtext::before {
         content: "";
         position: absolute;
@@ -238,12 +235,10 @@
     .dfe-manual-action-link * {
         color: #000 !important
     }
-
     .dfe-manual-action-link::before {
         display: none
     }
 }
-
 
 .dfe-manual--section {
     background-color: var(--white);
@@ -253,7 +248,6 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
-
 
 .dfe-manual-feature-panel {
     background-color: var(--modern-bg-blue);
@@ -265,9 +259,6 @@
 .dfe-manual-feature-panel h2 {
     margin-bottom: 1rem;
 }
-
-
-
 
 .dfe-manual-feature-panel .material-symbols-outlined {
     display: inline-flex;
@@ -296,19 +287,12 @@
     box-shadow: 0 2px 0 var(--modern-black);
 }
 
-
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined' !important;
-    font-variation-settings:
-        'FILL'0,
-        'wght'400,
-        'GRAD'0,
-        'opsz'48;
+    font-variation-settings: 'FILL'0, 'wght'400, 'GRAD'0, 'opsz'48;
     font-size: 2rem;
     font-weight: 400;
 }
-
-
 
 
 /* HOW MANY PEOPLE */
@@ -319,7 +303,6 @@
     border-radius: var(--modern-card-radius-small);
     box-shadow: 0 4px 32px rgba(37, 99, 235, 0.06);
 }
-
 
 .how-many-form-card {
     background: #fff;
@@ -378,7 +361,6 @@
     .how-many-modern .govuk-grid-row {
         flex-direction: column;
     }
-
     .how-many-form-card {
         margin-top: 2rem;
         padding: 1.5rem 1rem;
@@ -488,7 +470,6 @@
         gap: 2rem;
         align-items: stretch;
     }
-
     .how-many-modern-right {
         justify-content: flex-start;
     }
@@ -734,11 +715,9 @@ body {
     .stem-hero-title {
         font-size: 2.2rem;
     }
-
     .stem-hero-lead {
         font-size: 1.1rem;
     }
-
     .stem-metrics-row,
     .stem-features-inner,
     .stem-training-cards {
@@ -851,17 +830,14 @@ body {
 }
 
 @media (max-width: 900px) {
-
     .popular-links,
     .feature-cards {
         flex-direction: column;
         gap: 1.5rem;
     }
-
     .hero-title {
         font-size: 2.2rem;
     }
-
     .hero-lead {
         font-size: 1.1rem;
     }
@@ -1088,13 +1064,11 @@ body {
 }
 
 @media (max-width: 900px) {
-
     .stem-hero-left-title,
     .stem-hero-left-lead,
     .stem-training-title-left {
         text-align: left;
     }
-
     .stem-metrics-row-left,
     .stem-features-inner-left,
     .stem-training-cards-left {
@@ -1140,7 +1114,6 @@ body {
     padding-top: 0;
 }
 
-
 .dfe-manual-section .dfe-card .dfe-card-container p {
     font-size: 1rem;
     margin-bottom: 0;
@@ -1150,14 +1123,14 @@ body {
     .dfe-manual-section {
         padding-top: 1rem;
     }
-
     .dfe-manual-section.dfe-manual-section--header {
         padding: 1rem 0 1rem 0;
     }
-
 }
 
+
 /* Mobile nav toggle styles */
+
 .dfe-vertical-nav__toggle {
     font-size: 1rem;
     border: none;
@@ -1248,8 +1221,6 @@ body {
     background-color: var(--modern-blue-light);
     padding: 1rem 0;
 }
-
-
 
 .dfe-manual-section--meta p {
     margin-bottom: 0;
@@ -1374,13 +1345,11 @@ body {
         flex-direction: column;
         min-height: 0;
     }
-
     .dfe-manual--cta-panel__icon {
         justify-content: flex-start;
         padding: 1.5rem 1.5rem 0.5rem 1.5rem;
         min-width: 0;
     }
-
     .dfe-manual--cta-panel__content {
         padding: 1.5rem;
     }
@@ -1485,19 +1454,16 @@ body {
         align-items: flex-start;
         padding: 1.2rem 0.7rem;
     }
-
     .dfe-manual--cta-panel__svg {
         min-width: 0;
         width: 100%;
         justify-content: center;
         margin-top: 1.2rem;
     }
-
     .dfe-manual--cta-svg-icon {
         right: 0.7rem;
         bottom: 0.7rem;
     }
-
     .dfe-manual--cta-bg-svg {
         width: 90px;
         height: 90px;
@@ -1581,12 +1547,10 @@ body {
         border-radius: 1rem;
         min-height: 0;
     }
-
     .dfe-manual--cta-panel__row {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .dfe-manual--cta-bg-svg-demo {
         width: 120px;
         height: 120px;
@@ -1679,11 +1643,9 @@ body {
         padding: 1.5rem 0.7rem;
         min-height: 0;
     }
-
     .dfe-manual--cta-panel__main {
         max-width: 100%;
     }
-
     .dfe-manual--cta-bg-svg-obvious {
         width: 120px;
         height: 120px;
@@ -1720,6 +1682,8 @@ body {
 
 
 /* Compact table */
+
+
 /* all cells to be 1rem */
 
 .govuk-table--compact .govuk-table__header,
@@ -1732,7 +1696,9 @@ body {
     padding: 0.5rem 0.75rem;
 }
 
+
 /* Modern Calculator and Stats Styling */
+
 .dfe-manual-calculator {
     margin-bottom: 0;
 }
@@ -1829,7 +1795,9 @@ body {
     font-size: 16px;
 }
 
+
 /* Modern Stats Section */
+
 .dfe-manual-stats--modern .dfe-manual-stats__item {
     background: #ffffff;
     border-radius: 0;
@@ -1893,7 +1861,9 @@ body {
     font-style: normal;
 }
 
+
 /* Enhanced Calculator Card */
+
 .dfe-manual-card--calculator {
     background: white;
     border: 1px solid #d8dde0;
@@ -1914,24 +1884,26 @@ body {
     border-left: none;
 }
 
+
 /* Responsive adjustments */
+
 @media (max-width: 48.0525em) {
     .dfe-manual-calculator__input-wrapper {
         flex-direction: column;
         align-items: stretch;
     }
-
     .dfe-manual-calculator__input {
         min-width: auto;
     }
-
     .dfe-manual-calculator__button {
         min-width: auto;
         width: 100%;
     }
 }
 
+
 /* Content Cards */
+
 .dfe-manual-card {
     background: white;
     border: 1px solid #d8dde0;
@@ -2003,6 +1975,7 @@ body {
 
 
 /* Sticky Element */
+
 .sticky {
     position: sticky;
     top: 20px;
@@ -2014,29 +1987,113 @@ body {
         position: relative;
     }
 }
-.screenshot{width:100%; padding: 15px; border: 1px solid #d8dde0; border-radius: 2px;}
-code{ background-color: #f8f8f8; padding: 2px 4px; border-radius: 2px; color: #cc0000;}
+
+.screenshot {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d8dde0;
+    border-radius: 2px;
+}
+
+code {
+    background-color: #f8f8f8;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #cc0000;
+}
+
 .dfe-panel-do,
 .dfe-panel-dont {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .dfe-panel-do img,
 .dfe-panel-dont img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .dfe-panel-do {
-  background-color: rgba(74, 195, 128, 0.2);
-  padding: 20px;
-  border-top: 8px solid rgba(0, 130, 59, 1);
+    background-color: rgba(74, 195, 128, 0.2);
+    padding: 20px;
+    border-top: 8px solid rgba(0, 130, 59, 1);
 }
 
 .dfe-panel-dont {
-  background-color: rgba(207, 93, 104, 0.2);
-  padding: 20px;
-  border-top: 8px solid rgba(177, 14, 30, 1);
+    background-color: rgba(207, 93, 104, 0.2);
+    padding: 20px;
+    border-top: 8px solid rgba(177, 14, 30, 1);
+}
+
+.dfe-chevron-card__list {
+    list-style: none;
+    margin: 0 -15px;
+    padding: 0
+}
+
+.dfe-chevron-card {
+    border-top: 1px solid #b1b4b6;
+    margin: 0 15px;
+    padding: 5px 0 20px 0
+}
+
+.dfe-chevron-card:first-child {
+    border-top: none;
+    padding-top: 0
+}
+
+.dfe-chevron-card:first-child .chevron-card__wrapper {
+    padding-top: 0
+}
+
+.dfe-chevron-card__wrapper {
+    padding: 19px 0 4px;
+    position: relative
+}
+
+@media (max-width: 40.0525em) {
+    .dfe-chevron-card__wrapper .govuk-heading-s,
+    .dfe-chevron-card__wrapper .dfe-chevron-card__description {
+        font-size: 19px;
+    }
+}
+
+.dfe-chevron-card__description {
+    margin: 0 30px 0 0
+}
+
+.dfe-chevron-card__link::after {
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.dfe-chevron-card__link::before {
+    border-right: 4px solid #347ca9;
+    border-top: 4px solid #347ca9;
+    content: "";
+    display: block;
+    height: 12px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: 5px;
+    -webkit-transform: translateY(0) rotate(45deg) scale(1);
+    -ms-transform: translateY(0) rotate(45deg) scale(1);
+    transform: translateY(0) rotate(45deg) scale(1);
+    width: 12px
+}
+
+.dfe-chevron-card__link:hover::before {
+    border-color: #003078
+}
+
+.dfe-chevron-card__link:focus::before {
+    border-color: #0b0c0c
 }

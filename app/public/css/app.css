@@ -1,338 +1,791 @@
-@import "./root.css";
-
-/* Importing font */
-@import url('https://rsms.me/inter/inter.css');
-
-/* Global styles */
-p,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-span,
-div,
-button,
-input,
-textarea,
-select,
-option,
-label,
-legend,
-fieldset,
-table,
-tr,
-td,
-th,
-tbody,
-thead,
-tfoot,
-caption,
-form,
-fieldset,
-legend,
-label,
-input,
-textarea,
-select,
-option,
-button,
-a,
-span,
-div {
-    font-family: 'Inter', sans-serif !important;
-}
-
-.govuk-header__link .govuk-header__logotype {
-    height: 30px;
-}
-
-.govuk-header__link:focus .govuk-header__logotype {
-    content: url(/public/images/department-for-education_black.png);
-    height: 30px;
-}
-
-
-
-@media (min-width: 40.0625em) {
-  .govuk-template--rebranded .govuk-service-navigation__service-name {
-        padding-bottom: 0;
+    @import "./root.css";
+    /* Importing font */
+    
+    @import url("https://rsms.me/inter/inter.css");
+    /* Global styles */
+    
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    span,
+    div,
+    button,
+    input,
+    textarea,
+    select,
+    option,
+    label,
+    legend,
+    fieldset,
+    table,
+    tr,
+    td,
+    th,
+    tbody,
+    thead,
+    tfoot,
+    caption,
+    form,
+    fieldset,
+    legend,
+    label,
+    input,
+    textarea,
+    select,
+    option,
+    button,
+    a,
+    span,
+    div {
+        font-family: "Inter", sans-serif !important;
     }
-}
-
-
-.dfe-feedback{
-    background-color: var(--modern-blue-light);
-    border-top: 1px solid var(--modern-blue);
-    padding: 20px 0;
-
-}
-
-.dfe-feedback-banner--flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem; /* Adds spacing between elements */
-}
-
-.dfe-feedback-banner--flex h2 {
-    margin: 0; /* Remove default margins for better alignment */
-    flex-grow: 1; /* Allows text to take available space */
-}
-
-.dfe-feedback-banner--flex button {
-margin-bottom:0px;
-background-color: var(--modern-blue);
-}
-
-.dfe-feedback-banner--flex button:hover {
-background-color: var(--modern-blue-dark);
-}
-
-
-
-.dfe-feedback-banner .govuk-button--secondary {
-    background-color: #ffffff;
-}
-
-@media screen and (max-width: 40.0625em) {
+    
+    .govuk-header__link .govuk-header__logotype {
+        height: 30px;
+    }
+    
+    .govuk-header__link:focus .govuk-header__logotype {
+        content: url(/public/images/department-for-education_black.png);
+        height: 30px;
+    }
+    /* How Many People Tool Section */
+    
+    .dfe-hmp-tool {
+        background: #ffffff;
+    }
+    
+    .dfe-hmp-tool .govuk-form-group {
+        margin-bottom: 2rem;
+    }
+    
+    .dfe-hmp-tool .govuk-label {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .dfe-hmp-tool .govuk-input {
+        transition: border-color 0.2s ease;
+    }
+    
+    .dfe-hmp-tool .govuk-input:hover {
+        border-color: #0b0c0c;
+    }
+    
+    .dfe-hmp-tool .govuk-input:focus {
+        border-color: #0b0c0c;
+        box-shadow: 0 0 0 3px #ffdd00;
+        outline: none;
+    }
+    
+    .dfe-hmp-tool .govuk-button {
+        background-color: #00703c;
+        box-shadow: 0 2px 0 #002d18;
+    }
+    
+    .dfe-hmp-tool .govuk-button:hover {
+        background-color: #005a30;
+    }
+    /* Share Section Styling */
+    
+    .dfe-hmp-share-section {
+        background: #f8f8f8;
+        border: 1px solid #b1b4b6;
+        border-radius: 4px;
+        padding: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .dfe-hmp-share-section h3 {
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+    
+    .dfe-hmp-share-section p {
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+    /* Copy Button Styling */
+    
+    .dfe-copy-button {
+        background-color: #ffffff;
+        color: #0b0c0c;
+        border: 2px solid #0b0c0c;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .dfe-copy-button:hover {
+        background-color: #0b0c0c;
+        color: #ffffff;
+    }
+    
+    .dfe-copy-button:active {
+        transform: translateY(1px);
+    }
+    
+    .dfe-copy-button:focus {
+        outline: 3px solid #ffdd00;
+        outline-offset: 0;
+    }
+    
+    .dfe-copy-button--success {
+        background-color: #00703c !important;
+        color: #ffffff !important;
+        border-color: #00703c !important;
+        animation: copySuccess 0.6s ease;
+    }
+    
+    .dfe-copy-button--error {
+        background-color: #d4351c !important;
+        color: #ffffff !important;
+        border-color: #d4351c !important;
+        animation: copyError 0.6s ease;
+    }
+    
+    @keyframes copySuccess {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes copyError {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(-3px);
+        }
+        75% {
+            transform: translateX(3px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    
+    @media (min-width: 40.0625em) {
+        .govuk-template--rebranded .govuk-service-navigation__service-name {
+            padding-bottom: 0;
+        }
+    }
+    
+    .dfe-feedback {
+        background-color: var(--modern-blue-light);
+        border-top: 1px solid var(--modern-blue);
+        padding: 20px 0;
+    }
+    
     .dfe-feedback-banner--flex {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        /* Adds spacing between elements */
     }
-
+    
+    .dfe-feedback-banner--flex h2 {
+        margin: 0;
+        /* Remove default margins for better alignment */
+        flex-grow: 1;
+        /* Allows text to take available space */
+    }
+    
     .dfe-feedback-banner--flex button {
-        width: 100%;
+        margin-bottom: 0px;
+        background-color: var(--modern-blue);
     }
-}
-
-.dfe-manual-hero{
-    background-color:#ffffff;
-    border-bottom: 1px solid var(--modern-border-grey);
-}
-
-.dfe-manual-hero.dfe-manual-hero--homepage{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.dfe-manual-hero .dfe-manual-hero--homepage-title{
-    color: var(--modern-blue-dark);
-    font-size: 3rem;
-    margin-bottom: 2rem;
-} 
-
-
-@media screen and (max-width: 40.0625em) {
-    .dfe-manual-hero .dfe-manual-hero--homepage-title{
-        font-size: 2rem;
+    
+    .dfe-feedback-banner--flex button:hover {
+        background-color: var(--modern-blue-dark);
     }
-}
-
-.dfe-manual-hero.dfe-manual-hero--content-page{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-/* Tools Section - Modern CTA */
-.tools-section {
-    background: linear-gradient(135deg, var(--modern-blue-light) 0%, #ffffff 100%);
-    padding: 4rem 0;
-    margin-top: 3rem;
-}
-
-.tools-section .dfe-custom-card {
-    max-width: 600px;
-    margin: 0;
-}
-
-.tools-section .dfe-custom-card-title {
-    color: var(--modern-blue-dark);
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    line-height: 1.3;
-}
-
-.tools-section .govuk-form-group {
-    margin-bottom: 0;
-}
-
-.tools-section .govuk-label {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--modern-blue-dark);
-    margin-bottom: 0.75rem;
-    display: block;
-}
-
-.tools-section .govuk-input {
-    height: 3.5rem;
-    font-size: 1.25rem;
-    border: 2px solid var(--modern-border-grey);
-    border-radius: 4px;
-    padding: 0 1rem;
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 1.5rem;
-    transition: all 0.2s ease;
-}
-
-.tools-section .govuk-input:hover {
-    border-color: var(--modern-blue);
-}
-
-.tools-section .govuk-input:focus {
-    border-color: var(--modern-blue);
-    box-shadow: 0 0 0 4px rgba(29, 112, 184, 0.1);
-    outline: none;
-}
-
-.tools-section .govuk-button {
-    font-size: 1.25rem;
-    padding: 0.75rem 2.5rem;
-    background-color: var(--modern-blue);
-    box-shadow: 0 2px 4px rgba(29, 112, 184, 0.2);
-    transition: all 0.2s ease;
-}
-
-.tools-section .govuk-button:hover {
-    background-color: var(--modern-blue-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(29, 112, 184, 0.3);
-}
-
-.tools-section .govuk-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(29, 112, 184, 0.2);
-}
-
-@media (max-width: 48.0525em) {
+    
+    .dfe-feedback-banner .govuk-button--secondary {
+        background-color: #ffffff;
+    }
+    
+    @media screen and (max-width: 40.0625em) {
+        .dfe-feedback-banner--flex {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .dfe-feedback-banner--flex button {
+            width: 100%;
+        }
+    }
+    
+    .dfe-manual-hero {
+        background-color: #ffffff;
+        border-bottom: 1px solid var(--modern-border-grey);
+    }
+    
+    .dfe-manual-hero.dfe-manual-hero--homepage {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .dfe-manual-hero .dfe-manual-hero--homepage-title {
+        color: var(--modern-blue-dark);
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    @media screen and (max-width: 40.0625em) {
+        .dfe-manual-hero .dfe-manual-hero--homepage-title {
+            font-size: 2rem;
+        }
+    }
+    
+    .dfe-manual-hero.dfe-manual-hero--content-page {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    /* Tools Section - Modern CTA */
+    
     .tools-section {
-        padding: 3rem 0;
+        background: linear-gradient( 135deg, var(--modern-blue-light) 0%, #ffffff 100%);
+        padding: 4rem 0;
+        margin-top: 3rem;
     }
-
+    
+    .tools-section .dfe-custom-card {
+        max-width: 600px;
+        margin: 0;
+    }
+    
     .tools-section .dfe-custom-card-title {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+        color: var(--modern-blue-dark);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        line-height: 1.3;
     }
-
+    
+    .tools-section .govuk-form-group {
+        margin-bottom: 0;
+    }
+    
     .tools-section .govuk-label {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--modern-blue-dark);
+        margin-bottom: 0.75rem;
+        display: block;
     }
-
+    
     .tools-section .govuk-input {
-        height: 3rem;
-        font-size: 1.125rem;
-        max-width: 100%;
-    }
-
-    .tools-section .govuk-button {
+        height: 3.5rem;
+        font-size: 1.25rem;
+        border: 2px solid var(--modern-border-grey);
+        border-radius: 4px;
+        padding: 0 1rem;
         width: 100%;
         max-width: 400px;
-        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.2s ease;
     }
-}
-
-/* Tools Section - Modern CTA */
-.tools-section--cta {
-  background: linear-gradient(90deg, #ff8800 60%, #fff4e0 100%);
-  position: relative;
-  padding: 4rem 0 4rem 0;
-  margin: 3rem 0;
-  overflow: hidden;
-}
-
-.cta-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  padding-left: 2rem;
-}
-
-.cta-title {
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: 1rem;
-  letter-spacing: -1px;
-}
-
-.cta-subtitle {
-  color: #ffe2b8;
-  font-size: 1.15rem;
-  margin-bottom: 2.5rem;
-  max-width: 420px;
-}
-
-.cta-actions {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  background: #111;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 1rem 2.5rem 1rem 2rem;
-  border-radius: 2rem;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-  text-decoration: none;
-  position: relative;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-  overflow: hidden;
-}
-
-.cta-btn::after {
-  content: '';
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: radial-gradient(circle at 60% 40%, #fff, #bbb 70%, transparent 100%);
-  border-radius: 50%;
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.7;
-}
-
-.cta-btn:hover {
-  background: #333;
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-}
-
-.cta-bg-art {
-  position: absolute;
-  right: -20vw;
-  top: 50%;
-  width: 60vw;
-  height: 120%;
-  background: radial-gradient(circle, #fff4e0 0%, #ff8800 80%);
-  opacity: 0.5;
-  z-index: 1;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-@media (max-width: 700px) {
-  .cta-content {
-    padding-left: 0;
-    max-width: 100%;
-  }
-  .cta-title {
-    font-size: 2rem;
-  }
-  .cta-actions {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
+    
+    .tools-section .govuk-input:hover {
+        border-color: var(--modern-blue);
+    }
+    
+    .tools-section .govuk-input:focus {
+        border-color: var(--modern-blue);
+        box-shadow: 0 0 0 4px rgba(29, 112, 184, 0.1);
+        outline: none;
+    }
+    
+    .tools-section .govuk-button {
+        font-size: 1.25rem;
+        padding: 0.75rem 2.5rem;
+        background-color: var(--modern-blue);
+        box-shadow: 0 2px 4px rgba(29, 112, 184, 0.2);
+        transition: all 0.2s ease;
+    }
+    
+    .tools-section .govuk-button:hover {
+        background-color: var(--modern-blue-dark);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(29, 112, 184, 0.3);
+    }
+    
+    .tools-section .govuk-button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(29, 112, 184, 0.2);
+    }
+    
+    @media (max-width: 48.0525em) {
+        .tools-section {
+            padding: 3rem 0;
+        }
+        .tools-section .dfe-custom-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tools-section .govuk-label {
+            font-size: 1.125rem;
+        }
+        .tools-section .govuk-input {
+            height: 3rem;
+            font-size: 1.125rem;
+            max-width: 100%;
+        }
+        .tools-section .govuk-button {
+            width: 100%;
+            max-width: 400px;
+            font-size: 1.125rem;
+        }
+    }
+    /* Tools Section - Modern CTA */
+    
+    .tools-section--cta {
+        background: linear-gradient(90deg, #ff8800 60%, #fff4e0 100%);
+        position: relative;
+        padding: 4rem 0 4rem 0;
+        margin: 3rem 0;
+        overflow: hidden;
+    }
+    
+    .cta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+        padding-left: 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #fff;
+        margin-bottom: 1rem;
+        letter-spacing: -1px;
+    }
+    
+    .cta-subtitle {
+        color: #ffe2b8;
+        font-size: 1.15rem;
+        margin-bottom: 2.5rem;
+        max-width: 420px;
+    }
+    
+    .cta-actions {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        background: #111;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 1rem 2.5rem 1rem 2rem;
+        border-radius: 2rem;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        position: relative;
+        transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        overflow: hidden;
+    }
+    
+    .cta-btn::after {
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: radial-gradient( circle at 60% 40%, #fff, #bbb 70%, transparent 100%);
+        border-radius: 50%;
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.7;
+    }
+    
+    .cta-btn:hover {
+        background: #333;
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    }
+    
+    .cta-bg-art {
+        position: absolute;
+        right: -20vw;
+        top: 50%;
+        width: 60vw;
+        height: 120%;
+        background: radial-gradient(circle, #fff4e0 0%, #ff8800 80%);
+        opacity: 0.5;
+        z-index: 1;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+    
+    @media (max-width: 700px) {
+        .cta-content {
+            padding-left: 0;
+            max-width: 100%;
+        }
+        .cta-title {
+            font-size: 2rem;
+        }
+        .cta-actions {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+    
+    .dfe-hmp-tool {
+        border: 1px solid #8eb8dc;
+        padding: 20px;
+        border-radius: 2px;
+        background-color: #f4f8fb;
+    }
+    /* WCAG Explorer Styles */
+    
+    .dfe-wcag-filters {
+        background: #f8f9fa;
+        border: 1px solid #b1b4b6;
+        border-radius: 4px;
+        padding: 1.5rem;
+        position: sticky;
+        top: 2rem;
+    }
+    
+    .dfe-wcag-filters h2 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .dfe-wcag-filters .govuk-body-s {
+        margin-bottom: 1.5rem;
+        color: #505a5f;
+    }
+    
+    .dfe-wcag-filters .govuk-form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .dfe-wcag-filters .govuk-fieldset__legend {
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+    }
+    
+    .dfe-wcag-filters .govuk-checkboxes__item {
+        margin-bottom: 0.5rem;
+    }
+    
+    .dfe-wcag-filters .govuk-checkboxes__label {
+        font-size: 0.875rem;
+        line-height: 1.4;
+    }
+    
+    .dfe-wcag-filters .govuk-button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .dfe-wcag-stats {
+        background: #ffffff;
+        border: 1px solid #b1b4b6;
+        border-radius: 4px;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .dfe-wcag-stats h3 {
+        margin: 0;
+        color: #0b0c0c;
+    }
+    
+    .dfe-wcag-principles {
+        margin-bottom: 3rem;
+    }
+    
+    .dfe-wcag-principles h2 {
+        color: #0b0c0c;
+        border-bottom: 2px solid #00703c;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .dfe-wcag-criteria-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: #ffffff;
+        border: 1px solid #b1b4b6;
+        border-radius: 4px;
+    }
+    
+    .dfe-wcag-criteria-section h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #0b0c0c;
+        font-weight: 600;
+    }
+    
+    .dfe-wcag-criterion {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-left: 4px solid #00703c;
+        border-radius: 0 4px 4px 0;
+        transition: all 0.2s ease;
+    }
+    
+    .dfe-wcag-criterion:hover {
+        background: #f1f3f4;
+        transform: translateX(2px);
+    }
+    
+    .dfe-wcag-criterion:last-child {
+        margin-bottom: 0;
+    }
+    
+    .dfe-wcag-criterion h4 {
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .dfe-wcag-criterion h4 a {
+        color: #00703c;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .dfe-wcag-criterion h4 a:hover {
+        text-decoration: underline;
+    }
+    
+    .dfe-wcag-criterion .govuk-body-s {
+        margin: 0;
+        color: #505a5f;
+        line-height: 1.4;
+    }
+    /* Filter states */
+    
+    .dfe-wcag-criterion.hidden {
+        display: none !important;
+    }
+    
+    .dfe-wcag-criteria-section.hidden {
+        display: none !important;
+    }
+    /* Level indicators */
+    
+    .dfe-wcag-criterion[data-level="a"] {
+        border-left-color: #d4351c;
+    }
+    
+    .dfe-wcag-criterion[data-level="aa"] {
+        border-left-color: #f47738;
+    }
+    /* Responsive design */
+    
+    @media (max-width: 48.0625em) {
+        .dfe-wcag-filters {
+            position: static;
+            margin-bottom: 2rem;
+        }
+        .dfe-wcag-criteria-section {
+            padding: 1rem;
+        }
+        .dfe-wcag-criterion {
+            padding: 0.75rem;
+        }
+    }
+    /* Animation for filtering */
+    
+    .dfe-wcag-criterion {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .dfe-wcag-criterion.hidden {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    /* Theme tags */
+    
+    .dfe-wcag-criterion .govuk-tag {
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--forms {
+        background-color: #00703c;
+        color: #ffffff;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--contrast {
+        background-color: #d4351c;
+        color: #ffffff;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--images {
+        background-color: #1d70b8;
+        color: #ffffff;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--cognitive {
+        background-color: #f47738;
+        color: #0b0c0c;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--motor {
+        background-color: #912b88;
+        color: #ffffff;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--audio {
+        background-color: #0b0c0c;
+        color: #ffffff;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--navigation {
+        background-color: #00703c;
+        color: #ffffff;
+    }
+    
+    .dfe-wcag-criterion .govuk-tag--keyboard {
+        background-color: #d4351c;
+        color: #ffffff;
+    }
+    /* Simple HTML code formatting for accessibility statements */
+    
+    .code-example pre {
+        background: #f8f9fa;
+        border: 1px solid #b1b4b6;
+        border-radius: 4px;
+        margin: 0;
+        padding: 16px;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        font-size: 13px;
+        line-height: 1.4;
+        overflow-x: auto;
+        position: relative;
+    }
+    
+    .code-example code {
+        background: transparent;
+        border: none;
+        padding: 0;
+        color: #0b0c0c;
+        font-family: inherit;
+        font-size: inherit;
+    }
+    
+    .code-example .copy-button-container {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 10;
+    }
+    
+    .code-example .app-copy-button {
+        background: #00703c;
+        color: #ffffff;
+        border: 1px solid #00703c;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 11px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .code-example .app-copy-button:hover {
+        background: #00703c;
+        color: #ffffff;
+    }
+    
+    .code-example .app-copy-button:focus {
+        border-color: #fd0;
+        color: #0b0c0c;
+        background-color: #fd0;
+        box-shadow: 0 2px 0 #0b0c0c;
+    }
+    
+    .code-example .app-copy-button--success {
+        background: #00703c;
+        color: #ffffff;
+    }
+    
+    .code-example .app-copy-button--error {
+        background: #d4351c;
+        color: #ffffff;
+        border-color: #d4351c;
+    }
+    /* Example content styling */
+    
+    .code-example .example-content {
+        background: #ffffff;
+        padding: 20px;
+        border-bottom: 1px solid #b1b4b6;
+    }
+    
+    .code-example .example-content h1,
+    .code-example .example-content h2,
+    .code-example .example-content h3,
+    .code-example .example-content h4 {
+        color: #0b0c0c;
+        margin-top: 0;
+    }
+    
+    .code-example .example-content h1 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    
+    .code-example .example-content h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        margin-top: 24px;
+    }
+    
+    .code-example .example-content h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+    
+    .code-example .example-content h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        margin-top: 16px;
+    }
+    
+    .code-example .example-content p {
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+    
+    .code-example .example-content ul {
+        margin-bottom: 12px;
+    }
+    
+    .code-example .example-content li {
+        margin-bottom: 4px;
+    }
+    /* Remove the old copy button styling */
+    
+    .code-example .govuk-button {
+        margin-bottom: 0;
+    }
