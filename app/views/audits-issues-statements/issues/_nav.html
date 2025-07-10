@@ -1,58 +1,63 @@
-<nav class="dfe-vertical-nav sticky" aria-labelledby="vertical-nav-heading">
-  <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
-    Pages in this section
-  </h2>
+<nav class="dfe-vertical-nav govuk-!-margin-top-2" aria-labelledby="vertical-nav-heading">
+  <div class="dfe-vertical-nav__mobile-container">
+    <button class="dfe-vertical-nav__toggle" aria-expanded="false" aria-controls="vertical-nav-list">
+      <span class="dfe-vertical-nav__toggle-text">
+        <strong>Pages in this section</strong>
+      </span>
+      <span class="dfe-vertical-nav__chevron" aria-hidden="true"></span>
+    </button>
+    <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
+      Pages in this section
+    </h2>
+    <a href="/audits-issues-statements" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to audits, issues and statements</a>
 
-  <a href="/audits-issues-statements" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to audits, issues and statements</a>
-
-  
-  <ul class="dfe-vertical-nav__section">
-    <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues' %} dfe-vertical-nav__section-item--current{% endif %}">
-      <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues">Common issues</a>
-      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/issues/common-issues' %}block{% else %}none{% endif %}">
-        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#error-messages' %} dfe-vertical-nav__section-item--current{% endif %}">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#error-messages">Error messages</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#headings' %} dfe-vertical-nav__section-item--current{% endif %}">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#headings">Headings</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#images-charts-and-alt-text' %} dfe-vertical-nav__section-item--current{% endif %}">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#images-charts-and-alt-text">Images, charts and alt text</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#non-descriptive-links' %} dfe-vertical-nav__section-item--current{% endif %}">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#non-descriptive-links">Non-descriptive links</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#dynamic-content' %} dfe-vertical-nav__section-item--current{% endif %}">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#dynamic-content">Status changes to content</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#using-colour' %} dfe-vertical-nav__section-item--current{% endif %}">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#using-colour">Using colour</a>
-        </li>
-      </ul>
-    </li>
-      
-    <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/manage-and-prioritise-issues' %} dfe-vertical-nav__section-item--current{% endif %}">
-      <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues">Manage and prioritise issues</a>
-      <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/issues/manage-and-prioritise-issues' %}block{% else %}none{% endif %}">
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#who-is-involved">Who's involved</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#track-issues">Track issues</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#prioritise-issues">Prioritise issues</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#remediate-issues">Remediate issues</a>
-        </li>
-        <li class="dfe-vertical-nav__section-item">
-          <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#update-your-accessibility-statement">Update your accessibility statement</a>
-        </li>
-      </ul>
-    </li>
-     <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/disproportionate-burden' %} dfe-vertical-nav__section-item--current{% endif %}">
-      <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/disproportionate-burden">Disproportionate burden</a>
-    </li>
-  </ul>
+    <ul class="dfe-vertical-nav__section">
+      <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/audits-issues-statements/issues/common-issues' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues">Common issues</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/issues/common-issues' %}block{% else %}none{% endif %}">
+          <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#error-messages' %} dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#error-messages">Error messages</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#headings' %} dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#headings">Headings</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#images-charts-and-alt-text' %} dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#images-charts-and-alt-text">Images, charts and alt text</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#non-descriptive-links' %} dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#non-descriptive-links">Non-descriptive links</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#dynamic-content' %} dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#dynamic-content">Status changes to content</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/common-issues#using-colour' %} dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/common-issues#using-colour">Using colour</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--with-subnav{% if path == '/audits-issues-statements/issues/manage-and-prioritise-issues' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues">Manage and prioritise issues</a>
+        <ul class="dfe-vertical-nav__section dfe-vertical-nav__section--nested" style="display: {% if path == '/audits-issues-statements/issues/manage-and-prioritise-issues' %}block{% else %}none{% endif %}">
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#who-is-involved">Who's involved</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#track-issues">Track issues</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#prioritise-issues">Prioritise issues</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#remediate-issues">Remediate issues</a>
+          </li>
+          <li class="dfe-vertical-nav__section-item">
+            <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/manage-and-prioritise-issues#update-your-accessibility-statement">Update your accessibility statement</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dfe-vertical-nav__section-item{% if path == '/audits-issues-statements/issues/disproportionate-burden' %} dfe-vertical-nav__section-item--current{% endif %}">
+        <a class="dfe-vertical-nav__link" href="/audits-issues-statements/issues/disproportionate-burden">Disproportionate burden</a>
+      </li>
+    </ul>
+  </div>
 </nav>

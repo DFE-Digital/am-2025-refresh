@@ -146,13 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Simple test to see if script is running
-    if (document.getElementById('wcag-filter-form')) {
-        console.log('WCAG filter form found!');
-        alert('WCAG filter form found - JavaScript is working!');
-    } else {
-        console.log('WCAG filter form NOT found');
-    }
+    // Debug: Check if script is running
+    console.log('App.js loaded successfully');
 
     // WCAG Explorer Filter System - Updated for MOJ Filter with Apply Button
     const wcagFilterForm = document.getElementById('wcag-filter-form');
@@ -212,29 +207,115 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        // Clear filters functionality
         function clearAllFilters() {
             filterCheckboxes.forEach(checkbox => {
-                checkbox.checked = true;
+                checkbox.checked = false;
             });
             applyFilters();
+            updateCriteriaCount();
         }
 
         // Event listeners
-        if (applyFiltersButton) {
-            applyFiltersButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                applyFilters();
-            });
-        }
-
         if (clearFiltersButton) {
-            clearFiltersButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                clearAllFilters();
-            });
+            clearFiltersButton.addEventListener('click', clearAllFilters);
         }
 
-        // Initialize filters (show all by default)
-        applyFilters();
+        if (applyFiltersButton) {
+            applyFiltersButton.addEventListener('click', applyFilters);
+        }
+
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateCriteriaCount);
+        });
     }
+
+    // Mobile Navigation Functionality - Enhanced to work with DfE Frontend
+    function initializeMobileNavigation() {
+        console.log('Initializing mobile navigation...');
+
+        // Wait a bit for DfE Frontend to initialize first
+        setTimeout(() => {
+            // Find all mobile navigation containers on the page
+            const mobileContainers = document.querySelectorAll('.dfe-vertical-nav__mobile-container');
+
+            if (mobileContainers.length === 0) {
+                console.log('No mobile navigation containers found');
+                return;
+            }
+
+            console.log(`Found ${mobileContainers.length} mobile navigation container(s)`);
+
+            mobileContainers.forEach((container, index) => {
+                const toggle = container.querySelector('.dfe-vertical-nav__toggle');
+                const navList = container.querySelector('.dfe-vertical-nav__section');
+                const chevron = container.querySelector('.dfe-vertical-nav__chevron');
+
+                console.log(`Container ${index + 1} elements:`, {
+                    toggle: !!toggle,
+                    navList: !!navList,
+                    chevron: !!chevron
+                });
+
+                if (toggle && navList && chevron) {
+                    console.log(`Setting up mobile navigation for container ${index + 1}`);
+
+                    // Remove any existing event listeners to prevent conflicts
+                    const newToggle = toggle.cloneNode(true);
+                    toggle.parentNode.replaceChild(newToggle, toggle);
+
+                    // Set initial state
+                    function setInitialState() {
+                        console.log('Setting initial state, window width:', window.innerWidth);
+                        if (window.innerWidth <= 800) {
+                            navList.style.display = 'none';
+                            newToggle.setAttribute('aria-expanded', 'false');
+                            chevron.classList.remove('dfe-vertical-nav__chevron--up');
+                            container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
+                            newToggle.style.display = 'flex';
+                            console.log('Mobile state set');
+                        } else {
+                            navList.style.display = 'block';
+                            newToggle.style.display = 'none';
+                            container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
+                            chevron.classList.remove('dfe-vertical-nav__chevron--up');
+                            console.log('Desktop state set');
+                        }
+                    }
+
+                    newToggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Toggle clicked');
+                        const expanded = newToggle.getAttribute('aria-expanded') === 'true';
+                        newToggle.setAttribute('aria-expanded', !expanded);
+                        navList.style.display = expanded ? 'none' : 'block';
+
+                        if (!expanded) {
+                            chevron.classList.add('dfe-vertical-nav__chevron--up');
+                            container.classList.add('dfe-vertical-nav__mobile-container--expanded');
+                        } else {
+                            chevron.classList.remove('dfe-vertical-nav__chevron--up');
+                            container.classList.remove('dfe-vertical-nav__mobile-container--expanded');
+                        }
+                    });
+
+                    // Handle resize events
+                    function handleResize() {
+                        console.log('Handling resize, window width:', window.innerWidth);
+                        setInitialState();
+                    }
+
+                    window.addEventListener('resize', handleResize);
+                    setInitialState(); // Initialize on page load
+                    console.log(`Mobile navigation initialized for container ${index + 1}`);
+                } else {
+                    console.log(`Missing elements in container ${index + 1}, skipping`);
+                }
+            });
+        }, 100); // Small delay to let DfE Frontend initialize first
+    }
+
+    // Initialize mobile navigation if elements exist
+    initializeMobileNavigation();
 });

@@ -1,7 +1,17 @@
-<nav class="dfe-vertical-nav govuk-!-margin-top-2">
+<nav class="dfe-vertical-nav govuk-!-margin-top-2" aria-labelledby="vertical-nav-heading">
+  <div class="dfe-vertical-nav__mobile-container">
+    <button class="dfe-vertical-nav__toggle" aria-expanded="false" aria-controls="vertical-nav-list">
+      <span class="dfe-vertical-nav__toggle-text">
+        <strong>Pages in this section</strong>
+      </span>
+      <span class="dfe-vertical-nav__chevron" aria-hidden="true"></span>
+    </button>
+    <h2 class="govuk-heading-s govuk-visually-hidden" id="vertical-nav-heading">
+      Pages in this section
+    </h2>
     <a href="/standards" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to standards</a>
 
-    <ul class="dfe-vertical-nav__section">
+    <ul class="dfe-vertical-nav__section" id="vertical-nav-list">
            <li class="dfe-vertical-nav__section-item {% if sidenav === 'accessibility-regulations' %}dfe-vertical-nav__section-item--current{% endif %}">
             <a class="dfe-vertical-nav__link" href="/standards/accessibility-regulations">Public sector bodies accessibility regulations</a>
         </li>
@@ -12,4 +22,5 @@
             <a class="dfe-vertical-nav__link" href="/standards/en301549">Accessibility of IT hardware and software</a>
         </li>
     </ul>
+  </div>
 </nav>

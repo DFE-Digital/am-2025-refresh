@@ -1,3 +1,23 @@
+const fs = require('fs');
+const path = require('path');
+
+const getFileMetadata = (filePath) => {
+    try {
+        const fullPath = path.join(__dirname, '..', 'app', 'views', filePath + '.html');
+        const stats = fs.statSync(fullPath);
+        return {
+            created: stats.birthtime,
+            modified: stats.mtime
+        };
+    } catch (error) {
+        // Return default dates if file not found
+        return {
+            created: new Date('2025-01-01'),
+            modified: new Date('2025-01-01')
+        };
+    }
+};
+
 const removeFilter = (filters, filterToRemove) => {
     const newFilters = {...filters };
     delete newFilters[filterToRemove];
@@ -56,5 +76,6 @@ module.exports = {
     findServiceName,
     findById,
     formatDateFilter,
-    formatNumber
+    formatNumber,
+    getFileMetadata
 };

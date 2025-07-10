@@ -545,8 +545,7 @@
         margin-bottom: 1rem;
         padding: 1rem;
         background: #f8f9fa;
-        border-left: 4px solid #00703c;
-        border-radius: 0 4px 4px 0;
+        border-radius: 4px;
         transition: all 0.2s ease;
     }
     
@@ -587,15 +586,7 @@
     .dfe-wcag-criteria-section.hidden {
         display: none !important;
     }
-    /* Level indicators */
-    
-    .dfe-wcag-criterion[data-level="a"] {
-        border-left-color: #d4351c;
-    }
-    
-    .dfe-wcag-criterion[data-level="aa"] {
-        border-left-color: #f47738;
-    }
+    /* Level indicators - removed border styling */
     /* Responsive design */
     
     @media (max-width: 48.0625em) {
@@ -788,4 +779,198 @@
     
     .code-example .govuk-button {
         margin-bottom: 0;
+    }
+    /* Utility classes to replace inline styles */
+    
+    .img-responsive {
+        width: 100%;
+        height: auto;
+    }
+    
+    .img-fixed-height {
+        height: 230px;
+        width: auto;
+    }
+    
+    .img-max-width {
+        max-width: 300px;
+        height: auto;
+    }
+    
+    .code-example-inline {
+        background: #ffffff;
+        padding: 10px;
+        border: 1px solid #b1b4b6;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        font-size: 13px;
+    }
+    
+    .cta-button-container {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .cta-icon {
+        font-size: 32px;
+        color: #ffffff;
+    }
+    
+    .cta-button {
+        font-size: 19px;
+    }
+    
+    .code-block-container {
+        position: relative;
+    }
+    /* Accessibility improvements */
+    
+    .govuk-visually-hidden {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+    }
+    /* Focus improvements */
+    
+    .govuk-link:focus,
+    .govuk-button:focus,
+    .govuk-input:focus,
+    .govuk-textarea:focus,
+    .govuk-select:focus {
+        outline: 3px solid #fd0;
+        outline-offset: 0;
+    }
+    /* Skip link for keyboard navigation */
+    
+    .govuk-skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #0b0c0c;
+        color: #ffffff;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 100;
+    }
+    
+    .govuk-skip-link:focus {
+        top: 0;
+    }
+    /* High contrast mode support */
+    
+    @media (prefers-contrast: high) {
+        .govuk-link {
+            text-decoration: underline;
+        }
+        .govuk-button {
+            border: 2px solid currentColor;
+        }
+    }
+    /* Reduced motion support */
+    
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+    /* Mobile Navigation Styles - Override DfE Frontend */
+    
+    .dfe-vertical-nav__mobile-container {
+        position: relative;
+    }
+    
+    .dfe-vertical-nav__toggle {
+        display: none !important;
+        /* Hidden by default on desktop - override DfE Frontend */
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 12px 16px !important;
+        background: #f8f9fa !important;
+        border: 1px solid #b1b4b6 !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+        transition: background-color 0.2s ease !important;
+        color: #0b0c0c !important;
+        min-height: auto !important;
+        margin-bottom: 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+        box-shadow: none !important;
+        gap: 0 !important;
+        font-size: 1rem !important;
+    }
+    
+    .dfe-vertical-nav__toggle:hover {
+        background: #e9ecef !important;
+        color: #0b0c0c !important;
+    }
+    
+    .dfe-vertical-nav__toggle:focus {
+        outline: 3px solid #ffdd00 !important;
+        outline-offset: 0 !important;
+        background: #e9ecef !important;
+        color: #0b0c0c !important;
+    }
+    
+    .dfe-vertical-nav__chevron {
+        width: 0 !important;
+        height: 0 !important;
+        border-left: 5px solid transparent !important;
+        border-right: 5px solid transparent !important;
+        border-top: 5px solid #0b0c0c !important;
+        transition: transform 0.2s ease !important;
+        font-size: inherit !important;
+        vertical-align: middle !important;
+        margin-right: 0 !important;
+        font-variation-settings: none !important;
+    }
+    
+    .dfe-vertical-nav__chevron--up {
+        transform: rotate(180deg) !important;
+    }
+    /* Mobile styles */
+    
+    @media (max-width: 800px) {
+        .dfe-vertical-nav__toggle {
+            display: flex !important;
+            /* Show toggle on mobile */
+        }
+        .dfe-vertical-nav__section {
+            display: none !important;
+            /* Hide navigation by default on mobile */
+        }
+        .dfe-vertical-nav__mobile-container--expanded .dfe-vertical-nav__section {
+            display: block !important;
+            /* Show when expanded */
+        }
+    }
+    /* Desktop styles */
+    
+    @media (min-width: 801px) {
+        .dfe-vertical-nav__toggle {
+            display: none !important;
+            /* Always hide on desktop */
+        }
+        .dfe-vertical-nav__section {
+            display: block !important;
+            /* Always show on desktop */
+        }
+        .dfe-vertical-nav__mobile-container--expanded {
+            /* Reset any mobile expansion styles on desktop */
+        }
     }
