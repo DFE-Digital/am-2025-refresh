@@ -9,7 +9,11 @@
         <meta name="theme-color" content="#00294a">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="canonical" href="https://design.education.gov.uk/{{path}}">
-        <link rel="stylesheet" href="/public/css/consolidated.min.css">
+        <link rel="stylesheet" href="/public/css/govuk-frontend.min.css">
+        <link rel="stylesheet" href="/public/css/dfefrontend-2.0.0.min.css">
+        <link rel="stylesheet" href="/public/css/app.css">
+        <link rel="stylesheet" href="/public/css/manual.css">
+        <link rel="stylesheet" href="/public/css/moj-filter.css">
         <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
 
         <meta property="og:title" content="{{title}}">
@@ -19,6 +23,7 @@
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="Accessibility manual">
         
+        <!-- LD+JSON Structured Data -->
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -155,7 +160,12 @@
             initAll();
         </script>
 
-        <script src="/public/js/consolidated.min.js"></script>
+          <!-- MOJ Filter component JavaScript -->
+    <script src="/public/js/moj-filter.js"></script>
+
+        <script src="/public/js/dfefrontend-2.0.0.min.js"></script>
+        <script src="/public/js/app.js"></script>
+        <script src="/public/js/feedback.js"></script>
 
         {% block scripts %}{% endblock %}
     </body>
