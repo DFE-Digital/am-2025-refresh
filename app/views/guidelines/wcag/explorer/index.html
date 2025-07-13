@@ -7,10 +7,14 @@
 {% set dateModified = "2025-07-09" %}
 {% block content %}
 
+<style>
+   .govuk-tag{max-width: fit-content !important;}
+</style>
+
     <section class="dfe-manual-section dfe-manual-section--header dfe-manual-section-header--white dfe-manual-section-header--bordered-bottom">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-grid-column-two-thirds">
                     <span class="govuk-caption-xl">Guidelines</span>
                     <h1 class="govuk-heading-xl">{{title}}</h1>
                     <p class="govuk-body-l">{{description}}</p>
@@ -22,870 +26,1028 @@
     <section class="dfe-manual-section dfe-manual-section--light">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-                <div class="moj-filter" data-module="moj-filter">
-                    <div class="moj-filter__header">
-                        <div class="moj-filter__header-title">
-                            <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Filter</h2>
+                <div class="govuk-grid-column-one-third">
+                    <div class="moj-filter" data-module="moj-filter">
+                        <div class="moj-filter__header">
+                            <div class="moj-filter__header-title">
+                                <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Filter</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="moj-filter__content">
-                        <form id="wcag-filter-form" class="govuk-form-group">
-                            <div class="moj-filter__options govuk-!-margin-top-0">
-                                <div class="govuk-form-group">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <div class="moj-filter__content">
+                            <form id="wcag-filter-form" class="govuk-form-group">
+                                <div class="moj-filter__options govuk-!-margin-top-0">
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                             Accessibility themes
                                         </legend>
-                                        <div class="govuk-checkboxes govuk-checkboxes--small">
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-forms" name="filter-forms" type="checkbox" value="forms" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-forms">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-forms" name="filter-forms" type="checkbox" value="forms" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-forms">
                                                     Forms & inputs
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-contrast" name="filter-contrast" type="checkbox" value="contrast" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-contrast">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-contrast" name="filter-contrast" type="checkbox" value="contrast" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-contrast">
                                                     Contrast & readability
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-images" name="filter-images" type="checkbox" value="images" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-images">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-images" name="filter-images" type="checkbox" value="images" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-images">
                                                     Images & media
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-cognitive" name="filter-cognitive" type="checkbox" value="cognitive" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-cognitive">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-cognitive" name="filter-cognitive" type="checkbox" value="cognitive" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-cognitive">
                                                     Cognitive & learning
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-motor" name="filter-motor" type="checkbox" value="motor" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-motor">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-motor" name="filter-motor" type="checkbox" value="motor" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-motor">
                                                     Motor & mobility
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-audio" name="filter-audio" type="checkbox" value="audio" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-audio">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-audio" name="filter-audio" type="checkbox" value="audio" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-audio">
                                                     Audio & video
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-navigation" name="filter-navigation" type="checkbox" value="navigation" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-navigation">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-navigation" name="filter-navigation" type="checkbox" value="navigation" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-navigation">
                                                     Navigation & structure
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-keyboard" name="filter-keyboard" type="checkbox" value="keyboard" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-keyboard">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-keyboard" name="filter-keyboard" type="checkbox" value="keyboard" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-keyboard">
                                                     Keyboard & focus
                                                 </label>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <div class="govuk-form-group">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        </fieldset>
+                                    </div>
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                             WCAG level
                                         </legend>
-                                        <div class="govuk-checkboxes govuk-checkboxes--small">
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-level-a" name="filter-level-a" type="checkbox" value="a" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-level-a">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-level-a" name="filter-level-a" type="checkbox" value="a" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-level-a">
                                                     Level A (Essential)
                                                 </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="filter-level-aa" name="filter-level-aa" type="checkbox" value="aa" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="filter-level-aa">
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="filter-level-aa" name="filter-level-aa" type="checkbox" value="aa" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="filter-level-aa">
                                                     Level AA (Standard)
                                                 </label>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <button class="govuk-button" id="apply-filters" type="button">
+                                        </fieldset>
+                                    </div>
+                                    <button class="govuk-button" id="apply-filters" type="button">
                                     Apply filters
                                 </button>
-                                <button class="govuk-button govuk-button--secondary" id="clear-filters" type="button">
+                                    <button class="govuk-button govuk-button--secondary" id="clear-filters" type="button">
                                     Clear all filters
                                 </button>
-                                <div class="dfe-wcag-stats">
-                                    <h3 class="govuk-heading-s">Showing <span id="criteria-count">0</span> criteria</h3>
+                                    <div class="dfe-wcag-stats">
+                                        <h3 class="govuk-heading-s">Showing <span id="criteria-count">0</span> criteria</h3>
+                                    </div>
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-two-thirds" id="all-principles">
+                    <div class="dfe-wcag-principles">
+                        <h2 class="govuk-heading-l">Perceivable</h2>
+                        <p>Users must be able to perceive the content.</p>
+                        <p>Text alternative for non-text content such as images and charts, captions and other alternatives for video should be provided, and content should be adaptable by the user to fit their requirements.</p>
+
+                        <div class="dfe-wcag-criteria-section" data-category="images">
+                            <h3 class="govuk-heading-m">Text Alternatives</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="images">
+                                <strong class="govuk-tag govuk-tag--images">Images & media</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-1-1">
+                                1.1.1 - Non text content <a href="#1-1-1" id="1-1-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.1.1</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.1.1 Non-text Content</a>
+                                </p>
+                                <p>All non-text content like images, charts, icons and infographics, must have an appropriate text equivalent. This ensures that information conveyed by non-text content is available to people who cannot see it, like screen reader users.</p>
+                                <p>The exception to this is decorative images which should not be described or announced to screen reader users.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>All images must have an alternative text description that describes its meaning, not what the image is:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>images that communicate information (for example icons and logos) have short text descriptions</li>
+                                    <li>editorial images that support the text around them have short descriptions</li>
+                                    <li>images that communicate complex information (for example infographics and diagrams) have longer text descriptions within the same page</li>
+                                    <li>charts or graphs contain the same data in a corresponding table</li>
+                                    <li>decorative images have the null (or empty) alternative description alt="" (no space between the quotations)</li>
+                                </ul>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>identify images on the page, right click on them and select 'Inspect'</li>
+                                    <li>check the image tag to see if the alt attribute exists</li>
+                                    <li>for decorative images, the alt attribute should be alt="" or just alt</li>
+                                    <li>for editorial images and images which communicate information check that the descriptions are appropriate</li>
+                                    <li>for images of complex information, check that the description refers to the availability of a longer description and that this is present on the page</li>
+                                </ul>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                        </div>
 
-            <div class="govuk-grid-column-two-thirds" id="all-principles">
-                <div class="dfe-wcag-principles">
-                    <h2 class="govuk-heading-l">Perceivable</h2>
-                    <p>Users must be able to perceive the content.</p>
-                    <p>Text alternative for non-text content such as images and charts, captions and other alternatives for video should be provided, and content should be adaptable by the user to fit their requirements.</p>
-                    
-                    <div class="dfe-wcag-criteria-section" data-category="images">
-                    <h3 class="govuk-heading-m">Text Alternatives</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="images">
-                            <strong class="govuk-tag govuk-tag--images">Images & media</strong> <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-1-1">
-                        <a href="#1-1-1">1.1.1 - Non text content</a>
+                        <div class="dfe-wcag-criteria-section" data-category="audio">
+                            <h3 class="govuk-heading-m">Time based media</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="audio">
+                                <strong class="govuk-tag govuk-tag--audio">Audio & video</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-2-x">
+                                1.2.x - Alternatives for audio and video <a href="#1-2-x" id="1-2-x-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.2.x</span></a>
                             </h4>
-                            <p>All non-text content like images, charts, icons and infographics, must have an appropriate text equivalent. This ensures that information conveyed by non-text content is available to people who cannot see it, like screen reader users.</p>
-                    <p>The exception to this is decorative images which should not be described or announced to screen reader users.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>All images must have an alternative text description that describes its meaning, not what the image is:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>images that communicate information (for example icons and logos) have short text descriptions</li>
-                        <li>editorial images that support the text around them have short descriptions</li>
-                                <li>images that communicate complex information (for example infographics and diagrams) have longer text descriptions within the same page</li>
-                        <li>charts or graphs contain the same data in a corresponding table</li>
-                        <li>decorative images have the null (or empty) alternative description alt="" (no space between the quotations)</li>
-                    </ul>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                                <li>identify images on the page, right click on them and select 'Inspect'</li>
-                        <li>check the image tag to see if the alt attribute exists</li>
-                        <li>for decorative images, the alt attribute should be alt="" or just alt</li>
-                                <li>for editorial images and images which communicate information check that the descriptions are appropriate</li>
-                                <li>for images of complex information, check that the description refers to the availability of a longer description and that this is present on the page</li>
-                    </ul>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/time-based-media.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.2 Time-based Media</a>
+                                </p>
+                                <p>Audio and video content has appropriate alternatives to ensure that everyone has a comparable experience when interacting with this content. This may include transcripts, captions and audio description depending on the type of audio or video content.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>The alternative required depends on the context of the audio or video, but broadly:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>always provide a transcript</li>
+                                    <li>always provide captions for videos</li>
+                                    <li>if the narration of a video does not include all the detail required, then provide audio description</li>
+                                </ul>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>If the page contains multimedia content, check that the required alternative is available.</p>
+                                <p>The transcript should be available near to the multimedia content but can be a link to another page.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="dfe-wcag-criteria-section" data-category="audio">
-                        <h3 class="govuk-heading-m">Time based media</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="audio">
-                            <strong class="govuk-tag govuk-tag--audio">Audio & video</strong> <strong class="govuk-tag govuk-tag--red">Level A</strong> <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-2-x">
-                                <a href="#1-2-x">1.2.x - Alternatives for audio and video</a>
+                        <div class="dfe-wcag-criteria-section" data-category="navigation">
+                            <h3 class="govuk-heading-m">Adaptable</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-3-1a">
+                                1.3.1a - Info and relationships - Tables <a href="#1-3-1a" id="1-3-1a-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.1a</span></a>
                             </h4>
-                            <p>Audio and video content has appropriate alternatives to ensure that everyone has a comparable experience when interacting with this content. This may include transcripts, captions and audio description depending on the type of audio or video content.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>The alternative required depends on the context of the audio or video, but broadly:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>always provide a transcript</li>
-                                <li>always provide captions for videos</li>
-                        <li>if the narration of a video does not include all the detail required, then provide audio description</li>
-                    </ul>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <p>If the page contains multimedia content, check that the required alternative is available.</p>
-                            <p>The transcript should be available near to the multimedia content but can be a link to another page.</p>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>When information is visually presented as a table, this structure must be conveyed appropriately to assistive technologies. This ensures that tables are available to screen reader, screen magnification and speech recognition tool users.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Tabular data is presented using proper HTML markup (&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; elements).</p>
+                                <p>Tables include a &lt;caption&gt; element which summarises the overall purpose of the table.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>right click on any tables and select the 'Inspect' option</li>
+                                    <li>manually review the table structure to identify the presence of the correct mark up</li>
+                                    <li>note - &lt;thead&gt; and &lt;tbody&gt; are not semantic HTML and are used for formatting purposes</li>
+                                </ul>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-3-1b">
+                                1.3.1b - Info and relationships - Lists <a href="#1-3-1b" id="1-3-1b-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.1b</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>When presenting lists of information, you must communicate this list in a way that assistive technology users can understand.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use appropriate and proper HTML markup for lists of items:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>ordered lists for structured data like the steps in a process (&lt;ol&gt; and &lt;li&gt; elements)</li>
+                                    <li>unordered lists for unstructured data like the ID documents required for a process (&lt;ul&gt; and &lt;li&gt;)</li>
+                                    <li>description list/definition list to group a series of key terms and their descriptions/definitions together (&lt;dl&gt;, &lt;dt&gt; and &lt;dd&gt;)</li>
+                                </ul>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>right click on any list of information and select the 'Inspect' option</li>
+                                    <li>manually review the list to ensure the appropriate list type has been used for the data</li>
+                                </ul>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-3-1c">
+                                1.3.1c - Info and relationships - Headings <a href="#1-3-1c" id="1-3-1c-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.1c</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>Where visual headings are used to communicate the structure of a page, they must also be communicated in a way that supports assistive technology users to access this structure.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use proper HTML markup for headings (&lt;h1&gt; through &lt;h6&gt; elements).</p>
+                                <p>Each page should have a H1 which describes the overall purpose of the page.</p>
+                                <p>Do not skip heading levels or use multiple H1s on a page if you can avoid it.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>right click on any heading and select the 'Inspect' option</li>
+                                    <li>manually review the correct heading structure has been applied to visual headings</li>
+                                </ul>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
+                                <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-3-1d">
+                                1.3.1d - Info and relationships - Form fields <a href="#1-3-1d" id="1-3-1d-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.1d</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>All form fields have an associated visible label. Where this isn't possible a non-visible label must be present.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>If you can, use the &lt;label&gt; tag and 'for' attribute to give form field elements visible labels.</p>
+                                <p>Group sets of radio buttons or checkboxes using the &lt;fieldset&gt; tag and have an appropriate &lt;legend&gt; tag to label the group.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>click on the visible label for the form control you're testing</li>
+                                    <li>if focus moves to the control or activates it then the control and the label are correctly associated</li>
+                                </ul>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-3-1e">
+                                1.3.1e - Info and relationship - Landmarks <a href="#1-3-1e" id="1-3-1e-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.1e</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>Content sections within a page should have an appropriate HTML5 section element or ARIA landmark role defined.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>As a minimum, you must include a main landmark (either the HTML 5 &lt;main&gt; or ARIA role="main") on each page.</p>
+                                <p>Add extra landmarks, for example navigation and footer content, if the page has these areas.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>right click on the page and select the 'Inspect' option</li>
+                                    <li>review the code to ensure that the main section of the page either uses the &lt;main&gt; tag or has role="main"</li>
+                                </ul>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-3-2">
+                                1.3.2 - Meaningful sequence <a href="#1-3-2" id="1-3-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.2</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>When the order of content is important, the content order must be preserved no matter how it is presented to the user.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>The structure of your code should reflect the visual structure of the page.</p>
+                                <p>This keeps the order of content meaningful for screen reader users, or users who have turned off visual styling.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>to check the reading order of the page, the visual styling needs to be switched off</li>
+                                    <li>you can do this by using a simple bookmarklet or using the 'Reading view' option in the browser</li>
+                                    <li>once enabled, you should read through the linearised content to check that the reading order follows the reading order with styles enabled</li>
+                                </ul>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-3-3">
+                                1.3.3 - Sensory Characteristics <a href="#1-3-3" id="1-3-3-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.3</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>Instructions must not depend on sensory characteristics like shape, size, colour, or location. This ensures that instructions can be understood by users who are unable to see or recognise information communicated using sensory characteristics.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Do not rely on visual descriptions like 'green' or 'below' to communicate user instructions. For example, in 'Press the green 'Next' button to continue', the colour is supplemented by non-sensory information.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>If the page contains any instructions around where to find, or how to interact with, content on the website, check that these instructions do not rely on the ability of users to perceive shape, size, visual location or sound.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="motor">
+                                <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-3-4">
+                                1.3.4 - Orientation <a href="#1-3-4" id="1-3-4-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.4</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>A page view must not be locked to either horizontal or vertical views only, unless this is essential.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Let the user view pages in their preferred orientation.</p>
+                                <p>Use CSS to allow both landscape and portrait.</p>
+                                <p>Do not try to force a specific orientation or aspect ratio.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>View the page on a mobile device and change the orientation.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="forms">
+                                <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-3-5">
+                                1.3.5 - Identify Input Purpose <a href="#1-3-5" id="1-3-5-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.3.5</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.3.1 Info and Relationships</a>
+                                </p>
+                                <p>In an input field, the purpose of each input field that collects information about the user can be understood by assistive technologies and browsers by using autocomplete.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>If a form field relates to the user's personal information, include an explicit autocomplete attribute with the relevant value.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Right click on each form field requiring information that can be suggested by the browser, select 'Inspect' and check that the autocomplete attribute is included in its source code and that the correct value has been given to this attribute.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="dfe-wcag-criteria-section" data-category="navigation">
-                        <h3 class="govuk-heading-m">Adaptable</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong> <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-3-1a">
-                                <a href="#1-3-1a">1.3.1a - Info and relationships - Tables</a>
+                        <div class="dfe-wcag-criteria-section" data-category="contrast">
+                            <h3 class="govuk-heading-m">Distinguishable</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="contrast">
+                                <strong class="govuk-tag govuk-tag--contrast">Contrast & readability</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-4-1">
+                                1.4.1 - Use of colour <a href="#1-4-1" id="1-4-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.1</span></a>
                             </h4>
-                            <p>When information is visually presented as a table, this structure must be conveyed appropriately to assistive technologies. This ensures that tables are available to screen reader, screen magnification and speech recognition tool users.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Tabular data is presented using proper HTML markup (&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; elements).</p>
-                    <p>Tables include a &lt;caption&gt; element which summarises the overall purpose of the table.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                                <li>right click on any tables and select the 'Inspect' option</li>
-                        <li>manually review the table structure to identify the presence of the correct mark up</li>
-                                <li>note - &lt;thead&gt; and &lt;tbody&gt; are not semantic HTML and are used for formatting purposes</li>
-                    </ul>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong> <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-3-1b">
-                                <a href="#1-3-1b">1.3.1b - Info and relationships - Lists</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.1 Use of Colour</a>
+                                </p>
+                                <p>Information conveyed with colour must also be identifiable from context, labelling, or alternative forms.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>When rendered in monochrome, information does not disappear.</p>
+                                <p>Do not only use colour to indicate important content. Use a visible border and label, underline or other visual effect as well.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>If colour is used to convey information or distinguish between items, check that the same information is provided via an alternative means.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="audio">
+                                <strong class="govuk-tag govuk-tag--audio">Audio & video</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="1-4-2">
+                                1.4.2 - Audio control <a href="#1-4-2" id="1-4-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.2</span></a>
                             </h4>
-                            <p>When presenting lists of information, you must communicate this list in a way that assistive technology users can understand.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>Use appropriate and proper HTML markup for lists of items:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                                <li>ordered lists for structured data like the steps in a process (&lt;ol&gt; and &lt;li&gt; elements)</li>
-                                <li>unordered lists for unstructured data like the ID documents required for a process (&lt;ul&gt; and &lt;li&gt;)</li>
-                                <li>description list/definition list to group a series of key terms and their descriptions/definitions together (&lt;dl&gt;, &lt;dt&gt; and &lt;dd&gt;)</li>
-                    </ul>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                                <li>right click on any list of information and select the 'Inspect' option</li>
-                                <li>manually review the list to ensure the appropriate list type has been used for the data</li>
-                    </ul>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-3-1c">
-                                <a href="#1-3-1c">1.3.1c - Info and relationships - Headings</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.2 Audio Control</a>
+                                </p>
+                                <p>Audio/video must not play automatically unless the user is pre-warned and can control the audio.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Audio or video content that plays automatically, for example an alert sound, lasts for three seconds or less.</p>
+                                <p>Audio or video that plays automatically and lasts for more than three seconds can be paused and/or stopped using on screen controls.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>listen to the page without any assistive technology running</li>
+                                    <li>ensure that any sounds that play automatically only last for 3 seconds or less</li>
+                                    <li>if a sound lasts for more than 3 seconds, check that audio controls are available</li>
+                                </ul>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="contrast">
+                                <strong class="govuk-tag govuk-tag--contrast">Contrast & readability</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-4-3">
+                                1.4.3 - Contrast <a href="#1-4-3" id="1-4-3-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.3</span></a>
                             </h4>
-                            <p>Where visual headings are used to communicate the structure of a page, they must also be communicated in a way that supports assistive technology users to access this structure.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>Use proper HTML markup for headings (&lt;h1&gt; through &lt;h6&gt; elements).</p>
-                    <p>Each page should have a H1 which describes the overall purpose of the page.</p>
-                    <p>Do not skip heading levels or use multiple H1s on a page if you can avoid it.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>right click on any heading and select the 'Inspect' option</li>
-                        <li>manually review the correct heading structure has been applied to visual headings</li>
-                    </ul>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
-                            <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-3-1d">
-                                <a href="#1-3-1d">1.3.1d - Info and relationships - Form fields</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.3 Contrast</a>
+                                </p>
+                                <p>There should be enough difference (contrast) between a background and the foreground content so that user can easily differentiate the two.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Text, including text in images, must have a contrast ratio of at least 4.5:1 against its background colour.</p>
+                                <p>Where text crosses different background colours or an image, all of the text must meet the contrast requirement.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Use the Colour Contrast Analyser to check that the contrast ratio between text and background colours is at least 4.5:1 for standard text.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="images">
+                                <strong class="govuk-tag govuk-tag--images">Images & media</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-4-4">
+                                1.4.4 - Resize text <a href="#1-4-4" id="1-4-4-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.4</span></a>
                             </h4>
-                            <p>All form fields have an associated visible label. Where this isn't possible a non-visible label must be present.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>If you can, use the &lt;label&gt; tag and 'for' attribute to give form field elements visible labels.</p>
-                            <p>Group sets of radio buttons or checkboxes using the &lt;fieldset&gt; tag and have an appropriate &lt;legend&gt; tag to label the group.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>click on the visible label for the form control you're testing</li>
-                        <li>if focus moves to the control or activates it then the control and the label are correctly associated</li>
-                    </ul>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-3-1e">
-                                <a href="#1-3-1e">1.3.1e - Info and relationship - Landmarks</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.4 Resize Text</a>
+                                </p>
+                                <p>Users should be able to resize text up to 200% without any problems with the presentation and structure of the page (for example truncated text, overlaps or missing items).</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Avoid setting specific width and height sizes for containers if you can, so they will adapt to the size of the content they contain.</p>
+                                <p>Use relative text sizing, like percent sizes, em units or named font sizes.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Use the Zoom functionality of the browser to enlarge the page to 200% and check that you can access all content without having to scroll horizontally.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="images">
+                                <strong class="govuk-tag govuk-tag--images">Images & media</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-4-5">
+                                1.4.5 - Images of text <a href="#1-4-5" id="1-4-5-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.5</span></a>
                             </h4>
-                    <p>Content sections within a page should have an appropriate HTML5 section element or ARIA landmark role defined.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>As a minimum, you must include a main landmark (either the HTML 5 &lt;main&gt; or ARIA role="main") on each page.</p>
-                    <p>Add extra landmarks, for example navigation and footer content, if the page has these areas.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                                <li>right click on the page and select the 'Inspect' option</li>
-                                <li>review the code to ensure that the main section of the page either uses the &lt;main&gt; tag or has role="main"</li>
-                    </ul>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-3-2">
-                                <a href="#1-3-2">1.3.2 - Meaningful sequence</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.5 Images of Text</a>
+                                </p>
+                                <p>Meaningful text must not be presented as part of an image because it cannot be resized, it deteriorates in quality when magnified and is not customisable by the end user.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Do not use images for meaningful text that gives users information. Text in some types of images, like SVGs, can resize without deterioration, but cannot be customised.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Turn images off and check that no text disappears.</p>
+                                <p>Select all the text on the page - any images of text will not be selectable.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="images">
+                                <strong class="govuk-tag govuk-tag--images">Images & media</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-4-10">
+                                1.4.10 - Reflow <a href="#1-4-10" id="1-4-10-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.10</span></a>
                             </h4>
-                            <p>When the order of content is important, the content order must be preserved no matter how it is presented to the user.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>The structure of your code should reflect the visual structure of the page.</p>
-                    <p>This keeps the order of content meaningful for screen reader users, or users who have turned off visual styling.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>to check the reading order of the page, the visual styling needs to be switched off</li>
-                                <li>you can do this by using a simple bookmarklet or using the 'Reading view' option in the browser</li>
-                                <li>once enabled, you should read through the linearised content to check that the reading order follows the reading order with styles enabled</li>
-                    </ul>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-3-3">
-                                <a href="#1-3-3">1.3.3 - Sensory Characteristics</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.10 Reflow</a>
+                                </p>
+                                <p>Users should be able to magnify the page up to 400% and content should reflow - move into one column - and not add horizontal scroll bars (exemptions apply).</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Make sure your pages are responsive, so the content will 'reflow' to a single column gracefully.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Use the Zoom functionality of the browser to enlarge the page to 400% and check that you can access all content without having to scroll horizontally.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="contrast">
+                                <strong class="govuk-tag govuk-tag--contrast">Contrast & readability</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-4-11">
+                                1.4.11 - Non text contrast <a href="#1-4-11" id="1-4-11-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.11</span></a>
                             </h4>
-                            <p>Instructions must not depend on sensory characteristics like shape, size, colour, or location. This ensures that instructions can be understood by users who are unable to see or recognise information communicated using sensory characteristics.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Do not rely on visual descriptions like 'green' or 'below' to communicate user instructions. For example, in 'Press the green 'Next' button to continue', the colour is supplemented by non-sensory information.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>If the page contains any instructions around where to find, or how to interact with, content on the website, check that these instructions do not rely on the ability of users to perceive shape, size, visual location or sound.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="motor">
-                            <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-3-4">
-                                <a href="#1-3-4">1.3.4 - Orientation</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.11 Non-text Contrast</a>
+                                </p>
+                                <p>Interactive controls, keyboard focus, icons and content required for understanding, for example, charts and infographics must have enough contrast (at least 3:1) with adjacent colours.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Buttons or other inputs and controls must have a contrast ratio of 3:1 or higher in all their states.</p>
+                                <p>Parts of graphical objects, like icons, that convey information must have a minimum contrast ratio of 3:1 with adjacent colours.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Use the Colour Contrast Analyser to check that the contrast ratio between each informative object within icons and its surrounding colours is at least 3:1.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-4-12">
+                                1.4.12 - Text spacing <a href="#1-4-12" id="1-4-12-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.12</span></a>
                             </h4>
-                    <p>A page view must not be locked to either horizontal or vertical views only, unless this is essential.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Let the user view pages in their preferred orientation.</p>
-                    <p>Use CSS to allow both landscape and portrait.</p>
-                    <p>Do not try to force a specific orientation or aspect ratio.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <p>View the page on a mobile device and change the orientation.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="forms">
-                            <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-3-5">
-                                <a href="#1-3-5">1.3.5 - Identify Input Purpose</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.12 Text Spacing</a>
+                                </p>
+                                <p>For regular HTML page content, no loss of content or functionality happens when a user changes line height, letter or word spacing.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Make sure your CSS lets users adjust:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Line height (line spacing) to at least 1.5 times the font size</li>
+                                    <li>Spacing following paragraphs to at least 2 times the font size</li>
+                                    <li>Letter spacing (tracking) to at least 0.12 times the font size</li>
+                                    <li>Word spacing to at least 0.16 times the font size</li>
+                                </ul>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Use the <a href="/tools-testing/tools/text-spacing">Text Spacing tool</a> to test text spacing on a webpage.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="1-4-13">
+                                1.4.13 - Content on hover or focus <a href="#1-4-13" id="1-4-13-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 1.4.13</span></a>
                             </h4>
-                            <p>In an input field, the purpose of each input field that collects information about the user can be understood by assistive technologies and browsers by using autocomplete.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>If a form field relates to the user's personal information, include an explicit autocomplete attribute with the relevant value.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Right click on each form field requiring information that can be suggested by the browser, select 'Inspect' and check that the autocomplete attribute is included in its source code and that the correct value has been given to this attribute.</p>
-                        </div>
-                    </div>
-
-                    <div class="dfe-wcag-criteria-section" data-category="contrast">
-                        <h3 class="govuk-heading-m">Distinguishable</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="contrast">
-                            <strong class="govuk-tag govuk-tag--contrast">Contrast & readability</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-4-1">
-                                <a href="#1-4-1">1.4.1 - Use of colour</a>
-                            </h4>
-                            <p>Information conveyed with colour must also be identifiable from context, labelling, or alternative forms.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>When rendered in monochrome, information does not disappear.</p>
-                            <p>Do not only use colour to indicate important content. Use a visible border and label, underline or other visual effect as well.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>If colour is used to convey information or distinguish between items, check that the same information is provided via an alternative means.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="audio">
-                            <strong class="govuk-tag govuk-tag--audio">Audio & video</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="1-4-2">
-                                <a href="#1-4-2">1.4.2 - Audio control</a>
-                            </h4>
-                            <p>Audio/video must not play automatically unless the user is pre-warned and can control the audio.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>Audio or video content that plays automatically, for example an alert sound, lasts for three seconds or less.</p>
-                            <p>Audio or video that plays automatically and lasts for more than three seconds can be paused and/or stopped using on screen controls.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>listen to the page without any assistive technology running</li>
-                        <li>ensure that any sounds that play automatically only last for 3 seconds or less</li>
-                        <li>if a sound lasts for more than 3 seconds, check that audio controls are available</li>
-                    </ul>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="contrast">
-                            <strong class="govuk-tag govuk-tag--contrast">Contrast & readability</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-4-3">
-                                <a href="#1-4-3">1.4.3 - Contrast</a>
-                            </h4>
-                            <p>There should be enough difference (contrast) between a background and the foreground content so that user can easily differentiate the two.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>Text, including text in images, must have a contrast ratio of at least 4.5:1 against its background colour.</p>
-                    <p>Where text crosses different background colours or an image, all of the text must meet the contrast requirement.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Use the Colour Contrast Analyser to check that the contrast ratio between text and background colours is at least 4.5:1 for standard text.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="images">
-                            <strong class="govuk-tag govuk-tag--images">Images & media</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-4-4">
-                                <a href="#1-4-4">1.4.4 - Resize text</a>
-                            </h4>
-                            <p>Users should be able to resize text up to 200% without any problems with the presentation and structure of the page (for example truncated text, overlaps or missing items).</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Avoid setting specific width and height sizes for containers if you can, so they will adapt to the size of the content they contain.</p>
-                    <p>Use relative text sizing, like percent sizes, em units or named font sizes.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Use the Zoom functionality of the browser to enlarge the page to 200% and check that you can access all content without having to scroll horizontally.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="images">
-                            <strong class="govuk-tag govuk-tag--images">Images & media</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-4-5">
-                                <a href="#1-4-5">1.4.5 - Images of text</a>
-                            </h4>
-                            <p>Meaningful text must not be presented as part of an image because it cannot be resized, it deteriorates in quality when magnified and is not customisable by the end user.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Do not use images for meaningful text that gives users information. Text in some types of images, like SVGs, can resize without deterioration, but cannot be customised.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Turn images off and check that no text disappears.</p>
-                            <p>Select all the text on the page - any images of text will not be selectable.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="images">
-                            <strong class="govuk-tag govuk-tag--images">Images & media</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-4-10">
-                                <a href="#1-4-10">1.4.10 - Reflow</a>
-                            </h4>
-                            <p>Users should be able to magnify the page up to 400% and content should reflow - move into one column - and not add horizontal scroll bars (exemptions apply).</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Make sure your pages are responsive, so the content will 'reflow' to a single column gracefully.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Use the Zoom functionality of the browser to enlarge the page to 400% and check that you can access all content without having to scroll horizontally.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="contrast">
-                            <strong class="govuk-tag govuk-tag--contrast">Contrast & readability</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-4-11">
-                                <a href="#1-4-11">1.4.11 - Non text contrast</a>
-                            </h4>
-                            <p>Interactive controls, keyboard focus, icons and content required for understanding, for example, charts and infographics must have enough contrast (at least 3:1) with adjacent colours.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>Buttons or other inputs and controls must have a contrast ratio of 3:1 or higher in all their states.</p>
-                            <p>Parts of graphical objects, like icons, that convey information must have a minimum contrast ratio of 3:1 with adjacent colours.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Use the Colour Contrast Analyser to check that the contrast ratio between each informative object within icons and its surrounding colours is at least 3:1.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-4-12">
-                                <a href="#1-4-12">1.4.12 - Text spacing</a>
-                            </h4>
-                            <p>For regular HTML page content, no loss of content or functionality happens when a user changes line height, letter or word spacing.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                    <p>Make sure your CSS lets users adjust:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>Line height (line spacing) to at least 1.5 times the font size</li>
-                        <li>Spacing following paragraphs to at least 2 times the font size</li>
-                        <li>Letter spacing (tracking) to at least 0.12 times the font size</li>
-                        <li>Word spacing to at least 0.16 times the font size</li>
-                    </ul>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Use the <a href="/tools-testing/tools/text-spacing">Text Spacing tool</a> to test text spacing on a webpage.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="1-4-13">
-                                <a href="#1-4-13">1.4.13 - Content on hover or focus</a>
-                            </h4>
-                            <p>Ensuring that extra content eg tooltips can be viewed easily, don't cover up key content, and can be dismissed without moving focus or hover.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Position the additional content so that it does not obscure any other content, including the trigger.</p>
-                        <p>Provide an easy way to dismiss the additional content, such as by pressing Escape or selecting a close button.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                        <p>When new content appears on mouse over or on keyboard focus complete the following checks:</p>
-                        <ul class="govuk-list govuk-list--bullet">
-                            <li>check that you can dismiss the new content by pressing the Esc key or a close button</li>
-                            <li>check that you can move the mouse pointer to the new content</li>
-                                <li>check that the new content does not disappear until you move the mouse pointer or keyboard focus to the next item on the page</li>
-                        </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dfe-wcag-principles">
-                    <h2 class="govuk-heading-l" id="operable">Operable</h2>
-                    <p>All interactive components and page navigations must be operable via different input modalities.</p>
-                    <p>Users should be able to easily navigate around the site and have enough time to interact with the content without discomfort or physical reactions.</p>
-
-                    <div class="dfe-wcag-criteria-section" data-category="keyboard">
-                        <h3 class="govuk-heading-m">Keyboard accessible</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="keyboard">
-                            <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-1-1">
-                                <a href="#2-1-1">2.1.1 - Keyboard accessible</a>
-                            </h4>
-                            <p>It must be possible for someone using a keyboard to complete all tasks in a service.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure all interactive elements can be accessed and operated using only the keyboard.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Navigate through the page using only the Tab key and test all interactive elements.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="keyboard">
-                            <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-1-2">
-                                <a href="#2-1-2">2.1.2 - No keyboard trap</a>
-                            </h4>
-                            <p>No item traps the keyboard focus; upon reaching any item on the page, it is possible to move to the item that precedes or follows it using the keyboard.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure that keyboard focus can always be moved away from any element using standard keyboard navigation.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Navigate through all interactive elements and verify that focus can always be moved to the next or previous element.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="keyboard">
-                            <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-1-4">
-                                <a href="#2-1-4">2.1.4 - Character key shortcuts</a>
-                            </h4>
-                            <p>If single character key shortcuts have been set up within a page, the user can switch them off or remap them.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide a mechanism to disable or remap single character shortcuts to avoid conflicts with assistive technologies.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check if single character shortcuts exist and verify they can be disabled or remapped.</p>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 1.4.13 Content on Hover or Focus</a>
+                                </p>
+                                <p>Ensuring that extra content eg tooltips can be viewed easily, don't cover up key content, and can be dismissed without moving focus or hover.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Position the additional content so that it does not obscure any other content, including the trigger.</p>
+                                <p>Provide an easy way to dismiss the additional content, such as by pressing Escape or selecting a close button.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>When new content appears on mouse over or on keyboard focus complete the following checks:</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>check that you can dismiss the new content by pressing the Esc key or a close button</li>
+                                    <li>check that you can move the mouse pointer to the new content</li>
+                                    <li>check that the new content does not disappear until you move the mouse pointer or keyboard focus to the next item on the page</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dfe-wcag-criteria-section" data-category="cognitive">
-                        <h3 class="govuk-heading-m">Enough time</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-2-1">
-                                <a href="#2-2-1">2.2.1 - Timing adjustable</a>
+                    <div class="dfe-wcag-principles">
+                        <h2 class="govuk-heading-l" id="operable">Operable</h2>
+                        <p>All interactive components and page navigations must be operable via different input modalities.</p>
+                        <p>Users should be able to easily navigate around the site and have enough time to interact with the content without discomfort or physical reactions.</p>
+
+                        <div class="dfe-wcag-criteria-section" data-category="keyboard">
+                            <h3 class="govuk-heading-m">Keyboard accessible</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="keyboard">
+                                <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-1-1">
+                                2.1.1 - Keyboard accessible <a href="#2-1-1" id="2-1-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.1.1</span></a>
                             </h4>
-                            <p>When a time limit, like a session timeout, is set ensure a user is informed, especially if this may result in a loss of data.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide warnings before timeouts and allow users to extend time limits when possible.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that users are warned about time limits and can extend them if needed.</p>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.1.1 Keyboard Accessible</a>
+                                </p>
+                                <p>It must be possible for someone using a keyboard to complete all tasks in a service.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure all interactive elements can be accessed and operated using only the keyboard.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Navigate through the page using only the Tab key and test all interactive elements.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="keyboard">
+                                <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-1-2">
+                                2.1.2 - No keyboard trap <a href="#2-1-2" id="2-1-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.1.2</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.1.2 No Keyboard Trap</a>
+                                </p>
+                                <p>No item traps the keyboard focus; upon reaching any item on the page, it is possible to move to the item that precedes or follows it using the keyboard.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure that keyboard focus can always be moved away from any element using standard keyboard navigation.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Navigate through all interactive elements and verify that focus can always be moved to the next or previous element.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="keyboard">
+                                <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-1-4">
+                                2.1.4 - Character key shortcuts <a href="#2-1-4" id="2-1-4-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.1.4</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.1.4 Character Key Shortcuts</a>
+                                </p>
+                                <p>If single character key shortcuts have been set up within a page, the user can switch them off or remap them.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide a mechanism to disable or remap single character shortcuts to avoid conflicts with assistive technologies.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check if single character shortcuts exist and verify they can be disabled or remapped.</p>
+                            </div>
                         </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-2-2">
-                                <a href="#2-2-2">2.2.2 - Pause, stop, hide</a>
+
+                        <div class="dfe-wcag-criteria-section" data-category="cognitive">
+                            <h3 class="govuk-heading-m">Enough time</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-2-1">
+                                2.2.1 - Timing adjustable <a href="#2-2-1" id="2-2-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.2.1</span></a>
                             </h4>
-                            <p>Avoid moving or animated content on pages. When content moves automatically for more than 5 seconds, it must be possible for users to pause, stop or hide it.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide controls to pause, stop, or hide moving content that lasts more than 5 seconds.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that moving content can be paused, stopped, or hidden by users.</p>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.2.1 Timing Adjustable</a>
+                                </p>
+                                <p>When a time limit, like a session timeout, is set ensure a user is informed, especially if this may result in a loss of data.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide warnings before timeouts and allow users to extend time limits when possible.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that users are warned about time limits and can extend them if needed.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-2-2">
+                                2.2.2 - Pause, stop, hide <a href="#2-2-2" id="2-2-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.2.2</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.2.2 Pause, Stop, Hide</a>
+                                </p>
+                                <p>Avoid moving or animated content on pages. When content moves automatically for more than 5 seconds, it must be possible for users to pause, stop or hide it.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide controls to pause, stop, or hide moving content that lasts more than 5 seconds.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that moving content can be paused, stopped, or hidden by users.</p>
+                            </div>
+                        </div>
+
+                        <div class="dfe-wcag-criteria-section" data-category="cognitive">
+                            <h3 class="govuk-heading-m">Seizures and physical reactions</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-3-1">
+                                2.3.1 - Three flashes or below <a href="#2-3-1" id="2-3-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.3.1</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.3.1 Three Flashes or Below</a>
+                                </p>
+                                <p>A page must not contain content that flashes more than 3 times a second.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Avoid content that flashes more than 3 times per second to prevent seizures.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that no content flashes more than 3 times per second.</p>
+                            </div>
+                        </div>
+
+                        <div class="dfe-wcag-criteria-section" data-category="navigation">
+                            <h3 class="govuk-heading-m">Navigable</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-4-1">
+                                2.4.1 - Bypass blocks <a href="#2-4-1" id="2-4-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.1</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.1 Bypass Blocks</a>
+                                </p>
+                                <p>When there is repeated content (like a header) at the top of the page, there must be a way for keyboard users to move focus directly to the start of the main content area.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide a "skip to main content" link or use proper heading structure to allow users to bypass repeated content.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that keyboard users can skip repeated content and go directly to the main content.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-4-2">
+                                2.4.2 - Page title <a href="#2-4-2" id="2-4-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.2</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.2 Page Title</a>
+                                </p>
+                                <p>Each page must have a unique title that indicates its topic or purpose.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use descriptive and unique page titles that clearly indicate the page content.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that each page has a unique, descriptive title in the browser tab.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-4-3">
+                                2.4.3 - Focus order <a href="#2-4-3" id="2-4-3-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.3</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.3 Focus Order</a>
+                                </p>
+                                <p>It must be possible to navigate through content in a way that makes sense.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure the tab order follows a logical sequence that matches the visual layout.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Tab through the page and verify the focus order follows a logical sequence.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-4-4">
+                                2.4.4 - Link purpose in context <a href="#2-4-4" id="2-4-4-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.4</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.4 Link Purpose in Context</a>
+                                </p>
+                                <p>Link text should make it clear what the link is (where it goes). Links should make sense out of context.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use descriptive link text that clearly indicates the destination or purpose of the link.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Read link text out of context and verify it clearly indicates the link's purpose.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="2-4-5">
+                                2.4.5 - Multiple ways <a href="#2-4-5" id="2-4-5-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.5</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.5 Multiple Ways</a>
+                                </p>
+                                <p>Unless the service is a series of steps, there must be different ways for people to locate and navigate content.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide multiple navigation methods such as site maps, search, and navigation menus.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Verify that users can find content through multiple navigation methods.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="2-4-6">
+                                2.4.6 - Headings and labels <a href="#2-4-6" id="2-4-6-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.6</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.6 Headings and Labels</a>
+                                </p>
+                                <p>Headings must indicate the topic or purpose of the content in that section of the page, and labels must indicate the purpose of the field they relate to.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use descriptive headings and labels that clearly indicate the content or purpose.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that headings and labels are descriptive and indicate their purpose.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="keyboard">
+                                <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="2-4-7">
+                                2.4.7 - Focus visible <a href="#2-4-7" id="2-4-7-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.7</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.7 Focus Visible</a>
+                                </p>
+                                <p>It must be easy to tell which element has keyboard focus.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure that focused elements have a visible focus indicator that meets contrast requirements.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Tab through the page and verify that focused elements have a visible focus indicator.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="keyboard">
+                                <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="2-4-11">
+                                2.4.11 - Focus not obscured (minimum) <a href="#2-4-11" id="2-4-11-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.4.11</span></a>   
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.4.11 Focus Not Obscured (Minimum)</a>
+                                </p>
+                                <p>This Success Criterion is about ensuring a component that currently has focus is not entirely obscured by another element.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure that focused elements are not completely hidden by other content like modals or overlays.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that focused elements remain visible and accessible when other content appears.</p>
+                            </div>
+                        </div>
+
+                        <div class="dfe-wcag-criteria-section" data-category="motor">
+                            <h3 class="govuk-heading-m">Input modalities</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="motor">
+                                <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-5-1">
+                                2.5.1 - Pointer gestures <a href="#2-5-1" id="2-5-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.5.1</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.5.1 Pointer Gestures</a>
+                                </p>
+                                <p>Any functionality which requires a multipoint or path based gestures has an alternative single pointer, non path-based gesture.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide single-click alternatives for complex gestures like pinch-to-zoom or swipe.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Verify that all functionality can be accessed with single pointer actions.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="motor">
+                                <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-5-2">
+                                2.5.2 - Pointer cancellation <a href="#2-5-2" id="2-5-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.5.2</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.5.2 Pointer Cancellation</a>
+                                </p>
+                                <p>Any script triggering must be done on the 'up' event - not the 'down' event.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Trigger actions on pointer up rather than pointer down to allow users to cancel actions.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that actions trigger on pointer up, not pointer down.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
+                                <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-5-3">
+                                2.5.3 - Label in name <a href="#2-5-3" id="2-5-3-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.5.3</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.5.3 Label in Name</a>
+                                </p>
+                                <p>For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure that the accessible name matches the visible label text.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that screen readers announce the same text that is visible on screen.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="motor">
+                                <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="2-5-4">
+                                2.5.4 - Motion actuation <a href="#2-5-4" id="2-5-4-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.5.4</span></a>   
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.5.4 Motion Actuation</a>
+                                </p>
+                                <p>Any functionality that is initiated by tilting or shaking (etc) a device, must be able to be intiated by a button, or other control.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide button alternatives for motion-based interactions.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Verify that motion-based functionality can be triggered with buttons or other controls.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="motor">
+                                <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="2-5-7">
+                                2.5.7 - Dragging movements <a href="#2-5-7" id="2-5-7-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.5.7</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.5.7 Dragging Movements</a>
+                                </p>
+                                <p>This Success Criterion is about ensuring users can interact with components that can be dragged using only a pointer device.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide single-pointer alternatives for drag and drop interactions.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Verify that drag and drop functionality can be completed with single pointer actions.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="motor">
+                                <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="2-5-8">
+                                2.5.8 - Target size (minimum) <a href="#2-5-8" id="2-5-8-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 2.5.8</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 2.5.8 Target Size (Minimum)</a>
+                                </p>
+                                <p>Success Criterion 2.5.8 allows a smaller size of 24 by 24 pixels for interactive components.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure interactive elements are at least 24x24 pixels in size.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Measure interactive elements to ensure they meet the minimum size requirement.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dfe-wcag-criteria-section" data-category="cognitive">
-                        <h3 class="govuk-heading-m">Seizures and physical reactions</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-3-1">
-                                <a href="#2-3-1">2.3.1 - Three flashes or below</a>
+                    <div class="dfe-wcag-principles">
+                        <h2 class="govuk-heading-l" id="understandable">Understandable</h2>
+                        <p>Users must be able to understand the content.</p>
+                        <p>Content must be understandable by different types of users, must appear and behave in predictable ways and users should be helped to correct mistakes.</p>
+
+                        <div class="dfe-wcag-criteria-section" data-category="cognitive">
+                            <h3 class="govuk-heading-m">Readable</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="3-1-x">
+                                3.1.x - Language of page and parts <a href="#3-1-x" id="3-1-x-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.1.x</span></a> 
                             </h4>
-                            <p>A page must not contain content that flashes more than 3 times a second.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Avoid content that flashes more than 3 times per second to prevent seizures.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that no content flashes more than 3 times per second.</p>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.1.x Language of Page and Parts</a>
+                                </p>
+                                <p>The written language of the page must be identified in the code of the web page.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use the lang attribute on the html element and specify language for content in different languages.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that the lang attribute is present and correctly identifies the page language.</p>
+                            </div>
+                        </div>
+
+                        <div class="dfe-wcag-criteria-section" data-category="cognitive">
+                            <h3 class="govuk-heading-m">Predictable</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="3-2-1">
+                                3.2.1 - On focus <a href="#3-2-1" id="3-2-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.2.1</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.2.1 On Focus</a>
+                                </p>
+                                <p>When a keyboard user focuses on a control it must not cause a change of context, such as loading a new page/tab.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Avoid automatic context changes when elements receive focus.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Tab through form controls and verify that focus doesn't trigger unwanted actions.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
+                                <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="3-2-2">
+                                3.2.2 - On input <a href="#3-2-2" id="3-2-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.2.2</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.2.2 On Input</a>
+                                </p>
+                                <p>Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behaviour before using the component.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Only change context when users explicitly submit forms or activate controls.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Test form interactions to ensure context changes only occur on explicit user actions.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="3-2-3">
+                                3.2.3 - Consistent navigation <a href="#3-2-3" id="3-2-3-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.2.3</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.2.3 Consistent Navigation</a>
+                                </p>
+                                <p>When ways to navigate content are repeated on multiple pages, they must be presented in a consistent manner.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Maintain consistent navigation patterns across all pages of the website.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that navigation elements appear in the same order and location across pages.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="3-2-4">
+                                3.2.4 - Consistent identification <a href="#3-2-4" id="3-2-4-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.2.4</span></a>  
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.2.4 Consistent Identification</a>
+                                </p>
+                                <p>When features with the same functionality are used in multiple places, they must be identified in a consistent way.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use consistent labels and icons for similar functionality across the website.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Verify that similar functionality uses consistent identification across pages.</p>
+                            </div>
+                        </div>
+
+                        <div class="dfe-wcag-criteria-section" data-category="forms">
+                            <h3 class="govuk-heading-m">Input assistance</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
+                                <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="3-3-1">
+                                3.3.1 - Error identification <a href="#3-3-1" id="3-3-1-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.3.1</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.3.1 Error Identification</a>
+                                </p>
+                                <p>When an error occurs the user is informed what caused the error, and the error is described in text in an accessible way.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Error messages should be clear, specific and helpful. They should explain what went wrong and how to fix it.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Submit forms with invalid data and check that error messages are clear and explain what needs to be corrected.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
+                                <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="3-3-2">
+                                3.3.2 - Labels or instructions <a href="#3-3-2" id="3-3-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.3.2</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.3.2 Labels or Instructions</a>
+                                </p>
+                                <p>When data must be entered in a specific format or in a particular way, clear instructions must be associated with the form field.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide clear labels and instructions for form fields, especially when specific formats are required.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Check that all form fields have clear labels and instructions where needed.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="forms">
+                                <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="3-3-3">
+                                3.3.3 - Error suggestions <a href="#3-3-3" id="3-3-3-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.3.3</span></a>
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.3.3 Error Suggestions</a>
+                                </p>
+                                <p>When an error is detected, suggestions for correcting the issue must be provided unless the suggestion compromises security.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide helpful suggestions for fixing errors, such as format examples or common corrections.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Test form submissions with errors and verify that helpful suggestions are provided.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="aa" data-themes="forms">
+                                <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
+                                <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
+                                <h4 class="govuk-heading-s" id="3-3-4">
+                                3.3.4 - Error prevention <a href="#3-3-4" id="3-3-4-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 3.3.4</span></a>       
+                            </h4>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 3.3.4 Error Prevention</a>
+                                </p>
+                                <p>All transactions should be reversible, or confirmation must be required before submission.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Provide confirmation steps for important actions or allow users to undo their actions.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Test that important actions have confirmation steps or can be undone.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="dfe-wcag-criteria-section" data-category="navigation">
-                        <h3 class="govuk-heading-m">Navigable</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-4-1">
-                                <a href="#2-4-1">2.4.1 - Bypass blocks</a>
-                            </h4>
-                            <p>When there is repeated content (like a header) at the top of the page, there must be a way for keyboard users to move focus directly to the start of the main content area.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide a "skip to main content" link or use proper heading structure to allow users to bypass repeated content.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that keyboard users can skip repeated content and go directly to the main content.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-4-2">
-                                <a href="#2-4-2">2.4.2 - Page title</a>
-                            </h4>
-                            <p>Each page must have a unique title that indicates its topic or purpose.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Use descriptive and unique page titles that clearly indicate the page content.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that each page has a unique, descriptive title in the browser tab.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-4-3">
-                                <a href="#2-4-3">2.4.3 - Focus order</a>
-                            </h4>
-                            <p>It must be possible to navigate through content in a way that makes sense.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure the tab order follows a logical sequence that matches the visual layout.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Tab through the page and verify the focus order follows a logical sequence.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-4-4">
-                                <a href="#2-4-4">2.4.4 - Link purpose in context</a>
-                            </h4>
-                            <p>Link text should make it clear what the link is (where it goes). Links should make sense out of context.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Use descriptive link text that clearly indicates the destination or purpose of the link.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Read link text out of context and verify it clearly indicates the link's purpose.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="2-4-5">
-                                <a href="#2-4-5">2.4.5 - Multiple ways</a>
-                            </h4>
-                            <p>Unless the service is a series of steps, there must be different ways for people to locate and navigate content.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide multiple navigation methods such as site maps, search, and navigation menus.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Verify that users can find content through multiple navigation methods.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="2-4-6">
-                                <a href="#2-4-6">2.4.6 - Headings and labels</a>
-                            </h4>
-                            <p>Headings must indicate the topic or purpose of the content in that section of the page, and labels must indicate the purpose of the field they relate to.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Use descriptive headings and labels that clearly indicate the content or purpose.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that headings and labels are descriptive and indicate their purpose.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="keyboard">
-                            <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="2-4-7">
-                                <a href="#2-4-7">2.4.7 - Focus visible</a>
-                            </h4>
-                            <p>It must be easy to tell which element has keyboard focus.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure that focused elements have a visible focus indicator that meets contrast requirements.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Tab through the page and verify that focused elements have a visible focus indicator.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="keyboard">
-                            <strong class="govuk-tag govuk-tag--keyboard">Keyboard & focus</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="2-4-11">
-                                <a href="#2-4-11">2.4.11 - Focus not obscured (minimum)</a>
-                            </h4>
-                            <p>This Success Criterion is about ensuring a component that currently has focus is not entirely obscured by another element.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure that focused elements are not completely hidden by other content like modals or overlays.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that focused elements remain visible and accessible when other content appears.</p>
-                        </div>
-                    </div>
+                    <div class="dfe-wcag-principles">
+                        <h2 class="govuk-heading-l" id="robust">Robust</h2>
+                        <p>Content must be robust and compatible with current and future tools, browsers and technologies.</p>
 
-                    <div class="dfe-wcag-criteria-section" data-category="motor">
-                        <h3 class="govuk-heading-m">Input modalities</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="motor">
-                            <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-5-1">
-                                <a href="#2-5-1">2.5.1 - Pointer gestures</a>
+                        <div class="dfe-wcag-criteria-section" data-category="navigation">
+                            <h3 class="govuk-heading-m">Compatible</h3>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="4-1-2">
+                                4.1.2 - Name, Role, Value <a href="#4-1-2" id="4-1-2-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 4.1.2</span></a>
                             </h4>
-                            <p>Any functionality which requires a multipoint or path based gestures has an alternative single pointer, non path-based gesture.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide single-click alternatives for complex gestures like pinch-to-zoom or swipe.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Verify that all functionality can be accessed with single pointer actions.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="motor">
-                            <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-5-2">
-                                <a href="#2-5-2">2.5.2 - Pointer cancellation</a>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 4.1.2 Name, Role, Value</a>
+                                </p>
+                                <p>All interactive components must have an accessible name and role, and the state of the component must be communicated to assistive technologies.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Ensure all interactive elements have proper ARIA attributes and semantic HTML markup.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Use browser developer tools to check that interactive elements have proper names, roles, and values.</p>
+                            </div>
+                            <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
+                                <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
+                                <strong class="govuk-tag govuk-tag--red">Level A</strong>
+                                <h4 class="govuk-heading-s" id="4-1-3">
+                                4.1.3 - Status messages <a href="#4-1-3" id="4-1-3-link" class="govuk-link govuk-link--no-visited-state">Copy link <span class="govuk-visually-hidden">to criterion 4.1.3</span></a>            
                             </h4>
-                            <p>Any script triggering must be done on the 'up' event - not the 'down' event.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Trigger actions on pointer up rather than pointer down to allow users to cancel actions.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that actions trigger on pointer up, not pointer down.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
-                            <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-5-3">
-                                <a href="#2-5-3">2.5.3 - Label in name</a>
-                            </h4>
-                            <p>For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure that the accessible name matches the visible label text.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that screen readers announce the same text that is visible on screen.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="motor">
-                            <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="2-5-4">
-                                <a href="#2-5-4">2.5.4 - Motion actuation</a>
-                            </h4>
-                            <p>Any functionality that is initiated by tilting or shaking (etc) a device, must be able to be intiated by a button, or other control.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide button alternatives for motion-based interactions.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Verify that motion-based functionality can be triggered with buttons or other controls.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="motor">
-                            <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="2-5-7">
-                                <a href="#2-5-7">2.5.7 - Dragging movements</a>
-                            </h4>
-                            <p>This Success Criterion is about ensuring users can interact with components that can be dragged using only a pointer device.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide single-pointer alternatives for drag and drop interactions.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Verify that drag and drop functionality can be completed with single pointer actions.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="motor">
-                            <strong class="govuk-tag govuk-tag--motor">Motor & mobility</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="2-5-8">
-                                <a href="#2-5-8">2.5.8 - Target size (minimum)</a>
-                            </h4>
-                            <p>Success Criterion 2.5.8 allows a smaller size of 24 by 24 pixels for interactive components.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure interactive elements are at least 24x24 pixels in size.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Measure interactive elements to ensure they meet the minimum size requirement.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dfe-wcag-principles">
-                    <h2 class="govuk-heading-l" id="understandable">Understandable</h2>
-                    <p>Users must be able to understand the content.</p>
-                    <p>Content must be understandable by different types of users, must appear and behave in predictable ways and users should be helped to correct mistakes.</p>
-
-                    <div class="dfe-wcag-criteria-section" data-category="cognitive">
-                        <h3 class="govuk-heading-m">Readable</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="3-1-x">
-                                <a href="#3-1-x">3.1.x - Language of page and parts</a>
-                            </h4>
-                            <p>The written language of the page must be identified in the code of the web page.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Use the lang attribute on the html element and specify language for content in different languages.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that the lang attribute is present and correctly identifies the page language.</p>
-                        </div>
-                    </div>
-
-                    <div class="dfe-wcag-criteria-section" data-category="cognitive">
-                        <h3 class="govuk-heading-m">Predictable</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="3-2-1">
-                                <a href="#3-2-1">3.2.1 - On focus</a>
-                            </h4>
-                            <p>When a keyboard user focuses on a control it must not cause a change of context, such as loading a new page/tab.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Avoid automatic context changes when elements receive focus.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Tab through form controls and verify that focus doesn't trigger unwanted actions.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="cognitive">
-                            <strong class="govuk-tag govuk-tag--cognitive">Cognitive & learning</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="3-2-2">
-                                <a href="#3-2-2">3.2.2 - On input</a>
-                            </h4>
-                            <p>Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behaviour before using the component.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Only change context when users explicitly submit forms or activate controls.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Test form interactions to ensure context changes only occur on explicit user actions.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="3-2-3">
-                                <a href="#3-2-3">3.2.3 - Consistent navigation</a>
-                            </h4>
-                            <p>When ways to navigate content are repeated on multiple pages, they must be presented in a consistent manner.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Maintain consistent navigation patterns across all pages of the website.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that navigation elements appear in the same order and location across pages.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="3-2-4">
-                                <a href="#3-2-4">3.2.4 - Consistent identification</a>
-                            </h4>
-                            <p>When features with the same functionality are used in multiple places, they must be identified in a consistent way.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Use consistent labels and icons for similar functionality across the website.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Verify that similar functionality uses consistent identification across pages.</p>
-                        </div>
-                    </div>
-
-                    <div class="dfe-wcag-criteria-section" data-category="forms">
-                        <h3 class="govuk-heading-m">Input assistance</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
-                            <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="3-3-1">
-                                <a href="#3-3-1">3.3.1 - Error identification</a>
-                            </h4>
-                            <p>When an error occurs the user is informed what caused the error, and the error is described in text in an accessible way.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Error messages should be clear, specific and helpful. They should explain what went wrong and how to fix it.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Submit forms with invalid data and check that error messages are clear and explain what needs to be corrected.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="forms">
-                            <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="3-3-2">
-                                <a href="#3-3-2">3.3.2 - Labels or instructions</a>
-                            </h4>
-                            <p>When data must be entered in a specific format or in a particular way, clear instructions must be associated with the form field.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide clear labels and instructions for form fields, especially when specific formats are required.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Check that all form fields have clear labels and instructions where needed.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="forms">
-                            <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="3-3-3">
-                                <a href="#3-3-3">3.3.3 - Error suggestions</a>
-                            </h4>
-                            <p>When an error is detected, suggestions for correcting the issue must be provided unless the suggestion compromises security.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide helpful suggestions for fixing errors, such as format examples or common corrections.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Test form submissions with errors and verify that helpful suggestions are provided.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="aa" data-themes="forms">
-                            <strong class="govuk-tag govuk-tag--forms">Forms & inputs</strong>
-                            <strong class="govuk-tag govuk-tag--yellow">Level AA</strong>
-                            <h4 class="govuk-heading-s" id="3-3-4">
-                                <a href="#3-3-4">3.3.4 - Error prevention</a>
-                            </h4>
-                            <p>All transactions should be reversible, or confirmation must be required before submission.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Provide confirmation steps for important actions or allow users to undo their actions.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Test that important actions have confirmation steps or can be undone.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dfe-wcag-principles">
-                    <h2 class="govuk-heading-l" id="robust">Robust</h2>
-                    <p>Content must be robust and compatible with current and future tools, browsers and technologies.</p>
-
-                    <div class="dfe-wcag-criteria-section" data-category="navigation">
-                        <h3 class="govuk-heading-m">Compatible</h3>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="4-1-2">
-                                <a href="#4-1-2">4.1.2 - Name, Role, Value</a>
-                            </h4>
-                            <p>All interactive components must have an accessible name and role, and the state of the component must be communicated to assistive technologies.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Ensure all interactive elements have proper ARIA attributes and semantic HTML markup.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Use browser developer tools to check that interactive elements have proper names, roles, and values.</p>
-                        </div>
-                        <div class="dfe-wcag-criterion" data-level="a" data-themes="navigation">
-                            <strong class="govuk-tag govuk-tag--navigation">Navigation & structure</strong>
-                            <strong class="govuk-tag govuk-tag--red">Level A</strong>
-                            <h4 class="govuk-heading-s" id="4-1-3">
-                                <a href="#4-1-3">4.1.3 - Status messages</a>
-                            </h4>
-                            <p>There are different situations where a page needs to dynamically display a status message. These messages need to be conveyed to assistive technology users.</p>
-                            <h5 class="govuk-heading-s">How to implement</h5>
-                            <p>Use ARIA live regions to announce status messages to screen readers.</p>
-                            <h5 class="govuk-heading-s">How to test</h5>
-                            <p>Test with screen readers to ensure status messages are announced appropriately.</p>
+                                <p>
+                                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" class="govuk-link govuk-link--no-visited-state" rel="noopener noreferrer">Related guidance: WCAG 4.1.3 Status Messages</a>
+                                </p>
+                                <p>There are different situations where a page needs to dynamically display a status message. These messages need to be conveyed to assistive technology users.</p>
+                                <h5 class="govuk-heading-s">How to implement</h5>
+                                <p>Use ARIA live regions to announce status messages to screen readers.</p>
+                                <h5 class="govuk-heading-s">How to test</h5>
+                                <p>Test with screen readers to ensure status messages are announced appropriately.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 {% endblock %}

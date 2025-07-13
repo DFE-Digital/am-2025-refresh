@@ -43,8 +43,7 @@ async function createTrainingSessionWithUniqueCode(maxAttempts = 10) {
         VALUES ($1)
         ON CONFLICT DO NOTHING
         RETURNING id, unique_code;
-      `,
-            [code]
+      `, [code]
         );
 
         // If rowCount is 1, we inserted successfully (i.e., code was unique)
@@ -61,9 +60,16 @@ async function createTrainingSessionWithUniqueCode(maxAttempts = 10) {
 
 // Helper to load all intermediate questions
 function loadIntermediateQuestions() {
-    const filePath = path.join(__dirname, '../data/intermediateQuestions.json');
-    const rawData = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(rawData);
+    try {
+        let filePath = path.join(__dirname, '../data/intermediateQuestions.json');
+        const rawData = fs.readFileSync(filePath, 'utf-8');
+        const parsed = JSON.parse(rawData);
+        console.log(`Loaded ${parsed.length} questions from JSON file`);
+        return parsed;
+    } catch (error) {
+        console.error('Error loading intermediate questions:', error);
+        throw error;
+    }
 }
 
 // Helper for multiple-select array comparison
@@ -138,8 +144,7 @@ exports.getResults = (req, res) => {
 
     notify.sendEmail(
         process.env.email_basic_results,
-        process.env.designopsemail,
-        {
+        process.env.designopsemail, {
             personalisation: {
                 csvData: csvData,
                 score: score,
@@ -187,7 +192,7 @@ exports.g_intermediateAuth = (req, res) => {
 
 
 
-exports.g_questionsList = async (req, res) => {
+exports.g_questionsList = async(req, res) => {
     if (!req.session.intermediateDbSessionCode) {
         return res.redirect('/training/intermediate/auth');
     }
@@ -256,7 +261,7 @@ exports.g_questionsList = async (req, res) => {
 
 
 // 2) GET route handler for /training/intermediate/question-:questionNumber
-exports.g_intermediateQuestion = async (req, res) => {
+exports.g_intermediateQuestion = async(req, res) => {
     // Make sure the user has a session code
     if (!req.session.intermediateDbSessionCode) {
         return res.redirect('/training/intermediate/auth');
@@ -267,9 +272,13 @@ exports.g_intermediateQuestion = async (req, res) => {
 
     // Load your JSON
     const allQuestions = loadIntermediateQuestions();
+    console.log(`Looking for question ${questionNumber} in ${allQuestions.length} questions`);
+    console.log(`Available question IDs: ${allQuestions.map(q => q.id).join(', ')}`);
+    
     // Find the question object by id
     const question = allQuestions.find(q => q.id === questionNumber);
     if (!question) {
+        console.error(`Question ${questionNumber} not found. Available IDs: ${allQuestions.map(q => q.id).join(', ')}`);
         return res.status(404).send(`Question ${questionNumber} not found in JSON`);
     }
 
@@ -332,7 +341,7 @@ exports.g_intermediateComplete = (req, res) => {
     res.render('training/intermediate/complete');
 };
 
-exports.p_intermediateAuth = async (req, res) => {
+exports.p_intermediateAuth = async(req, res) => {
     const { action, existingCode } = req.body;
 
     if (action === 'useExistingCode') {
@@ -364,7 +373,7 @@ exports.p_intermediateAuth = async (req, res) => {
             const { id, unique_code } = rows[0];
             req.session.intermediateDbSessionId = id;
             req.session.intermediateDbSessionCode = unique_code;
-            req.session.intermediateAnswers = [];  // optional
+            req.session.intermediateAnswers = []; // optional
             return res.redirect('/training/intermediate/questions-list');
 
         } catch (err) {
@@ -403,7 +412,7 @@ exports.p_intermediateAuth = async (req, res) => {
 
 
 
-exports.p_intermediateQuestion = async (req, res) => {
+exports.p_intermediateQuestion = async(req, res) => {
     // 1) Check for session code
     if (!req.session.intermediateDbSessionCode) {
         return res.redirect('/training/intermediate/auth');
@@ -538,7 +547,7 @@ exports.p_intermediateQuestion = async (req, res) => {
 };
 
 
-exports.p_sendCodeEmail = async (req, res) => {
+exports.p_sendCodeEmail = async(req, res) => {
     // 1) Grab the user's email from the form
     const email = req.body.email;
 
