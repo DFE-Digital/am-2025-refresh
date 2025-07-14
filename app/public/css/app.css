@@ -1033,20 +1033,3 @@ div {
         /* Show when expanded */
     }
 }
-
-
-/* Desktop styles */
-
-@media (min-width: 801px) {
-    .dfe-vertical-nav__toggle {
-        display: none !important;
-        /* Always hide on desktop */
-    }
-    .dfe-vertical-nav__section {
-        display: block !important;
-        /* Always show on desktop */
-    }
-    .dfe-vertical-nav__mobile-container--expanded {
-        /* Reset any mobile expansion styles on desktop */
-    }
-}
