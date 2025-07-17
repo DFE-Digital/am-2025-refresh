@@ -30,13 +30,22 @@
                 </div>
                 <div class="govuk-grid-column-two-thirds">
 
-                    {% include 'audits-issues-statements/accessibility-statements/_statement_warning.html' %}
+                        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                        <div class="govuk-notification-banner__header">
+                            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                        </div>
+                        <div class="govuk-notification-banner__content">
+                            <p class="govuk-notification-banner__heading">
+                            <a class="govuk-notification-banner__link" href="https://accessibility-statements.education.gov.uk/">Manage your accessibility issues and statements service</a> enables you to track issues and automatically create an accessibility statement.
+                            </p>
+                        </div>
+                    </div>
 
                     <h2 class="govuk-heading-l">Template</h2>
 
-                    <p>To add the non-compliant accessibility statement to your website, we have provided HTML code for you to use.
-                    You
-                    should personalise it for your service by replacing the content in square brackets, for example:</p>
+                    <p class="govuk-body">If you are not using the new issues and statements service, to add the non-compliant accessibility statement to your website, we have provided the HTML code.</p>
+                    
+                    <p class="govuk-body">You should personalise it for your service by replacing the content in square brackets, for example:</p>
 
                     <p>Replace <code>[name of the service]</code> with the name of the website the statement is for.</p>
 
