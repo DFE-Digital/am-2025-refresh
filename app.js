@@ -206,14 +206,11 @@ const redirectMap = {
     '/knowledge-hub/tools-testing/tools/screen-readers': '/tools-testing/tools/screen-readers',
     // Audits, Issues, Statements
     '/knowledge-hub/audits-issues-statements': '/audits-issues-statements',
-    '/knowledge-hub/audits-issues-statements/audits': '/audits-issues-statements/audits',
-    '/knowledge-hub/audits-issues-statements/audits/get-an-audit': '/audits-issues-statements/audits/get-an-audit',
     '/knowledge-hub/audits-issues-statements/audits/after-an-audit': '/audits-issues-statements/audits/after-an-audit',
-    '/knowledge-hub/audits-issues-statements/issues': '/audits-issues-statements/issues',
+    '/knowledge-hub/audits-issues-statements/audits/get-an-audit': '/audits-issues-statements/audits/get-an-audit',
     '/knowledge-hub/audits-issues-statements/issues/common-issues': '/audits-issues-statements/issues/common-issues',
     '/knowledge-hub/audits-issues-statements/issues/manage-and-prioritise-issues': '/audits-issues-statements/issues/manage-and-prioritise-issues',
     '/knowledge-hub/audits-issues-statements/issues/disproportionate-burden': '/audits-issues-statements/issues/disproportionate-burden',
-    '/knowledge-hub/audits-issues-statements/accessibility-statements': '/audits-issues-statements/accessibility-statements',
     '/knowledge-hub/audits-issues-statements/accessibility-statements/fully-compliant': '/audits-issues-statements/accessibility-statements/fully-compliant',
     '/knowledge-hub/audits-issues-statements/accessibility-statements/partially-compliant': '/audits-issues-statements/accessibility-statements/partially-compliant',
     '/knowledge-hub/audits-issues-statements/accessibility-statements/non-compliant': '/audits-issues-statements/accessibility-statements/non-compliant',
@@ -252,6 +249,30 @@ app.use((req, res, next) => {
     next();
 });
 
+// Just do basic session handling
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+    })
+);
+
+// Add navigation items and DfE-specific variables to all responses
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    res.locals.currentPath = req.path;
+    res.locals.navigationItems = req.session.user ?
+        getNavigationItems(req.session.user) : [];
+    res.locals.serviceName = process.env.SERVICE_NAME;
+    res.locals.env = process.env.NODE_ENV;
+    // Set default dateModified to today for LD+JSON
+    res.locals.dateModified = new Date().toISOString().split('T')[0];
+    next();
+});
+
+// Use application routes (move this up)
+app.use('/', routes);
 
 // Clean URLs
 app.get(/\.html?$/i, function(req, res) {
@@ -334,34 +355,6 @@ app.use((err, req, res, next) => {
 app.get('/robots.txt', function(req, res) {
     res.sendFile(path.join(__dirname, 'app/robots.txt'));
 });
-
-// Just do basic session handling
-app.use(
-    session({
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: true,
-    })
-);
-
-// Add navigation items and DfE-specific variables to all responses
-app.use((req, res, next) => {
-    res.locals.user = req.session.user;
-    res.locals.currentPath = req.path;
-    res.locals.navigationItems = req.session.user ?
-        getNavigationItems(req.session.user) : [];
-    res.locals.serviceName = process.env.SERVICE_NAME;
-    res.locals.env = process.env.NODE_ENV;
-
-    // Set default dateModified to today for LD+JSON
-    res.locals.dateModified = new Date().toISOString().split('T')[0];
-
-    next();
-});
-
-
-// Use application routes
-app.use('/', routes);
 
 // Test route
 app.get('/api/test', (req, res) => {
