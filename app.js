@@ -77,11 +77,17 @@ app.use(
 );
 app.use(
     '/dfe',
-    express.static(path.join(__dirname, 'node_modules/dfe-frontend/dist'), staticOptions)
+    express.static(
+        path.join(__dirname, 'node_modules/dfe-frontend/dist'),
+        staticOptions
+    )
 );
 app.use('/public', express.static('app/public', staticOptions));
 app.use('/assets', express.static('app/public', staticOptions));
-app.use('/node_modules', express.static(path.join(__dirname, 'node_modules'), staticOptions));
+app.use(
+    '/node_modules',
+    express.static(path.join(__dirname, 'node_modules'), staticOptions)
+);
 
 // Serve consolidated files with specific caching
 app.use(
@@ -114,7 +120,6 @@ nunjuckEnv.addFilter('formatNumber', formatNumber);
 nunjuckEnv.addFilter('getFileMetadata', getFileMetadata);
 nunjuckEnv.addGlobal('govukRebrand', true);
 
-
 // Add updateQueryParams filter for pagination
 nunjuckEnv.addFilter('updateQueryParams', function(url, params) {
     const urlObj = new URL(url, 'http://localhost');
@@ -140,7 +145,7 @@ nunjuckEnv.addFilter('find', function(arr, opts) {
         typeof opts.value === 'undefined'
     )
         return null;
-    return arr.find((item) => item[opts.attribute] == opts.value);
+    return arr.find(item => item[opts.attribute] == opts.value);
 });
 
 // Register marked and markdown libraries
@@ -168,10 +173,75 @@ app.use((req, res, next) => {
     res.setHeader('Vary', 'Accept-Encoding');
 
     // Cache control for HTML pages
-    if (req.path.endsWith('.html') || (!req.path.includes('.') && req.path !== '/')) {
+    if (
+        req.path.endsWith('.html') ||
+        (!req.path.includes('.') && req.path !== '/')
+    ) {
         res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache HTML for 1 hour
     }
 
+    next();
+});
+
+// 301 Redirects from old site structure to new site structure
+const redirectMap = {
+    // Tools & Testing
+    '/knowledge-hub/tools-testing/vision': '/tools-testing/vision',
+    '/knowledge-hub/tools-testing/motor': '/tools-testing/motor',
+    '/knowledge-hub/tools-testing/hearing': '/tools-testing/hearing',
+    '/knowledge-hub/tools-testing/cognitive': '/tools-testing/cognitive',
+    '/knowledge-hub/tools-testing/false-positives': '/tools-testing/false-positives',
+    '/knowledge-hub/tools-testing/tools/accessibility-insights': '/tools-testing/tools/accessibility-insights',
+    '/knowledge-hub/tools-testing/tools/arc': '/tools-testing/tools/arc-toolkit',
+    '/knowledge-hub/tools-testing/tools/axe': '/tools-testing/tools/axe-devtools',
+    '/knowledge-hub/tools-testing/tools/contrast': '/tools-testing/tools/contrast-checker',
+    '/knowledge-hub/tools-testing/tools/headings-map': '/tools-testing/tools/headingsmap',
+    '/knowledge-hub/tools-testing/tools/wave': '/tools-testing/tools/wave-evaluation',
+    '/knowledge-hub/tools-testing/tools/lists': '/tools-testing/tools/lists',
+    '/knowledge-hub/tools-testing/tools/blur': '/tools-testing/tools/blur',
+    '/knowledge-hub/tools-testing/tools/target-size': '/tools-testing/tools/target-size',
+    '/knowledge-hub/tools-testing/tools/text-spacing': '/tools-testing/tools/text-spacing',
+    '/knowledge-hub/tools-testing/tools/resize-text': '/tools-testing/tools/resize-text',
+    '/knowledge-hub/tools-testing/tools/voiceover': '/tools-testing/tools/voiceover',
+    '/knowledge-hub/tools-testing/tools/screen-readers': '/tools-testing/tools/screen-readers',
+    // Audits, Issues, Statements
+    '/knowledge-hub/audits-issues-statements': '/audits-issues-statements',
+    '/knowledge-hub/audits-issues-statements/audits': '/audits-issues-statements/audits',
+    '/knowledge-hub/audits-issues-statements/audits/get-an-audit': '/audits-issues-statements/audits/get-an-audit',
+    '/knowledge-hub/audits-issues-statements/audits/after-an-audit': '/audits-issues-statements/audits/after-an-audit',
+    '/knowledge-hub/audits-issues-statements/issues': '/audits-issues-statements/issues',
+    '/knowledge-hub/audits-issues-statements/issues/common-issues': '/audits-issues-statements/issues/common-issues',
+    '/knowledge-hub/audits-issues-statements/issues/manage-and-prioritise-issues': '/audits-issues-statements/issues/manage-and-prioritise-issues',
+    '/knowledge-hub/audits-issues-statements/issues/disproportionate-burden': '/audits-issues-statements/issues/disproportionate-burden',
+    '/knowledge-hub/audits-issues-statements/accessibility-statements': '/audits-issues-statements/accessibility-statements',
+    '/knowledge-hub/audits-issues-statements/accessibility-statements/fully-compliant': '/audits-issues-statements/accessibility-statements/fully-compliant',
+    '/knowledge-hub/audits-issues-statements/accessibility-statements/partially-compliant': '/audits-issues-statements/accessibility-statements/partially-compliant',
+    '/knowledge-hub/audits-issues-statements/accessibility-statements/non-compliant': '/audits-issues-statements/accessibility-statements/non-compliant',
+    '/knowledge-hub/audits-issues-statements/accessibility-statements/templates': '/audits-issues-statements/accessibility-statements/templates',
+    // WCAG and Guidance
+    '/knowledge-hub/wcag': '/guidelines/wcag',
+    '/knowledge-hub/wcag/criteria': '/guidelines/wcag/criteria',
+    '/knowledge-hub/wcag/criteria/perceivable': '/guidelines/wcag/criteria/perceivable',
+    '/knowledge-hub/wcag/criteria/operable': '/guidelines/wcag/criteria/operable',
+    '/knowledge-hub/wcag/criteria/understandable': '/guidelines/wcag/criteria/understandable',
+    '/knowledge-hub/wcag/criteria/robust': '/guidelines/wcag/criteria/robust',
+    '/knowledge-hub/wcag/conformance': '/guidelines/wcag/conformance',
+    '/knowledge-hub/coga': '/guidelines/coga',
+};
+
+app.use((req, res, next) => {
+    // Normalize path: remove trailing slash (except for root), and lowercase
+    let reqPath = req.path;
+    if (reqPath.length > 1 && reqPath.endsWith('/')) {
+        reqPath = reqPath.slice(0, -1);
+    }
+    // Check both original and lowercased path for flexibility
+    const target = redirectMap[reqPath] || redirectMap[reqPath.toLowerCase()];
+    console.log('Redirect middleware:', req.path, '| Normalized:', reqPath, '| Target:', target);
+    if (target) {
+        console.log(`Redirecting ${req.path} -> ${target}`);
+        return res.redirect(301, target);
+    }
     next();
 });
 
@@ -182,44 +252,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// Add a route that serves the app/robots.txt file
-app.get('/robots.txt', function(req, res) {
-    res.sendFile(path.join(__dirname, 'app/robots.txt'));
-});
-
-// Just do basic session handling
-app.use(
-    session({
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: true,
-    })
-);
-
-// Add navigation items and DfE-specific variables to all responses
-app.use((req, res, next) => {
-    res.locals.user = req.session.user;
-    res.locals.currentPath = req.path;
-    res.locals.navigationItems = req.session.user ? getNavigationItems(req.session.user) : [];
-    res.locals.serviceName = process.env.SERVICE_NAME;
-    res.locals.env = process.env.NODE_ENV;
-
-    // Set default dateModified to today for LD+JSON
-    res.locals.dateModified = new Date().toISOString().split('T')[0];
-
-
-
-    next();
-});
-
-// Use application routes
-app.use('/', routes);
-
-// Test route
-app.get('/api/test', (req, res) => {
-    console.log('Test route hit');
-    res.json({ message: 'Test route working' });
-});
 
 // Clean URLs
 app.get(/\.html?$/i, function(req, res) {
@@ -278,24 +310,63 @@ app.use((err, req, res, next) => {
         method: req.method,
         originalMethod: req.originalMethod,
         path: req.path,
-        body: req.body
+        body: req.body,
     });
 
     if (err.code === 'EBADCSRFTOKEN') {
         return res.status(403).render('error', {
             message: 'Invalid CSRF token',
             error: process.env.NODE_ENV === 'development' ? {
-                stack: 'The form submission failed the CSRF validation. Please try again.'
-            } : null
+                stack: 'The form submission failed the CSRF validation. Please try again.',
+            } : null,
         });
     }
 
     res.status(500).render('error', {
         message: 'Something went wrong',
         error: process.env.NODE_ENV === 'development' ? {
-            stack: err.stack || err.message
-        } : null
+            stack: err.stack || err.message,
+        } : null,
     });
+});
+
+// Add a route that serves the app/robots.txt file
+app.get('/robots.txt', function(req, res) {
+    res.sendFile(path.join(__dirname, 'app/robots.txt'));
+});
+
+// Just do basic session handling
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+    })
+);
+
+// Add navigation items and DfE-specific variables to all responses
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    res.locals.currentPath = req.path;
+    res.locals.navigationItems = req.session.user ?
+        getNavigationItems(req.session.user) : [];
+    res.locals.serviceName = process.env.SERVICE_NAME;
+    res.locals.env = process.env.NODE_ENV;
+
+    // Set default dateModified to today for LD+JSON
+    res.locals.dateModified = new Date().toISOString().split('T')[0];
+
+    next();
+});
+
+
+// Use application routes
+app.use('/', routes);
+
+// Test route
+app.get('/api/test', (req, res) => {
+    console.log('Test route hit');
+    res.json({ message: 'Test route working' });
 });
 
 // Start the server
